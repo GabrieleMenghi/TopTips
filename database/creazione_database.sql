@@ -13,7 +13,7 @@ USE `toptips` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `toptips`.`utente` (
   `idutente` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(100) NOT NULL,
+  `username` VARCHAR(100) UNIQUE NOT NULL,
   `password` VARCHAR(512) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idutente`))
