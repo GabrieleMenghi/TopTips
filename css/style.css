@@ -9,7 +9,7 @@ body {
 }
 
 /* MOBILE VERSION */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .notification {
         color: white;
         font-size: 24px;
@@ -24,6 +24,10 @@ body {
     }
 
     .sidebar {
+        display: none;
+    }
+    
+    .toggle {
         display: none;
     }
 

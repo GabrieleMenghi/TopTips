@@ -11,17 +11,27 @@
 <title>TopTips - Home</title>
 </head>
 <body>
-    <div class="conteiner-fluid p-0 overflow-hidden" >
+    <div class="conteiner-fluid m-0 p-0 overflow-hidden" >
         <div class="row">
             <div class="col-12">
                 <header class="fixed-top bg-dark">
-                    <div class="container d-flex align-items-center">
+                    <div class="d-flex align-items-center">
                         <div class="toggle text-dark">
                             <i class="bx bx-menu"></i>
                         </div>
-                        <h1 class="logo text-white col-10">TopTips</h1>
-                        <ul class="notification nav nav-pills">
-                            <li class="nav-item col-2 text-center">
+                        <h1 class="logo text-white text-center col-4">TopTips</h1>
+                        <div class="col-1"></div>
+                        <nav class="col-4 navbar bg-dark">
+                            <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit">
+                                <i class='bx bx-search'></i>
+                            </button>
+                            </form>
+                        </nav>
+                        <div class="col-1"></div>
+                        <ul class="col-2 notification nav nav-pills align-content-center">
+                            <li class="nav-item ps-4">
                                 <i class="bx bxs-bell"></i>
                             </li>
                         </ul>
