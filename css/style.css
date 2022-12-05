@@ -9,7 +9,7 @@ body {
 }
 
 /* MOBILE VERSION */
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .notification {
         color: white;
         font-size: 24px;
@@ -28,6 +28,10 @@ body {
     }
     
     .toggle {
+        display: none;
+    }
+
+    .input-search {
         display: none;
     }
 
@@ -50,12 +54,11 @@ body {
 }
 
 /* DESKTOP VERSION */
-@media screen and (min-width: 768px){
+@media only screen and (min-width: 769px){
     .sidebar {
         width: 120px;
         height: 100%;
         backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
         background: rgba(10, 10, 10, .65);
         box-shadow: 0 8px 32px rgb(2, 4, 24);
         border-right: 2px solid rgba(255, 255, 255, .09);
@@ -64,14 +67,6 @@ body {
 
     .sidebar.open {
         width: 360px;
-    }
-
-    .sidebar .logo {
-        width: 100%;
-        padding: 40px 0;
-        display: grid;
-        align-items: center;
-        justify-items: center;
     }
 
     .sidebar .nav-title {
@@ -91,7 +86,7 @@ body {
     }
 
     .sidebar nav {
-    padding: 0 30px 0 0;
+        padding: 60px 30px 0 0;
     }
 
     .sidebar nav .nav-item {
@@ -172,5 +167,64 @@ body {
     footer {
         display: none;
     }
+}
+
+/*LOGO*/
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5% 5%;
+}
+
+.icons .icon {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    transition: .3s ease-out;
+}
+
+.icons .icon:hover {
+    scale: 1.10;
+}
+
+.icons .icon .bg {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff328e;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    transform: rotate(14deg);
+    transition: .3s ease-out;
+}
+
+.icons .icon:hover .bg {
+    transform: rotate(24deg);
+}
+
+.icons .icon .glass {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 30%;
+}
+
+.icons .icon img {
+    width: 30px;
+    height: 25px;
+    filter: invert(50%) opacity(92%) brightness(220%);
+}
+
+.logo {
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
