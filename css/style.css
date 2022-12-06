@@ -49,6 +49,11 @@ body {
         display: none;
     }
 
+    main {
+        width: 100%;
+        margin-top: 60px;
+    }
+
     footer ul li {
         display: flex;
         align-items: center;
@@ -77,6 +82,7 @@ body {
         box-shadow: 0 8px 32px rgb(2, 4, 24);
         border-right: 2px solid rgba(255, 255, 255, .09);
         transition: .4s ease-in-out;
+        float: left;
     }
 
     .sidebar.open {
@@ -181,6 +187,11 @@ body {
     .search-nav {
         padding: 0;
         margin-left: 100px;
+    }
+
+    main {
+        margin-top: 60px;
+        transition: .4s ease-in-out;
     }
 
     footer {
