@@ -8,6 +8,20 @@ body {
     background-color: rgba(30, 30, 250, .2);
 }
 
+.bx.bx-search {
+    font-size: 24px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+}
+
+.search-nav{
+    padding: 0 6.5% 0;
+}
+
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
     .notification {
@@ -162,6 +176,11 @@ body {
 
     header .toggle:hover{
         background: rgb(255, 255, 255, .7);
+    }
+
+    .search-nav {
+        padding: 0;
+        margin-left: 100px;
     }
 
     footer {
