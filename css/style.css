@@ -70,6 +70,22 @@ body {
     footer ul li.active {
         background: #ff328e !important;
     }
+
+    .i-bell {
+        display: flex;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        font-size: 24px;
+        padding: 0 16px;
+        color: #fff;
+        transition: .3s;
+
+    }
+    .i-bell.active {
+        background: #ff328e !important;
+    }
 }
 
 /* DESKTOP VERSION */
