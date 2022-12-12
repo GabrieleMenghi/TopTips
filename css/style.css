@@ -166,7 +166,6 @@ body {
     }
 
     .toggle {
-        margin: 0 10px 0 0;
         cursor: pointer;
         font-size: 38px;
         line-height: 50%;
@@ -192,7 +191,7 @@ body {
     }
 
     header .toggle {
-        margin-left: 16px;
+        margin-left: 39px;
         margin-right: 70px;
     }
 
