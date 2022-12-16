@@ -4,8 +4,17 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     background-color: rgba(30, 30, 250, .2);
+}
+
+main {
+    text-align: center;
+}
+
+main > article {
+    width: 100%;
+    margin-bottom: 4%;
 }
 
 .bx.bx-search {
@@ -54,6 +63,10 @@ body {
         margin-top: 60px;
     }
 
+    main > article {
+        margin-bottom: 10%;
+    }
+
     footer ul li {
         display: flex;
         align-items: center;
@@ -93,12 +106,12 @@ body {
     .sidebar {
         width: 120px;
         height: 100%;
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(40px);
         background: rgba(10, 10, 10, .65);
         box-shadow: 0 8px 32px rgb(2, 4, 24);
         border-right: 2px solid rgba(255, 255, 255, .09);
         transition: .4s ease-in-out;
-        float: left;
+        position: fixed;
     }
 
     .sidebar.open {
@@ -206,10 +219,11 @@ body {
 
     main {
         margin-top: 60px;
-        transition: .4s ease-in-out;
+        margin-left: 120px;
+        width: calc(100% - 120px);
     }
 
-    footer {
+    .footer.mobile {
         display: none;
     }
 }
@@ -272,4 +286,3 @@ body {
     justify-content: right;
     align-items: center;
 }
-
