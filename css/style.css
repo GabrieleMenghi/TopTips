@@ -223,7 +223,7 @@ main > article {
         width: calc(100% - 120px);
     }
 
-    .footer.mobile {
+    footer {
         display: none;
     }
 }
