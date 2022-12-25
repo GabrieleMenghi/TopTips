@@ -17,6 +17,10 @@ main > article {
     margin-bottom: 4%;
 }
 
+main img {
+    width: 25%;
+}
+
 .bx.bx-search {
     font-size: 24px;
     width: 100%;

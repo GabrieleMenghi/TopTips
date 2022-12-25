@@ -42,3 +42,26 @@ CREATE TABLE IF NOT EXISTS `toptips`.`post` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `toptips`.`commento`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `toptips`.`commento` (
+  `post` INT NOT NULL,
+  `utente` INT NOT NULL,
+  `datacommento` DATETIME NOT NULL,
+  `testo` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`post`, `utente`, `datacommento`),
+  INDEX `fk_commento_post_idx` (`post` ASC),
+  INDEX `fk_commento_utente_idx` (`utente` ASC),
+  CONSTRAINT `fk_commento_post`
+    FOREIGN KEY (`post`)
+    REFERENCES `toptips`.`post` (`idpost`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_commento_utente`
+    FOREIGN KEY (`utente`)
+    REFERENCES `toptips`.`utente` (`idutente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
