@@ -10,6 +10,7 @@ body {
 
 main {
     text-align: center;
+    box-sizing: border-box;
 }
 
 main > article {
@@ -19,6 +20,25 @@ main > article {
 
 main img {
     width: 25%;
+}
+
+article {
+    border: 4px solid black;
+}
+
+.imgpost.clicked {
+    width: 60%;
+}
+
+.imgcontainer .imgpost {
+    width: 25%;
+}
+
+.imgcontainer .btn {
+    background-color: white;
+    position: absolute;
+    top: 2.5%;
+    left: 85%;
 }
 
 .bx.bx-search {

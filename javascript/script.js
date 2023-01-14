@@ -10,6 +10,8 @@ const userIcon = document.querySelectorAll('.i-user');
 
 const bell = document.querySelector('.notification .i-bell');
 
+const postimages = document.querySelectorAll('.imgpost');
+
 toggle.addEventListener('click', () => {
 
     if(sidebar.className === 'sidebar')
@@ -96,3 +98,18 @@ bell.addEventListener('click', () => {
         icon.classList.add('active');
     });
 });
+
+postimages.forEach(img => {
+    img.addEventListener('click', () => {
+        postimages.forEach(img2 => {
+            if(img2.classList.contains('clicked') && img != img2){
+                img2.classList.remove('clicked');
+            }
+        })
+        if(!img.classList.contains('clicked')){
+            img.classList.add('clicked');
+        } else {
+            img.classList.remove('clicked');
+        }
+    });
+})
