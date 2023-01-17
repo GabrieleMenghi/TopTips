@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `toptips`.`utente` (
   `username` VARCHAR(100) UNIQUE NOT NULL,
   `password` VARCHAR(512) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(55) NOT NULL,
   PRIMARY KEY (`idutente`))
 ENGINE = InnoDB;
 
@@ -60,6 +61,23 @@ CREATE TABLE IF NOT EXISTS `toptips`.`commento` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_commento_utente`
+    FOREIGN KEY (`utente`)
+    REFERENCES `toptips`.`utente` (`idutente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `toptips`.`profilo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `toptips`.`profilo` (
+  `idprofilo` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(100) UNIQUE NOT NULL,
+  `imgprofilo` VARCHAR(50) NOT NULL,  
+  `utente` INT NOT NULL,
+  PRIMARY KEY (`idprofilo`),
+  INDEX `fk_profilo_utente_idx` (`utente` ASC),
+  CONSTRAINT `fk_profilo_utente`
     FOREIGN KEY (`utente`)
     REFERENCES `toptips`.`utente` (`idutente`)
     ON DELETE NO ACTION

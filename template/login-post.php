@@ -1,0 +1,38 @@
+<h1 class="px-5 py-4"><?php echo $_SESSION["user"]?></h1>
+
+<table class="mx-3">
+    <tr>
+        <th class="border-white border-2 px-3 py-3">Immagine profilo</th>
+        <th class="border-white border-2 px-3 py-3">Seguiti</th>
+        <th class="border-white border-2 px-3 py-3">Seguaci</th>
+    </tr>
+    <?php foreach($templateParams["profilo"] as $profilo): ?>
+    <tr class="border-white border-2">
+        <td class="img border-white border-2 px-1 py-2 text-start"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" />
+            Qui si troveranno tutte le "caratteristiche" dell'utente
+        </td>
+        <td class="border-white border-2 py-2">Numero seguiti</td>
+        <td class="border-white border-2 py-2">Numero seguaci</td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
+<h2 class="py-4">Post personali</h2>
+
+<table class="mx-3 mb-5">
+    <tr>
+        <th class="border-white border-2 px-3 py-3">Domanda / Consiglio</th>
+        <th class="border-white border-2 px-2 py-3">Immagini</th>
+    </tr>
+    <?php foreach($templateParams["post"] as $post): ?>
+    <tr class="border-white border-2">
+        <td class="border-white border-2"><?php echo $post["titolopost"]; ?></td>
+        <td class="border-white border-2 py-2">
+            <img src="<?php echo UPLOAD_DIR.$post["img1"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["img2"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["img3"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["img4"]; ?>" alt="" />
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>

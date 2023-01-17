@@ -39,6 +39,9 @@
                                 <!--'bx-tada': animazione campanella-->
                                 <i class="bx bxs-bell"></i>
                             </li>
+                            <li class="nav-item exit i-exit">
+                                <a <?php isActive("./exit.php"); ?> href="./exit.php"><i class="bx bx-exit text-white"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </header>
@@ -54,8 +57,8 @@
             
             <ul>
                 <li class="nav-item i-home active">
-                    <i class="bx bxs-home"></i>
-                    <span>Home</span>
+                <a <?php isActive("./home.php"); ?> href="./home.php"><i class="bx bxs-home text-white"></i></a>
+                    <span><a href="./home.php">Home</a></span>
                 </li>
                 <li class="nav-item i-bell">
                     <i class="bx bxs-bell"></i>
@@ -66,8 +69,12 @@
                     <span>New Post</span>
                 </li>
                 <li class="nav-item i-user">
-                    <i class="bx bxs-user"></i>
-                    <span>Profile</span>
+                    <a <?php isActive("./login.php"); ?> href="./login.php"><i class="bx bxs-user text-white"></i></a>
+                    <span><a href="./login.php">Profile</a></span>
+                </li>
+                <li class="nav-item i-exit">
+                    <a <?php isActive("./exit.php"); ?> href="./exit.php"><i class="bx bx-exit text-white"></i></a>
+                    <span><a href="./exit.php">Exit</a></span>
                 </li>
             </ul>
         </nav>
@@ -89,15 +96,15 @@
                 <footer class="footer-mobile bg-dark fixed-bottom">
                     <ul class="nav nav-pills">
                         <li class="nav-item i-home col-2 text-center active">
-                            <i class="bx bxs-home"></i>
+                            <a <?php isActive("./home.php"); ?> href="./home.php"><i class="bx bxs-home text-white"></i></a>
                         </li>
                         <div class="col-3"></div>
                         <li class="nav-item i-post col-2 text-center">
-                            <i class='bx bx-plus-circle'></i>
+                            <a <?php isActive("./crea-post.php"); ?> href="./crea-post.php"><i class='bx bx-plus-circle text-white'></i></a>
                         </li>
                         <div class="col-3"></div>
                         <li class="nav-item i-user col-2 text-center">
-                            <i class="bx bxs-user"></i>
+                            <a <?php isActive("./login.php"); ?> href="./login.php"><i class="bx bxs-user text-white"></i></a>
                         </li>
                     </ul>
                 </footer> 

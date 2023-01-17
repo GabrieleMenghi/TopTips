@@ -18,6 +18,32 @@ main > article {
     margin-bottom: 4%;
 }
 
+a {
+    text-decoration: none;
+}
+
+span > a {
+    color: white;
+}
+
+main > form {
+    padding-top: 3%;
+}
+
+button {
+    margin: 2% 0;
+    border-radius: 5px;
+    padding: 0.1% 1.5%;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
 main img {
     width: 25%;
 }
@@ -248,6 +274,10 @@ article {
     }
 
     footer {
+        display: none;
+    }
+
+    .exit {
         display: none;
     }
 }
