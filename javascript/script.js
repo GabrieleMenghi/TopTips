@@ -11,6 +11,7 @@ const userIcon = document.querySelectorAll('.i-user');
 const bell = document.querySelector('.notification .i-bell');
 
 const postimages = document.querySelectorAll('.imgpost');
+const labelimages = document.querySelectorAll('article > label');
 
 toggle.addEventListener('click', () => {
 
@@ -111,5 +112,30 @@ postimages.forEach(img => {
         } else {
             img.classList.remove('clicked');
         }
+    });
+})
+
+postimages.forEach(img => {
+    img.addEventListener('mousedown', () => {
+        postimages.forEach(img2 => {
+            img2.setAttribute('style', 'width: 25%');
+        })
+        img.setAttribute('style', 'width: 60%; transition: .5s');
+    });
+    img.addEventListener('mouseup', () => {
+        img.setAttribute('style', 'width: 25%; transition: .3s');
+    });
+})
+
+postimages.forEach(img => {
+    img.addEventListener('dblclick', () => {
+        labelimages.forEach(l => {
+            if(img.getAttribute('id') == l.getAttribute('for')){
+                let votes = parseInt(l.innerHTML);
+                votes = votes + 1;
+                l.innerHTML = votes;
+                l.setAttribute('style','display: inline');
+            }
+        });
     });
 })
