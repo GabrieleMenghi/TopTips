@@ -9,12 +9,12 @@
         <img id="imgpost<?php echo $post["img4"]; ?>" class="imgpost" src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" style="width: 25%"/>
             <label for="imgpost<?php echo $post["img4"]; ?>" style="display: none"><?php echo $post["votes4"]; ?></label>
         <h2><?php echo $post["titolopost"]; ?></h2>
-        <p><?php echo $post["datapost"] ?> - <?php echo $post["nome"]; ?></p>
+        <p><?php echo $post["datapost"] ?> - <?php echo $post["username"]; ?></p>
         <p><?php echo $post["anteprimapost"]; ?></p>
         <h3>Commenti</h3>
         <?php foreach($templateParams["commenti"] as $commento): 
             if($commento["post"]==$post["idpost"]): ?>
-                <p><?php echo $commento["nome"]; ?> - <?php echo $commento["testo"]; ?></p>
+                <p><?php echo $commento["username"]; ?> - <?php echo $commento["testo"]; ?></p>
             <?php endif ?>
         <?php endforeach ?>
         <a href="#">Vedi post</a>

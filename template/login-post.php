@@ -28,10 +28,10 @@
     <tr class="border-white border-2">
         <td class="border-white border-2"><?php echo $post["titolopost"]; ?></td>
         <td class="border-white border-2 py-2">
-            <img src="<?php echo UPLOAD_DIR.$post["img1"]; ?>" alt="" />
-            <img src="<?php echo UPLOAD_DIR.$post["img2"]; ?>" alt="" />
-            <img src="<?php echo UPLOAD_DIR.$post["img3"]; ?>" alt="" />
-            <img src="<?php echo UPLOAD_DIR.$post["img4"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" />
         </td>
     </tr>
     <?php endforeach; ?>

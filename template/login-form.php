@@ -27,8 +27,4 @@
         <a href="registrazione.php">Creane uno!</a>
     </p>
 
-    <p>
-        <a href="forgot-password.php">Password dimenticata?</a>
-    </p>
-
 </form>

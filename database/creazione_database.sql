@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `toptips`.`utente` (
   `idutente` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(100) UNIQUE NOT NULL,
   `password` VARCHAR(512) NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
   `email` VARCHAR(55) NOT NULL,
   PRIMARY KEY (`idutente`))
 ENGINE = InnoDB;
@@ -35,33 +34,7 @@ CREATE TABLE IF NOT EXISTS `toptips`.`post` (
   `img3` INT,
   `img4` INT, 
   `utente` INT NOT NULL,
-  PRIMARY KEY (`idpost`),
-  INDEX `fk_post_utente_idx` (`utente` ASC),
-  CONSTRAINT `fk_post_utente`
-    FOREIGN KEY (`utente`)
-    REFERENCES `toptips`.`utente` (`idutente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_post_immagine1`
-    FOREIGN KEY (`img1`)
-    REFERENCES `toptips`.`immagine` (`image_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_post_immagine2`
-    FOREIGN KEY (`img2`)
-    REFERENCES `toptips`.`immagine` (`image_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_post_immagine3`
-    FOREIGN KEY (`img3`)
-    REFERENCES `toptips`.`immagine` (`image_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_post_immagine4`
-    FOREIGN KEY (`img4`)
-    REFERENCES `toptips`.`immagine` (`image_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idpost`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -72,19 +45,7 @@ CREATE TABLE IF NOT EXISTS `toptips`.`commento` (
   `utente` INT NOT NULL,
   `datacommento` DATETIME NOT NULL,
   `testo` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`post`, `utente`, `datacommento`),
-  INDEX `fk_commento_post_idx` (`post` ASC),
-  INDEX `fk_commento_utente_idx` (`utente` ASC),
-  CONSTRAINT `fk_commento_post`
-    FOREIGN KEY (`post`)
-    REFERENCES `toptips`.`post` (`idpost`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_commento_utente`
-    FOREIGN KEY (`utente`)
-    REFERENCES `toptips`.`utente` (`idutente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`post`, `utente`, `datacommento`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -95,13 +56,7 @@ CREATE TABLE IF NOT EXISTS `toptips`.`profilo` (
   `username` VARCHAR(100) UNIQUE NOT NULL,
   `imgprofilo` VARCHAR(50) NOT NULL,  
   `utente` INT NOT NULL,
-  PRIMARY KEY (`idprofilo`),
-  INDEX `fk_profilo_utente_idx` (`utente` ASC),
-  CONSTRAINT `fk_profilo_utente`
-    FOREIGN KEY (`utente`)
-    REFERENCES `toptips`.`utente` (`idutente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idprofilo`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------

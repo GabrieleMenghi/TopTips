@@ -10,7 +10,7 @@
     <?php
     if(@$response == "success"){
         ?>
-            <p class="success py-2">Registrazione avvenuta con successo!</p>
+            <p class="success py-2">Registrazione avvenuta con successo! <a href="login.php">Login qui</a></p>
         <?php
     }else{
         ?>

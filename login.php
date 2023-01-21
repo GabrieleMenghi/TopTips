@@ -18,10 +18,10 @@ if(isset($_POST["submit"])){
 
 
 if(isUserLoggedIn()){
-    $templateParams["titolo"] = "TopTips - Proilo admin";
+    $templateParams["titolo"] = "TopTips - Profilo admin";
     $templateParams["nome"] = "login-post.php";
-    $templateParams["post"] = $dbh->getPostByUserId($_SESSION["idutente"]);
     $templateParams["profilo"] = $dbh->getProfileByUserId($_SESSION["idutente"]);
+    $templateParams["post"] = $dbh->getPostByUserId($_SESSION["idutente"]);
 }
 else{
     $templateParams["titolo"] = "TopTips - Login";
