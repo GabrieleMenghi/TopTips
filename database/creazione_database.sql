@@ -69,3 +69,23 @@ CREATE TABLE IF NOT EXISTS `toptips`.`immagine` (
   PRIMARY KEY (`image_id`)
 )
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `toptips`.`segue`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `toptips`.`segue` (
+  `utente1` INT NOT NULL,
+  `utente2` INT NOT NULL,
+  PRIMARY KEY (`utente1`, `utente2`)
+)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `toptips`.`seguito`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `toptips`.`seguito` (
+  `utente2` INT NOT NULL,
+  `utente1` INT NOT NULL,
+  PRIMARY KEY (`utente2`, `utente1`)
+)
+ENGINE = InnoDB;

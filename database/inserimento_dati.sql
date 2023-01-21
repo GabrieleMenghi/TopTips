@@ -33,3 +33,11 @@ INSERT INTO `immagine` (`filename`, `votes`) VALUES
 ('cheesecakeTorta.jpg',0),
 ('telimone.jpg',0),
 ('tepesca.jpg',0);
+
+INSERT INTO `segue` (`utente1`, `utente2`) VALUES
+(1,2),
+(2,1);
+
+INSERT INTO `seguito` (`utente2`, `utente1`) VALUES
+(2,1),
+(1,2);
