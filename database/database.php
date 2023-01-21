@@ -42,7 +42,7 @@ class databaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getPostByUserId($id){ //cerco nel db I POST dell'utente in base al suo ID
+    public function getPostByUserId($id){
         $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4
         FROM post
         LEFT JOIN immagine AS immagine1 ON post.img1 = immagine1.image_id
@@ -58,20 +58,10 @@ class databaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getProfileByUserId($id){ //cerco nel db il PROFILO dell'utente in base al suo ID
+    public function getProfileByUserId($id){
         $query = "SELECT idprofilo, username, imgprofilo FROM profilo WHERE utente=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function checkLogin($username, $password){
-        $query = "SELECT idutente, username FROM utente WHERE username = ? AND password = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ss',$username, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 

@@ -10,12 +10,6 @@ function isUserLoggedIn(){
     return !empty($_SESSION["idutente"]);
 }
 
-function registerLoggedUser($user){
-    $_SESSION["idutente"] = $user["idutente"];
-    $_SESSION["username"] = $user["username"];
-}
-
-
 function connect(){
     $mysqli = new mysqli("localhost", "root", "", "toptips", 3306);
     if($mysqli->connect_errno != 0){
@@ -65,6 +59,19 @@ function registerUser($email, $username, $password, $confirm_password){
         return "Email già esistente, perfavore usa un username diverso";
     }
 
+    if(strlen($username) > 50){
+        return "Username troppo lungo";
+    }
+
+    $stmt = $mysqli->prepare("SELECT username FROM utente WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = $result->fetch_assoc();
+    if($data != NULL){
+        return "Username già esistente, per favore usa un username diverso";
+    }
+
     if(strlen($password) > 50){
         return "Password troppo lunga";
     }
@@ -73,10 +80,10 @@ function registerUser($email, $username, $password, $confirm_password){
         return "Password non corrisponde";
     }
 
-    //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = $mysqli->prepare("INSERT INTO utente(email, username, password) VALUES(?,?,?)");
-    $stmt->bind_param("sss", $email, $username, $password); //$hashed_password
+    $stmt->bind_param("sss", $email, $username, $hashed_password);
     $stmt->execute();
     if($stmt->affected_rows != 1){
         return "Si è verificato un errore. Perfavore, riprova";
@@ -85,7 +92,6 @@ function registerUser($email, $username, $password, $confirm_password){
         return "success";
     }
 }
-
 
 function loginUser($username, $password){
     $mysqli = connect();
@@ -101,10 +107,10 @@ function loginUser($username, $password){
         return "Entrambi i campi sono richiesti";
     }
 
-    $username = filter_var($username, FILTER_UNSAFE_RAW); //FILTER_SANITIZE_STRING deprecata
-    $password = filter_var($password, FILTER_UNSAFE_RAW); //FILTER_SANITIZE_STRING deprecata
+    $username = filter_var($username, FILTER_UNSAFE_RAW);
+    $password = filter_var($password, FILTER_UNSAFE_RAW); 
 
-    $query = "SELECT username, password FROM utente WHERE username = ?";
+    $query = "SELECT idutente, username, password FROM utente WHERE username = ?";
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -115,11 +121,12 @@ function loginUser($username, $password){
         return "Username o password errati";
     }
 
-    if(password_verify($password, $data["password"] == FALSE)){
+    if(password_verify($password, $data["password"]) == FALSE){
         return "Username o password errati";
     }
     else{
-        $_SESSION["user"] = $username;
+        $_SESSION["user"] = $data["username"];
+        $_SESSION["idutente"] = $data["idutente"];
     }
 
 }
