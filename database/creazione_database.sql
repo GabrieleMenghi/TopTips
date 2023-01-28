@@ -89,3 +89,17 @@ CREATE TABLE IF NOT EXISTS `toptips`.`seguito` (
   PRIMARY KEY (`utente2`, `utente1`)
 )
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `toptips`.`notifica`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `toptips`.`notifica` (
+  `idnotifica` INT NOT NULL,
+  `testo` VARCHAR(50) NOT NULL,
+  `letta` INT NOT NULL,
+  `utentenotificante` INT NOT NULL,
+  `utentenotificato` INT NOT NULL,
+  `datanotifica` DATETIME NOT NULL,
+  PRIMARY KEY (`idnotifica`)
+)
+ENGINE = InnoDB;
