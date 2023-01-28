@@ -35,10 +35,12 @@
                         </div>
                         <div class="col-3"></div>
                         <ul class="col-2 notification nav nav-pills align-content-center">
+                            <a href="./notifications.php">
                             <li class="nav-item i-bell">
                                 <!--'bx-tada': animazione campanella-->
-                                <i class="bx bxs-bell"></i>
+                                <i class="bx bxs-bell notifications_number"></i>
                             </li>
+                            </a>
                             <li class="nav-item exit i-exit">
                                 <a <?php isActive("./exit.php"); ?> href="./exit.php"><i class="bx bx-log-out text-white"></i></a>
                             </li>
@@ -62,10 +64,12 @@
                     <span>Home</span>
                 </li>
                 </a>
+                <a href="./notifications.php">
                 <li class="nav-item i-bell">
-                    <i class="bx bxs-bell"></i>
+                    <i class="bx bxs-bell notifications_number"></i>
                     <span>Notifications</span>
                 </li>
+                </a>
                 <li class="nav-item i-post">
                     <i class='bx bx-plus-circle'></i>
                     <span>New Post</span>
@@ -120,5 +124,24 @@
 
     <!-- JS File -->
     <script type="text/javascript" src="./javascript/script.js"></script>
+    <script type="text/javascript">
+        function loadDoc() {
+            setInterval(function(){
+            const bells = document.querySelectorAll('.notifications_number');
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    bells.forEach(b => {
+                        b.innerHTML = this.responseText;
+                    });
+                }
+            };
+            xhttp.open("GET", "notification-number.php", true);
+            xhttp.send();
+
+            },1000);
+        }
+        loadDoc();
+    </script>
 </body>
 </html>
