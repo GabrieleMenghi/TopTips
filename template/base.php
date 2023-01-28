@@ -40,7 +40,7 @@
                                 <i class="bx bxs-bell"></i>
                             </li>
                             <li class="nav-item exit i-exit">
-                                <a <?php isActive("./exit.php"); ?> href="./exit.php"><i class="bx bx-exit text-white"></i></a>
+                                <a <?php isActive("./exit.php"); ?> href="./exit.php"><i class="bx bx-log-out text-white"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -56,10 +56,12 @@
             </div> 
             
             <ul>
+                <a <?php isActive("./home.php"); ?> href="./home.php">
                 <li class="nav-item i-home active">
-                <a <?php isActive("./home.php"); ?> href="./home.php"><i class="bx bxs-home text-white"></i></a>
-                    <span><a href="./home.php">Home</a></span>
+                    <i class="bx bxs-home text-white"></i>
+                    <span>Home</span>
                 </li>
+                </a>
                 <li class="nav-item i-bell">
                     <i class="bx bxs-bell"></i>
                     <span>Notifications</span>
@@ -68,14 +70,18 @@
                     <i class='bx bx-plus-circle'></i>
                     <span>New Post</span>
                 </li>
+                <a <?php isActive("./login.php"); ?> href="./login.php">
                 <li class="nav-item i-user">
-                    <a <?php isActive("./login.php"); ?> href="./login.php"><i class="bx bxs-user text-white"></i></a>
-                    <span><a href="./login.php">Profile</a></span>
+                    <i class="bx bxs-user text-white"></i>
+                    <span>Profile</span>
                 </li>
+                </a>
+                <a <?php isActive("./exit.php"); ?> href="./exit.php">
                 <li class="nav-item i-exit">
-                    <a <?php isActive("./exit.php"); ?> href="./exit.php"><i class="bx bx-exit text-white"></i></a>
-                    <span><a href="./exit.php">Exit</a></span>
+                    <i class="bx bx-log-out text-white"></i>
+                    <span>Exit</span>
                 </li>
+                </a>
             </ul>
         </nav>
     </div>

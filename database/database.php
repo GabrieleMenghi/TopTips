@@ -58,6 +58,16 @@ class databaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPostById($id){
+        $query = "SELECT * FROM post WHERE idpost=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getProfileByUserId($id){
         $query = "SELECT idprofilo, username, imgprofilo FROM profilo WHERE utente=?";
         $stmt = $this->db->prepare($query);
@@ -77,6 +87,15 @@ class databaseHelper {
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function deletePost($idpost){
+        $query = "DELETE FROM post WHERE idpost = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idpost);
+        $stmt->execute();
+        var_dump($stmt->error);
+        return true;
     }
 }
 
