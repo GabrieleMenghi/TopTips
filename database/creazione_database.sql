@@ -28,12 +28,6 @@ CREATE TABLE IF NOT EXISTS `toptips`.`post` (
   `testopost` MEDIUMTEXT NOT NULL,
   `datapost` DATE NOT NULL,
   `anteprimapost` TINYTEXT NOT NULL,
-  `numeroimmagini` INT NOT NULL,
-  `img1` INT NOT NULL, 
-  `img2` INT NOT NULL, 
-  `img3` INT,
-  `img4` INT, 
-  `utente` INT NOT NULL,
   PRIMARY KEY (`idpost`))
 ENGINE = InnoDB;
 
@@ -54,7 +48,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `toptips`.`profilo` (
   `idprofilo` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(100) UNIQUE NOT NULL,
-  `imgprofilo` VARCHAR(50) NOT NULL,  
+  `imgprofilo` VARCHAR(50),  
   `utente` INT NOT NULL,
   PRIMARY KEY (`idprofilo`))
 ENGINE = InnoDB;
@@ -102,4 +96,13 @@ CREATE TABLE IF NOT EXISTS `toptips`.`notifica` (
   `datanotifica` DATETIME NOT NULL,
   PRIMARY KEY (`idnotifica`)
 )
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `toptips`.`immagine_in_post`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `toptips`.`immagine_in_post` (
+  `idpost` INT NOT NULL,
+  `idimmagine` INT NOT NULL,
+  PRIMARY KEY (`idpost`,`idimmagine`))
 ENGINE = InnoDB;
