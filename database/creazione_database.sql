@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `toptips`.`post` (
   `testopost` MEDIUMTEXT NOT NULL,
   `datapost` DATE NOT NULL,
   `anteprimapost` TINYTEXT NOT NULL,
+  `utente` INT NOT NULL,
   PRIMARY KEY (`idpost`))
 ENGINE = InnoDB;
 
