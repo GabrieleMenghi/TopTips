@@ -1,13 +1,12 @@
 <?php foreach($templateParams["notifiche"] as $notifica): ?>
     <p><?php echo $notifica["testo"]; ?></p>
-    <input class="check" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" value="Read" <?php if ($notifica["letta"] == '1') echo "checked='checked'"; ?>>
+    <input class="check" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" value="Read" <?php if ($notifica["letta"] == '1') echo "checked='true'"; ?>>
 <?php endforeach; ?>
 
 <script type="text/javascript">
     function loadDoc() {
         setInterval(function(){
         const checks = document.querySelectorAll('.check');
-        //var parameters = "notifica=";
         checks.forEach(c => {
             if(c.checked == true){
                 var xhttp = new XMLHttpRequest();
@@ -23,11 +22,6 @@
                 xhttp.send(parameters);
             }
         });
-        /*xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            }
-        };*/
-
         },1000);
     }
     loadDoc();
