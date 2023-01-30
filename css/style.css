@@ -90,6 +90,10 @@ article {
     padding: 0 6.5% 0;
 }
 
+.pagebutton.active li{
+    background: #ff328e !important;
+}
+
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
     .notification {
@@ -139,10 +143,6 @@ article {
         transition: .3s;
     }
 
-    footer ul li.active {
-        background: #ff328e !important;
-    }
-
     .i-bell {
         display: flex;
         border-radius: 4px;
@@ -154,9 +154,6 @@ article {
         color: #fff;
         transition: .3s;
 
-    }
-    .i-bell.active {
-        background: #ff328e !important;
     }
 }
 
@@ -229,10 +226,6 @@ article {
         transition-delay: .2s;
     }
 
-    .sidebar nav .nav-item.active {
-        background: #ff328e !important;
-    }
-
     .sidebar nav .nav-item:hover {
         background: rgba(255, 255, 255, .1);
     }
@@ -287,6 +280,10 @@ article {
     }
 
     .exit {
+        display: none;
+    }
+
+    .footerbell {
         display: none;
     }
 }

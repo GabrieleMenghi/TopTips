@@ -35,15 +35,17 @@
                         </div>
                         <div class="col-3"></div>
                         <ul class="col-2 notification nav nav-pills align-content-center">
-                            <a href="./notifications.php">
+                            <a class="pagebutton footerbell" href="./notifications.php">
                             <li class="nav-item i-bell">
                                 <!--'bx-tada': animazione campanella-->
                                 <i class="bx bxs-bell notifications_number"></i>
                             </li>
                             </a>
+                            <a class="pagebutton" href="./exit.php">
                             <li class="nav-item exit i-exit">
-                                <a <?php isActive("./exit.php"); ?> href="./exit.php"><i class="bx bx-log-out text-white"></i></a>
+                                <i class="bx bx-log-out text-white"></i>
                             </li>
+                            </a>
                         </ul>
                     </div>
                 </header>
@@ -58,29 +60,31 @@
             </div> 
             
             <ul>
-                <a <?php isActive("./home.php"); ?> href="./home.php">
-                <li class="nav-item i-home active">
+                <a class="pagebutton" href="./home.php">
+                <li class="nav-item i-home">
                     <i class="bx bxs-home text-white"></i>
                     <span>Home</span>
                 </li>
                 </a>
-                <a href="./notifications.php">
+                <a class="pagebutton" href="./notifications.php">
                 <li class="nav-item i-bell">
                     <i class="bx bxs-bell notifications_number"></i>
                     <span>Notifications</span>
                 </li>
                 </a>
+                <a class="pagebutton" href="./creazione-post.php">
                 <li class="nav-item i-post">
                     <i class='bx bx-plus-circle'></i>
                     <span>New Post</span>
                 </li>
-                <a <?php isActive("./login.php"); ?> href="./login.php">
+                </a>
+                <a class="pagebutton" href="./login.php">
                 <li class="nav-item i-user">
                     <i class="bx bxs-user text-white"></i>
                     <span>Profile</span>
                 </li>
                 </a>
-                <a <?php isActive("./exit.php"); ?> href="./exit.php">
+                <a class="pagebutton" href="./exit.php">
                 <li class="nav-item i-exit">
                     <i class="bx bx-log-out text-white"></i>
                     <span>Exit</span>
@@ -105,17 +109,23 @@
             <div class="col-12">
                 <footer class="footer-mobile bg-dark fixed-bottom">
                     <ul class="nav nav-pills">
-                        <li class="nav-item i-home col-2 text-center active">
-                            <a <?php isActive("./home.php"); ?> href="./home.php"><i class="bx bxs-home text-white"></i></a>
+                        <a class="pagebutton col-2 text-center" href="./home.php">
+                        <li class="nav-item i-home">
+                            <i class="bx bxs-home text-white"></i>
                         </li>
+                        </a>
                         <div class="col-3"></div>
-                        <li class="nav-item i-post col-2 text-center">
-                            <a <?php isActive("./crea-post.php"); ?> href="./crea-post.php"><i class='bx bx-plus-circle text-white'></i></a>
+                        <a class="pagebutton col-2 text-center" href="./creazione-post.php">
+                        <li class="nav-item i-post">
+                            <i class='bx bx-plus-circle text-white'></i>
                         </li>
+                        </a>
                         <div class="col-3"></div>
-                        <li class="nav-item i-user col-2 text-center">
-                            <a <?php isActive("./login.php"); ?> href="./login.php"><i class="bx bxs-user text-white"></i></a>
+                        <a class="pagebutton col-2 text-center" href="./login.php">
+                        <li class="nav-item i-user">
+                            <i class="bx bxs-user text-white"></i>
                         </li>
+                        </a>
                     </ul>
                 </footer> 
             </div>

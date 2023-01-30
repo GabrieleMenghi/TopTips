@@ -1,17 +1,17 @@
 const sidebar = document.querySelector('.sidebar');
-const navItems = document.querySelectorAll('nav .nav-item');
 const toggle = document.querySelector('.toggle');
-const footerMobile = document.querySelectorAll('.footer-mobile .nav-item');
-
-const homeIcon = document.querySelectorAll('.i-home');
-const bellIcon = document.querySelectorAll('.i-bell');
-const postIcon = document.querySelectorAll('.i-post');
-const userIcon = document.querySelectorAll('.i-user');
-
-const bell = document.querySelector('.notification .i-bell');
 
 const postimages = document.querySelectorAll('.imgpost');
 const labelimages = document.querySelectorAll('article > label');
+
+const activePage = window.location.pathname;
+const pagebuttons = document.querySelectorAll('.pagebutton');
+
+pagebuttons.forEach(b => {
+    if(b.href.includes(`${activePage}`)){
+        b.classList.add('active');
+    }
+});
 
 toggle.addEventListener('click', () => {
 
@@ -25,79 +25,6 @@ toggle.addEventListener('click', () => {
         sidebar.classList.remove('open');
         toggle.classList.remove('open');
     }
-});
-
-
-//Cambio pagina in versione desktop
-navItems.forEach(navItem => {
-    navItem.addEventListener('click', () => {
-        navItems.forEach(navItem => {
-            navItem.classList.remove('active');
-        })
-        footerMobile.forEach(navItem => {
-            navItem.classList.remove('active');
-        })
-        bellIcon.forEach(icon => {
-            icon.classList.remove('active');
-        });
-        if(navItem.classList.contains('i-bell')){
-            bellIcon.forEach(icon => {
-                icon.classList.add('active');
-            });
-        } else if(navItem.classList.contains('i-post')){
-            postIcon.forEach(icon => {
-                icon.classList.add('active');
-            });
-        } else if(navItem.classList.contains('i-user')){
-            userIcon.forEach(icon => {
-                icon.classList.add('active');
-            });
-        } else if(navItem.classList.contains('i-home')){
-            homeIcon.forEach(icon => {
-                icon.classList.add('active');
-            });
-        }
-    });
-});
-
-//Cambio pagina in versione mobile
-footerMobile.forEach(navItem => {
-    navItem.addEventListener('click', function() {
-        footerMobile.forEach(navItem => {
-            navItem.classList.remove('active');
-        })
-        navItems.forEach(navItem => {
-            navItem.classList.remove('active');
-        })
-        bellIcon.forEach(icon => {
-            icon.classList.remove('active');
-        });
-        if(navItem.classList.contains('i-post')){
-            postIcon.forEach(icon => {
-                icon.classList.add('active');
-            });
-        } else if(navItem.classList.contains('i-user')){
-            userIcon.forEach(icon => {
-                icon.classList.add('active');
-            });
-        } else if(navItem.classList.contains('i-home')){
-            homeIcon.forEach(icon => {
-                icon.classList.add('active');
-            });
-        }
-    });
-});
-
-bell.addEventListener('click', () => {
-    footerMobile.forEach(navItem => {
-        navItem.classList.remove('active');
-    })
-    navItems.forEach(navItem => {
-        navItem.classList.remove('active');
-    })
-    bellIcon.forEach(icon => {
-        icon.classList.add('active');
-    });
 });
 
 postimages.forEach(img => {
