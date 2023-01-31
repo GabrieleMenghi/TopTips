@@ -133,7 +133,7 @@ function loginUser($username, $password){
 
 function logoutUser(){
     session_destroy();
-    header("location: login.php");
+    echo "<script>window.location.href='login.php';</script>";
     exit();
 }
 
