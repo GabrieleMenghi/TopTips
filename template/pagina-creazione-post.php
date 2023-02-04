@@ -8,22 +8,11 @@
             <label for="testopost">Testo post:</label><textarea id="testopost" name="testopost" cols="50"></textarea>
         </li>
         <li>
-            <label for="numeropost">Numero di post (min. 2 - max. 4):</label><input type="number" id="numeropost" name="numeropost" min="2" max="4" value="2" />
+            <label for="imagepicker">Scegli le immagini per il tuo post (min. 2 - max. 4):</label><input type="file" id="imagepicker" name="immagine" accept="image/png, image/jpeg" multiple>
+            <h2 class="postcreationmessages" style="color: red; font-size: 18px;"></h2>
         </li>
         <li>
-            <label for="immagine">Scegli una immagine</label><input type="file" id="immagine" name="immagine" accept="image/png, image/jpeg">
-        </li>
-        <!--<li>
-            <label for="anteprimaarticolo">Anteprima Articolo:</label><textarea id="anteprimaarticolo" name="anteprimaarticolo"></textarea>
-        </li>-->
-        <li>
-            <input type="submit" name="submit" value="Inserisci post" />
+            <input class="submitpost" type="submit" name="submit" value="Inserisci post" />
         </li>
     </ul>
-        <!--</*?php if($templateParams["azione"]!=1): ?>
-        <input type="hidden" name="idarticolo" value="</*?php echo $articolo["idarticolo"]; ?>" />
-        <input type="hidden" name="categorie" value="</*?php echo implode(",", $articolo["categorie"]); ?>" />
-        <input type="hidden" name="oldimg" value="</*?php echo $articolo["imgarticolo"]; ?>" />
-        </*?php endif;?>
-        -->
 </form>
