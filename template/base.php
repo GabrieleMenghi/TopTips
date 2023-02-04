@@ -60,7 +60,7 @@
             </div> 
             
             <ul>
-                <a class="pagebutton" href="./home.php">
+                <a class="pagebutton pagebuttonhome" href="./home.php">
                 <li class="nav-item i-home">
                     <i class="bx bxs-home text-white"></i>
                     <span>Home</span>
@@ -109,7 +109,7 @@
             <div class="col-12">
                 <footer class="footer-mobile bg-dark fixed-bottom">
                     <ul class="nav nav-pills">
-                        <a class="pagebutton col-2 text-center" href="./home.php">
+                        <a class="pagebutton pagebuttonhome col-2 text-center" href="./home.php">
                         <li class="nav-item i-home">
                             <i class="bx bxs-home text-white"></i>
                         </li>

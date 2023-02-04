@@ -6,10 +6,13 @@ const labelimages = document.querySelectorAll('article > label');
 
 const activePage = window.location.pathname;
 const pagebuttons = document.querySelectorAll('.pagebutton');
+const homebutton = document.querySelector('.pagebuttonhome');
 
 pagebuttons.forEach(b => {
-    if(b.href.includes(`${activePage}`)){
+    if(b.href.includes(`${activePage}`) && activePage != "/TopTips/"){
         b.classList.add('active');
+    } else if(activePage == "/TopTips/"){
+        homebutton.classList.add('active');
     }
 });
 
@@ -66,3 +69,25 @@ postimages.forEach(img => {
         });
     });
 })
+
+//Check numero di file nella creazione di un post
+const imgpicker = document.querySelector('#imagepicker');
+const submit = document.querySelector('.submitpost');
+const messages = document.querySelector('.postcreationmessages');
+
+imgpicker.addEventListener('change', (e) => {
+    const files = imgpicker.files;
+
+    if (files.length < 2) {
+        submit.setAttribute('disabled', 'true');
+        messages.innerHTML="Inserire almeno 2 file";
+        return;
+    } else if (files.length > 4) {
+        submit.setAttribute('disabled', 'true');
+        messages.innerHTML="Inserire massimo 4 file";
+        return;
+    } else {
+        submit.removeAttribute('disabled');
+        messages.innerHTML="";
+    }
+});
