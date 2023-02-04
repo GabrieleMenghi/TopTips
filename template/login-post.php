@@ -7,23 +7,29 @@
 <table class="mx-3">
     <tr>
         <th class="border-white border-2 px-3 py-3">Immagine profilo</th>
+        <th class="border-white border-2 px-3 py-3">Informazioni personali</th>
         <th class="border-white border-2 px-3 py-3">Seguiti</th>
         <th class="border-white border-2 px-3 py-3">Seguaci</th>
     </tr>
     <?php foreach($templateParams["profilo"] as $profilo): ?>
     <tr class="border-white border-2">
-        <td class="img border-white border-2 px-1 py-2 text-start"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" />
-            Qui si troveranno tutte le "caratteristiche" dell'utente
-        </td>
+        <td class="border-white border-2 px-1 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
+        <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
         <td class="border-white border-2 py-2">Numero seguiti</td>
         <td class="border-white border-2 py-2">Numero seguaci</td>
     </tr>
     <?php endforeach; ?>
 </table>
-
-<button class="bg-grey border-1"> <!-- mi serve prendere l'id dell'utente per permettergli la modifica del profilo -->
-    <a href="modifica-profilo.php?id=<?php echo $_SESSION["idutente"]; ?>">Modifica profilo</a>
-</button>
+<!-- Iniziale controllo se è un utente nuovo oppure già registrato -->
+<?php if($templateParams["profilo"]==null) :?>
+    <button class="bg-grey border-1">
+        <a href="gestione-profilo.php?action=1&id=<?php echo $_SESSION["idutente"]; ?>">Inserisci profilo</a>
+    </button>
+<?php else: ?>
+    <button class="bg-grey border-1">
+        <a href="gestione-profilo.php?action=2&id=<?php echo $_SESSION["idutente"]; ?>">Modifica profilo</a>
+    </button>
+<?php endif;?>
 
 <h2 class="py-4">Post personali</h2>
 
@@ -37,10 +43,10 @@
     <tr class="border-white border-2">
         <td class="border-white border-2"><?php echo $post["titolopost"]; ?></td>
         <td class="border-white border-2 py-2">
-            <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="" />
-            <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="" />
-            <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="" />
-            <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" />
+            <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
+            <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="" style="max-width:200px;max-height:170px;" />
+            <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
+            <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
         </td>
         <td class="border-white border-2">
             <a href="gestione-post.php?id=<?php echo $post["idpost"]; ?>">Cancella</a>

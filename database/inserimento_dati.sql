@@ -1,6 +1,7 @@
 INSERT INTO `utente` (`idutente`, `username`, `password`, `email`) VALUES
 (1,'gio_muccioli', 'admin1', 'giovannimuccioli@gmail.com'),
-(2,'gabri_menghi2', 'admin2', 'gabrielemenghi@gmail.com');
+(2,'gabri_menghi2', 'admin2', 'gabrielemenghi@gmail.com'),
+(3,'prova', '123', 'prova@gmail.com');
 
 ALTER TABLE `utente`
   MODIFY `idutente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
@@ -9,8 +10,8 @@ INSERT INTO `post` (`idpost`, `titolopost`, `testopost`, `datapost`, `anteprimap
 (1, 'Quali scarpe sono più belle?', '\"Vorrei comprare un paio di scarpe, ma sono indeciso sul colore. Come marca sono convinto delle nike e su questo non ho dubbi.\"\r\n\r\n', '2022-12-11', 'Vorrei comprare un paio di scarpe, ma sono indeciso sul colore. Come marca sono convinto delle nike e su questo non ho dubbi.', '2', 1, 2, null, null, 1),
 (2, 'Che scarpe da calcio mi consigliate?', '\"Mi serve un paio di scarpe da calcio poichè nell ultimo allenamento mi si sono rotte. Sono indeciso sia sul colore che sulla marca: nike o puma...cosa mi consigliate?\"\r\n\r\n', '2022-12-11', 'Mi serve un paio di scarpe da calcio poichè nell ultimo allenamento mi si sono rotte. Sono indeciso sia sul colore che sulla marca: nike o puma...cosa mi consigliate?', '3', 3, 4, 5, null, 1),
 (3, 'Che dolce posso cucinare?', '\In una giornata così piovosa come oggi ho deciso di cucinare un dolce assieme alla mia ragazza, solo che siamo indecisi su che dolce cucinare. Abbiamo diverse opzioni: la sacher, la torta della nonna, una torta gelato, oppure una cheescake. Son tutte buonissime e non sappiamo scegliere la migliore anche se siamo propensi alla cheesecake. Quale possiamo fare?"\"\r\n\r\n', '2022-12-11', 'In una giornata così piovosa come oggi ho deciso di cucinare un dolce assieme alla mia ragazza, solo che siamo indecisi su che dolce cucinare. Abbiamo diverse opzioni: la sacher, la torta della nonna, una torta gelato, oppure una cheescake.', 
-'4', 6, 7, 8, 9, 1);
-(5, 'Titolo: prova per modifica ed eliminazione','Testo: questa è una prova per verificare la modifica e l eliminazione', '2023-01-26', 'prova per modifica ed eliminazione', 2 , 1, 2,NULL,NULL, 1);
+'4', 6, 7, 8, 9, 1),
+(5, 'Titolo: prova per modifica profilo ed eliminazione post','Testo: questa è una prova per verificare la modifica del profilo e l eliminazione del post', '2023-01-26', 'prova per modifica ed eliminazione', 2 , 1, 2,NULL,NULL, 3);
 
 INSERT INTO `post` (`titolopost`, `testopost`, `datapost`, `anteprimapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) VALUES
 ('Il dilemma più grande', 'Tè al limone o tè alla pesca?\r\n\r\n', '2022-12-25', 'Tè al limone o tè alla pesca?\r\n\r\n', '2', 10, 11, null, null, 2);
@@ -18,9 +19,10 @@ INSERT INTO `post` (`titolopost`, `testopost`, `datapost`, `anteprimapost`, `num
 INSERT INTO `commento` (`post`, `utente`, `datacommento`, `testo`) VALUES
 (4, 2, '2022-12-25 11:36:00', 'Io sono team pesca');
 
-INSERT INTO `profilo` (`idprofilo`, `username`, `imgprofilo`, `utente`) VALUES
-(1, 'gio_muccioli', 'fotoProfilo1.jpg', 1),
-(2, 'gabri_menghi2', 'fotoProfilo2.jpg', 2);
+INSERT INTO `profilo` (`idprofilo`, `username`, `imgprofilo`, `datipersonali`, `utente`) VALUES
+(1, 'gio_muccioli', 'fotoProfilo1.jpg', 'Qui si troveranno tutti i dati personali che un utente desidera inserire', 1),
+(2, 'gabri_menghi2', 'fotoProfilo2.jpg', 'Qui si troveranno tutti i dati personali che un utente desidera inserire', 2),
+(3, 'prova', 'fotoProfilo1.jpg', 'Qui i dati personali da inserire/modificare', 3);
 
 INSERT INTO `immagine` (`filename`, `votes`) VALUES
 ('nikeBianche.jpg',0),

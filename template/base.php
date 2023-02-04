@@ -35,15 +35,15 @@
                         </div>
                         <div class="col-3"></div>
                         <ul class="col-2 notification nav nav-pills align-content-center">
+                            <a class="pagebutton pt-2" href="./exit.php">
+                            <li class="nav-item exit i-exit">
+                                <i class="bx bx-log-out text-white"></i>
+                            </li>
+                            </a>
                             <a class="pagebutton footerbell" href="./notifications.php">
                             <li class="nav-item i-bell">
                                 <!--'bx-tada': animazione campanella-->
                                 <i class="bx bxs-bell notifications_number"></i>
-                            </li>
-                            </a>
-                            <a class="pagebutton" href="./exit.php">
-                            <li class="nav-item exit i-exit">
-                                <i class="bx bx-log-out text-white"></i>
                             </li>
                             </a>
                         </ul>

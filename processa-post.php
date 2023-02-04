@@ -9,7 +9,7 @@ if(!isUserLoggedIn()){
 $idpost = $_POST["idpost"];
 $dbh->deletePost($idpost);
 
-$msg = "Cancellazione completata correttamente!";
+$msg = "Cancellazione del post avvenuta correttamente!";
 header("location: login.php?formmsg=".$msg);
 
 ?>

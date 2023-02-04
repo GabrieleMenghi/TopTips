@@ -69,7 +69,7 @@ class databaseHelper {
     }
 
     public function getProfileByUserId($id){
-        $query = "SELECT idprofilo, username, imgprofilo FROM profilo WHERE utente=?";
+        $query = "SELECT idprofilo, username, imgprofilo, datipersonali FROM profilo WHERE utente=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -96,6 +96,23 @@ class databaseHelper {
         $stmt->execute();
         var_dump($stmt->error);
         return true;
+    }
+
+    public function insertProfile($datipersonali, $imgprofilo, $utente){
+        $query = "INSERT INTO profilo(datipersonali, imgprofilo, utente) VALUES (?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssi',$datipersonali, $imgprofilo, $utente);
+        $stmt->execute();
+        
+        return $stmt->insert_id;
+    }
+
+    public function updateProfile($datipersonali, $imgprofilo, $utente){
+        $query = "UPDATE profilo SET datipersonali = ?, imgprofilo = ? WHERE utente = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssi', $datipersonali, $imgprofilo, $utente);
+
+        return $stmt->execute();
     }
 
     public function getFollowedBy($user_id){
