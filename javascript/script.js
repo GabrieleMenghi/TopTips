@@ -58,15 +58,53 @@ postimages.forEach(img => {
 })
 
 postimages.forEach(img => {
-    img.addEventListener('dblclick', () => {
+    if(img.classList.contains('notvoteable')){
         labelimages.forEach(l => {
-            if(img.getAttribute('id') == l.getAttribute('for')){
-                let votes = parseInt(l.innerHTML);
-                votes = votes + 1;
-                l.innerHTML = votes;
+            if(img.getAttribute('id') == l.getAttribute('for') && l.getAttribute('for') != "imgpost"){                
                 l.setAttribute('style','display: inline');
             }
-        });
+        })
+    }
+})
+
+postimages.forEach(img => {
+    img.addEventListener('dblclick', () => {
+        if(!img.classList.contains('notvoteable')) {
+            img.classList.add('notvoteable');
+            //Disabilitazione tramite database della possibilità di votare un post già votato
+            var xhttp = new XMLHttpRequest();
+            let parameters = "post=" + img.getAttribute('postnumber') + "&profilo=" + img.getAttribute('profilenumber');
+            
+            xhttp.open("POST", "aggiungi-voto.php", true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.send(parameters);
+            
+            //Incremento voto su database
+            var xhttpinc = new XMLHttpRequest();
+            let parametersinc = "immagine=" + img.id.substring(7)+ "&post=" + img.getAttribute('postnumber');
+            
+            xhttpinc.open("POST", "incremento-voti.php", true);
+            xhttpinc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttpinc.send(parametersinc);
+
+            //Aggiornamento delle label
+            labelimages.forEach(l => {
+                if(img.getAttribute('id') == l.getAttribute('for')){
+                    l.setAttribute('style','display: inline');
+                    postimages.forEach(img2 => {
+                        if(img2.getAttribute('postnumber') == img.getAttribute('postnumber')){
+                            img2.classList.add('notvoteable');
+                            labelimages.forEach(l2 => {
+                                if(l2.getAttribute('for') == img2.getAttribute('id')){
+                                    l2.setAttribute('style','display: inline');
+                                }
+                            })
+                        }
+                        window.location.reload();
+                    })
+                }
+            });
+        }
     });
 })
 

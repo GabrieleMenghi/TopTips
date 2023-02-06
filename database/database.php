@@ -78,17 +78,6 @@ class databaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function incrementVote($image_filename){
-        $query = "UPDATE immagine SET votes = votes + 1 WHERE immagine.filename = ?";
-
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param("s", $image_filename);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
     public function deletePost($idpost){
         $query = "DELETE FROM post WHERE idpost = ?";
         $stmt = $this->db->prepare($query);
@@ -155,6 +144,18 @@ class databaseHelper {
         $query = "SELECT * FROM notifica WHERE utentenotificato=? ORDER BY datanotifica DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function profileVotesPost($idprofile){
+        $query = "SELECT idpost FROM post_profilo_voti WHERE idprofilo=?";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idprofile);
+
         $stmt->execute();
         $result = $stmt->get_result();
 

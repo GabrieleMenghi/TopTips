@@ -104,3 +104,13 @@ CREATE TABLE IF NOT EXISTS `toptips`.`notifica` (
   PRIMARY KEY (`idnotifica`)
 )
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `toptips`.`post_profilo_voti`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `toptips`.`post_profilo_voti` (
+  `idpost` INT NOT NULL,
+  `idprofilo` INT NOT NULL,
+  PRIMARY KEY (`idpost`, `idprofilo`)
+)
+ENGINE = InnoDB;
