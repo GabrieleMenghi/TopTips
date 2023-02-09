@@ -19,10 +19,10 @@ INSERT INTO `post` (`titolopost`, `testopost`, `datapost`, `anteprimapost`, `num
 INSERT INTO `commento` (`post`, `utente`, `datacommento`, `testo`) VALUES
 (4, 2, '2022-12-25 11:36:00', 'Io sono team pesca');
 
-INSERT INTO `profilo` (`idprofilo`, `username`, `imgprofilo`, `datipersonali`, `utente`) VALUES
-(1, 'gio_muccioli', 'fotoProfilo1.jpg', 'Qui si troveranno tutti i dati personali che un utente desidera inserire', 1),
-(2, 'gabri_menghi2', 'fotoProfilo2.jpg', 'Qui si troveranno tutti i dati personali che un utente desidera inserire', 2),
-(3, 'prova', 'fotoProfilo1.jpg', 'Qui i dati personali da inserire/modificare', 3);
+INSERT INTO `profilo` (`idprofilo`, `imgprofilo`, `datipersonali`, `utente`) VALUES
+(1, 'fotoProfilo1.jpg', 'Qui si troveranno tutti i dati personali che un utente desidera inserire', 1),
+(2, 'fotoProfilo2.jpg', 'Qui si troveranno tutti i dati personali che un utente desidera inserire', 2),
+(3, 'fotoProfilo3.jpg', 'Qui i dati personali da inserire/modificare', 3);
 
 INSERT INTO `immagine` (`filename`, `votes`) VALUES
 ('nikeBianche.jpg',0),

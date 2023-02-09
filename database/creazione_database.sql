@@ -53,7 +53,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `toptips`.`profilo` (
   `idprofilo` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(100) UNIQUE NOT NULL,
   `imgprofilo` VARCHAR(50) NOT NULL,
   `datipersonali` VARCHAR(1000) NOT NULL, 
   `utente` INT NOT NULL,

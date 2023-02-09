@@ -69,7 +69,7 @@ class databaseHelper {
     }
 
     public function getProfileByUserId($id){
-        $query = "SELECT idprofilo, username, imgprofilo, datipersonali FROM profilo WHERE utente=?";
+        $query = "SELECT idprofilo, imgprofilo, datipersonali, username FROM profilo, utente WHERE profilo.utente = utente.idutente AND utente=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$id);
         $stmt->execute();

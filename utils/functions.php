@@ -139,12 +139,17 @@ function deleteAccount(){
         return FALSE;
     }
 
-    $query = "DELETE FROM utente WHERE username = ?";
-    $stmt = $mysqli->prepare($query);
-    $stmt->bind_param("s", $_SESSION["user"]);
-    $stmt->execute();
+    $queryUtente = "DELETE FROM utente WHERE idutente = ?";
+    $queryProfilo = "DELETE FROM profilo WHERE utente = ?";
 
-    if($stmt->affected_rows != 1){
+    $stmtUtente = $mysqli->prepare($queryUtente);
+    $stmtUtente->bind_param("i", $_SESSION["idutente"]);
+    $stmtUtente->execute();
+    $stmtProfilo = $mysqli->prepare($queryProfilo);
+    $stmtProfilo->bind_param("i", $_SESSION["idutente"]);
+    $stmtProfilo->execute();
+
+    if($stmtUtente->affected_rows != 1 || $stmtProfilo->affected_rows != 1){
         return "Si è verificato un errore. Per favore, riprova";
     }
     else{
