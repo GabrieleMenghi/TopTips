@@ -94,6 +94,12 @@ article {
     background: #ff328e !important;
 }
 
+.custom-font {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    opacity: 0.4;
+}
+
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
     .notification {

@@ -11,16 +11,26 @@
         <th class="border-white border-2 px-3 py-3">Seguiti</th>
         <th class="border-white border-2 px-3 py-3">Seguaci</th>
     </tr>
-    <?php foreach($templateParams["profilo"] as $profilo): ?>
+    <!-- distinguo se è nuovo oppure no: se lo è allora metto un immagine di default -->
+    <?php if($templateParams["profilo"]==null) :?>
     <tr class="border-white border-2">
-        <td class="border-white border-2 px-1 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
-        <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
+        <td class="border-white border-2 px-1 py-2 text-center"><img src="./upload/fotoProfiloDefault.jpg" alt=""/></td>
+        <td class="custom-font border-white border-2 py-2">Inserisci le tue informazioni</td>
         <td class="border-white border-2 py-2">Numero seguiti</td>
         <td class="border-white border-2 py-2">Numero seguaci</td>
     </tr>
-    <?php endforeach; ?>
+    <?php else: ?>
+        <?php foreach($templateParams["profilo"] as $profilo): ?>
+        <tr class="border-white border-2">
+            <td class="border-white border-2 px-1 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
+            <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
+            <td class="border-white border-2 py-2">Numero seguiti</td>
+            <td class="border-white border-2 py-2">Numero seguaci</td>
+        </tr>
+        <?php endforeach; ?>
+    <?php endif;?>
 </table>
-<!-- Iniziale controllo se è un utente nuovo oppure già registrato -->
+
 <?php if($templateParams["profilo"]==null) :?>
     <button class="bg-grey border-1">
         <a href="gestione-profilo.php?action=1&id=<?php echo $_SESSION["idutente"]; ?>">Inserisci profilo</a>
