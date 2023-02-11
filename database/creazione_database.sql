@@ -94,7 +94,7 @@ ENGINE = InnoDB;
 -- Table `toptips`.`notifica`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `toptips`.`notifica` (
-  `idnotifica` INT NOT NULL,
+  `idnotifica` INT NOT NULL AUTO_INCREMENT,
   `testo` VARCHAR(50) NOT NULL,
   `letta` INT NOT NULL,
   `utentenotificante` INT NOT NULL,

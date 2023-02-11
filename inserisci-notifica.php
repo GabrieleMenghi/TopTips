@@ -17,8 +17,8 @@ $tiponotifica = $_POST["tiponotifica"];
 $utentenotificante = $_POST["utentenotificante"];
 $utentenotificato = $_POST["utentenotificato"];
 
-$sql = "INSERT INTO notifica
-        VALUES (6, ?, 0, ?, ?, NOW())";
+$sql = "INSERT INTO notifica (`testo`, `letta`, `utentenotificante`, `utentenotificato`, `datanotifica`)
+        VALUES (?, 0, ?, ?, NOW())";
 
 if($tiponotifica =="votazione"){
     $testo = "L'utente " . $utentenotificante . " ha votato un tuo post";

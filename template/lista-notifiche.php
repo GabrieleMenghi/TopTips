@@ -16,7 +16,6 @@
                 
                 let value = c.getAttribute('id').substring(11, c.getAttribute('id').length);
                 let parameters = "notifica=" + value;
-                console.log(parameters);
                 xhttp.open("POST", url);
                 xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhttp.send(parameters);

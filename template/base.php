@@ -11,7 +11,7 @@
 <title><?php echo $templateParams["titolo"]; ?></title>
 </head>
 <body>
-    <div class="conteiner-fluid m-0 p-0 overflow-hidden" >
+    <div class="conteiner-fluid m-0 p-0 overflow-hidden">
         <div class="row">
             <div class="col-12">
                 <header class="fixed-top bg-dark">
@@ -59,7 +59,7 @@
         </div>
     </div>
     
-    <div class="sidebar">        
+    <div class="sidebar" user="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"]; else echo 0; ?>">        
         <nav>
             <div class="nav-title">
                 Menù
@@ -145,6 +145,9 @@
             setInterval(function(){
             const bells = document.querySelectorAll('.notifications_number');
             var xhttp = new XMLHttpRequest();
+            const sidebar = document.querySelector('.sidebar');
+            let user = "utente=" + sidebar.getAttribute('user');
+
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     bells.forEach(b => {
@@ -152,8 +155,9 @@
                     });
                 }
             };
-            xhttp.open("GET", "notification-number.php", true);
-            xhttp.send();
+            xhttp.open("POST", "notification-number.php", true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.send(user);
 
             },1000);
         }
