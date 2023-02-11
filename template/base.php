@@ -30,9 +30,15 @@
                             </div>  
                         </div>
                         <h1 class="text-white text-start col-3">TopTips</h1>
-                        <div class="search-nav col-2 bg-dark">
-                            <i class='bx bx-search'></i>
+
+                        <!-- Opzione ricerca utente da rivedere graficamente-->            
+                        <div class="col-2">
+                            <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
+                            <input class="form-control me-2" type="text" name="keyword" placeholder="Ricerca utente">
+                            <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
+                            </form>
                         </div>
+                        <!-- -->
                         <div class="col-3"></div>
                         <ul class="col-2 notification nav nav-pills align-content-center">
                             <a class="pagebutton pt-2" href="./exit.php">

@@ -1,5 +1,4 @@
 <?php
-
 function isUserLoggedIn(){
     return !empty($_SESSION["idutente"]);
 }
@@ -203,5 +202,4 @@ function uploadImage($path, $image){
     }
     return array($result, $msg);
 }
-
 ?>

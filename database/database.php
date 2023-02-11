@@ -104,6 +104,17 @@ class databaseHelper {
         return $stmt->execute();
     }
 
+    public function searchUser($keyword){
+        $sql = "SELECT username FROM utente WHERE username LIKE ? ";
+        $stmt = $this->db->prepare($sql);
+        $keyword = $keyword."%";
+        $stmt->bind_param('s',$keyword);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getFollowedBy($user_id){
         $query = "SELECT DISTINCT utente2 FROM segue WHERE utente1=?";
         $stmt = $this->db->prepare($query);
