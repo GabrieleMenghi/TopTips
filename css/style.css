@@ -44,20 +44,20 @@ button {
     color: red;
 }
 
-main img {
-    width: 25%;
+main article img {
+    background-color: white;
+    border: 2px solid #040470;
+    margin: 2%;
+    width: 400px;
+    height: 370px;
+    object-fit: scale-down;
+}
+main article img:active {
+    transform: scale(1.5);
 }
 
 article {
     border: 4px solid black;
-}
-
-.imgpost.clicked {
-    width: 60%;
-}
-
-.imgcontainer .imgpost {
-    width: 25%;
 }
 
 .imgcontainer .btn {
@@ -65,15 +65,6 @@ article {
     position: absolute;
     top: 2.5%;
     left: 85%;
-}
-
-.hold {
-    width: 60% !important;
-    transition-duration: 3s;
-    }
-.release {
-    width: 25% !important;
-    transition-duration: 1s;
 }
 
 .bx.bx-search {
