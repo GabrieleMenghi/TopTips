@@ -15,7 +15,7 @@ else{
 }
 
 $templateParams["titolo"] = "TopTips - Modifica profilo";
-$templateParams["nome"] = "modifica-profilo.php";
+$templateParams["nome"] = "template/modifica-profilo.php";
 $templateParams["azione"] = $_GET["action"];
 
 require("template/base.php");

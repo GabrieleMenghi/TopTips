@@ -110,3 +110,39 @@ imgpicker.addEventListener('change', (e) => {
         messages.innerHTML="";
     }
 });
+
+//Controllo e impongo che un nuovo utente inserisca un immagine: solo così può salvare il suo profilo
+/*
+const input = document.getElementById("imgprofilo");
+const submitImage = document.getElementById("submitImage");
+const check = document.querySelector('.checkInsertImage');
+
+input.addEventListener('change', (e) => {
+
+    if (input.files.length > 0) {
+    submitImage.removeAttribute("disabled");
+    check.innerHTML="Puoi salvare!";
+    } else {
+    submitImage.setAttribute("disabled", "true");
+    check.innerHTML="Inserire la foto profilo!";
+    }
+});
+*/
+
+// più generico
+/*const input = document.querySelector('#imgprofilo');
+const submitImage = document.querySelector('.submitImage');
+const check = document.querySelector('.checkInsertImage');
+
+input.addEventListener('change', (e) => {
+    const files = input.files;
+
+    if (files.length > 0) {
+        submitImage.removeAttribute('disabled');
+        check.innerHTML="";
+    } else {
+        submitImage.setAttribute('disabled');
+        check.innerHTML="Inserire la foto profilo";
+    }
+});
+*/

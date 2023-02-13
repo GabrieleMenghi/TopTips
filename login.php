@@ -8,7 +8,7 @@ if(isset($_POST["submit"])){
 
 if(isUserLoggedIn()){
     $templateParams["titolo"] = "TopTips - Profilo admin";
-    $templateParams["nome"] = "login-post.php";
+    $templateParams["nome"] = "template/login-post.php";
     $templateParams["profilo"] = $dbh->getProfileByUserId($_SESSION["idutente"]);
     $templateParams["post"] = $dbh->getPostByUserId($_SESSION["idutente"]);
     if(isset($_GET["formmsg"])){
@@ -17,7 +17,7 @@ if(isUserLoggedIn()){
 }
 else{
     $templateParams["titolo"] = "TopTips - Login";
-    $templateParams["nome"] = "login-form.php";    
+    $templateParams["nome"] = "template/login-form.php";    
 }
 
 require("template/base.php");
