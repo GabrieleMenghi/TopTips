@@ -182,6 +182,25 @@ class databaseHelper {
         
         return $stmt->insert_id;
     }
+
+    public function insertNotify($testo, $utentenotificante, $utentenotificato){
+        $sql = "INSERT INTO notifica (`testo`, `letta`, `utentenotificante`, `utentenotificato`, `datanotifica`)
+        VALUES (?, 0, ?, ?, NOW())";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param('sii', $testo, $utentenotificante, $utentenotificato);
+        $stmt->execute();
+    }
+
+    public function getUsernameByIdUtente($idutente){
+        $query = "SELECT username FROM utente WHERE idutente=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idutente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
