@@ -1,4 +1,5 @@
 <?php
+require_once("bootstrap.php");
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -21,7 +22,10 @@ $sql = "INSERT INTO notifica (`testo`, `letta`, `utentenotificante`, `utentenoti
         VALUES (?, 0, ?, ?, NOW())";
 
 if($tiponotifica =="votazione"){
-    $testo = "L'utente " . $utentenotificante . " ha votato un tuo post";
+    $params["user"] = $dbh->getUsernameByIdUtente($utentenotificante);
+    foreach($params["user"] as $user){
+        $testo = "L'utente " . $user["username"] . " ha votato un tuo post";
+    }
 }
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('sii', $testo, $utentenotificante, $utentenotificato);
