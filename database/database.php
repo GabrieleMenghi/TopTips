@@ -35,7 +35,8 @@ class databaseHelper {
 
     public function getComments(){
         $stmt = $this->db->prepare("SELECT post, utente, datacommento, testo, username FROM commento, utente
-                                    WHERE utente=idutente");
+                                    WHERE utente=idutente
+                                    ORDER BY datacommento DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -171,6 +172,15 @@ class databaseHelper {
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function addComment($post, $author, $text){
+        $query = "INSERT INTO commento VALUES (?, ?, NOW(), ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iis',$post, $author, $text);
+        $stmt->execute();
+        
+        return $stmt->insert_id;
     }
 }
 
