@@ -12,4 +12,6 @@ $dbh->deletePost($idpost);
 $msg = "Cancellazione del post avvenuta correttamente!";
 header("location: login.php?formmsg=".$msg);
 
+require("template/base.php");
+
 ?>

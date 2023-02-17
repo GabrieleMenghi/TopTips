@@ -71,24 +71,15 @@ CREATE TABLE IF NOT EXISTS `toptips`.`immagine` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `toptips`.`segue`
+-- Table `toptips`.`followers`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `toptips`.`segue` (
-  `utente1` INT NOT NULL,
-  `utente2` INT NOT NULL,
-  PRIMARY KEY (`utente1`, `utente2`)
-)
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
--- Table `toptips`.`seguito`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `toptips`.`seguito` (
-  `utente2` INT NOT NULL,
-  `utente1` INT NOT NULL,
-  PRIMARY KEY (`utente2`, `utente1`)
-)
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `toptips`.`followers` (
+  `idazione` INT NOT NULL AUTO_INCREMENT, -- id relazione/azione follow --
+  `follower_id` INT NOT NULL, -- id dell'utente che segue un altro utente = id di colui che intraprende l'azione di follower --
+  `following_id` INT NOT NULL, -- id dell'utente che viene seguito --
+  PRIMARY KEY (`idazione`)
+  )
+  ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `toptips`.`notifica`

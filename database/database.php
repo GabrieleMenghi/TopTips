@@ -106,8 +106,8 @@ class databaseHelper {
     }
 
     public function searchUser($keyword){
-        $sql = "SELECT username FROM utente WHERE username LIKE ? ";
-        $stmt = $this->db->prepare($sql);
+        $query = "SELECT username FROM utente WHERE username LIKE ? ";
+        $stmt = $this->db->prepare($query);
         $keyword = $keyword."%";
         $stmt->bind_param('s',$keyword);
         $stmt->execute();
@@ -116,10 +116,28 @@ class databaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getFollowedBy($user_id){
-        $query = "SELECT DISTINCT utente2 FROM segue WHERE utente1=?";
+    public function followUser($following_id, $follower_id) {
+        $query = "INSERT INTO followers (following_id, follower_id) VALUES (?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$user_id);
+        $stmt->bind_param("ii", $following_id, $follower_id);
+        $result = $stmt->execute();
+
+        return $result;
+    }
+    
+    public function unfollowUser($following_id, $follower_id) {
+        $query = "DELETE FROM followers WHERE following_id = ? AND follower_id = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("ii", $following_id, $follower_id);
+        $result = $stmt->execute();
+
+        return $result;
+    }
+
+    public function getIdByUsername($username){
+        $query = "SELECT idutente FROM utente WHERE username = ? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$username);
         $stmt->execute();
         $result = $stmt->get_result();
 
