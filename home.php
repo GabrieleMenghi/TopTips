@@ -7,7 +7,7 @@ $templateParams["nome"] = "template/lista-post.php";
 
 
 if(isUserLoggedIn()){
-    $seguiti= $dbh->getFollowedBy($_SESSION["idutente"]);
+    $seguiti = $dbh->getFollowedBy($_SESSION["idutente"]);
     $templateParams["posts"] = $dbh->getPostsOfUsers($seguiti);
     $templateParams["postvotati"] = $dbh->profileVotesPost($_SESSION["idutente"]);
 

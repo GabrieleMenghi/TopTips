@@ -158,7 +158,7 @@ class databaseHelper {
             WHERE utente = ?
             ORDER BY datapost DESC";
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param('i',$user["utente2"]);
+            $stmt->bind_param('i',$user["following_id"]);
             $stmt->execute();
             $result = $stmt->get_result();
             $posts = $result->fetch_all(MYSQLI_ASSOC);
@@ -189,6 +189,15 @@ class databaseHelper {
         $stmt->execute();
         $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getFollowedBy($user_id){
+        $query = "SELECT DISTINCT following_id FROM followers WHERE follower_id=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
