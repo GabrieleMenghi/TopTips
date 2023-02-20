@@ -24,15 +24,15 @@ INSERT INTO `profilo` (`idprofilo`, `imgprofilo`, `datipersonali`, `utente`) VAL
 (2, 'fotoProfilo2.jpg', 'Qui si troveranno tutti i dati personali che un utente desidera inserire', 2),
 (3, 'fotoProfilo3.jpg', 'Qui i dati personali da inserire/modificare', 3);
 
-INSERT INTO `immagine` (`filename`, `votes`) VALUES
-('nikeBianche.jpg',0),
-('nikeNere.jpg',0),
-('scarpeCalcioNere.jpg',0),
-('scarpeCalcioRosse.jpg',0),
-('scarpeCalcioGialle.jpg',0),
-('sacherTorta.jpg',0),
-('tortaDellaNonna.jpg',0),
-('tortaGelato.jpg',0),
-('cheesecakeTorta.jpg',0),
-('telimone.jpg',0),
-('tepesca.jpg',0);
+INSERT INTO `immagine` (`image_id`, `filename`, `descrizione`, `votes`) VALUES
+(1, 'nikeBianche.jpg', 'Nike bianche', 5),
+(2, 'nikeNere.jpg', 'Nike nere', 4),
+(3, 'scarpeCalcioNere.jpg', 'Scarpe calcio nere', 1),
+(4, 'scarpeCalcioRosse.jpg', 'Scarpe calcio rosse', 1),
+(5, 'scarpeCalcioGialle.jpg', 'Scarpe calcio gialle', 1),
+(6, 'sacherTorta.jpg', 'Torta sacher', 2),
+(7, 'tortaDellaNonna.jpg', 'Torta della nonna', 1),
+(8, 'tortaGelato.jpg', 'Torta gelato', 2),
+(9, 'cheesecakeTorta.jpg', 'Cheesecake', 7),
+(10, 'telimone.jpg', 'Te al limone', 4),
+(11, 'tepesca.jpg', 'Te alla pesca', 0);

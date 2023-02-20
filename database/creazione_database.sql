@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `toptips`.`post` (
   `idpost` INT NOT NULL AUTO_INCREMENT,
   `titolopost` VARCHAR(100) NOT NULL,
   `testopost` MEDIUMTEXT NOT NULL,
-  `datapost` DATE NOT NULL,
+  `datapost` DATETIME NOT NULL,
   `anteprimapost` TINYTEXT NOT NULL,
   `numeroimmagini` INT NOT NULL,
   `img1` INT NOT NULL, 
@@ -65,6 +65,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `toptips`.`immagine` (
   `image_id` INT NOT NULL AUTO_INCREMENT,
   `filename` VARCHAR(50) NOT NULL,
+  `descrizione` VARCHAR(100) NOT NULL,
   `votes` INT NOT NULL,
   PRIMARY KEY (`image_id`)
 )
