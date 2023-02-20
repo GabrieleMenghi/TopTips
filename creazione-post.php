@@ -6,7 +6,9 @@ $templateParams["titolo"] = "TopTips - Nuovo Post";
 
 if(isUserLoggedIn()){
     $templateParams["nome"] = "template/pagina-creazione-post.php";
-    //$templateParams["notifiche"]= $dbh->getNotificationsById($_SESSION["idutente"]);
+    if(isset($_GET["formmsg"])){
+        $templateParams["formmsg"] = $_GET["formmsg"];
+    }
 } else {
     $templateParams["nome"] = "template/richiesta-login.php";
 }

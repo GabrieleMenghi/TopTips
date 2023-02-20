@@ -38,7 +38,7 @@
             <label for="imgpost<?php echo $post["img4"]; ?>" style="display: none"><?php if($totvotes!=0) echo round(intval($post["votes4"])/$totvotes*100, 2) . '%'; ?></label>
         <h2><?php echo $post["titolopost"]; ?></h2>
         <p><?php echo $post["datapost"] ?> - <?php echo $post["username"]; ?></p>
-        <p><?php echo $post["anteprimapost"]; ?></p>
+        <p><?php echo $post["testopost"]; ?></p>
         <h3>Commenti</h3>
         <?php foreach($templateParams["commenti"] as $commento): 
             if($commento["post"]==$post["idpost"]): ?>

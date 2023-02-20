@@ -1,5 +1,6 @@
 <form action="template/ricezione-post.php" method="POST" enctype="multipart/form-data">
     <h1>Inserisci un nuovo post</h1>
+    <p class="success"><?php if(isset($templateParams["formmsg"])) echo $templateParams["formmsg"]; ?></p>
     <ul>
         <li>
             <input type="hidden" name="user" value="<?php echo $_SESSION["idutente"]; ?>"/>

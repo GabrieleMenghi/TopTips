@@ -25,8 +25,10 @@ $imagedescription2 = $_POST["imagedescription2"];
 $image3 = $_POST["image3"];
 $imagedescription3 = $_POST["imagedescription3"];
 
-$countfiles = count($_FILES['imagepicker']['name']);
+$number_of_images = 2;
 
+$msg = "";
+$countfiles = count($_FILES['imagepicker']['name']);
  
 //Upload delle immagini
 for($i=0;$i<$countfiles;$i++){
@@ -46,9 +48,50 @@ for($i=0;$i<$countfiles;$i++){
 }
 
 //Inserimento su database delle immagini
+//Immagine 1 (sicuramente presente)
+$query0 = "INSERT INTO immagine(`filename`, `descrizione`, `votes`) VALUES (?, ?, 0)";
+$stmt0 = $conn->prepare($query0);
+$stmt0->bind_param('ss', $image0, $imagedescription0);
+$stmt0->execute();
+$image_id0 = $stmt0->insert_id;
+
+//Immagine 2 (sicuramente presente)
+$query1 = "INSERT INTO immagine(`filename`, `descrizione`, `votes`) VALUES (?, ?, 0)";
+$stmt1 = $conn->prepare($query1);
+$stmt1->bind_param('ss', $image1, $imagedescription1);
+$stmt1->execute();
+$image_id1 = $stmt1->insert_id;
+
+//Immagine 3
+if(isset($image2)){
+    $number_of_images++;
+    $query2 = "INSERT INTO immagine(`filename`, `descrizione`, `votes`) VALUES (?, ?, 0)";
+    $stmt2 = $conn->prepare($query2);
+    $stmt2->bind_param('ss', $image2, $imagedescription2);
+    $stmt2->execute();
+    $image_id2 = $stmt2->insert_id;
+}
+
+//Immagine 4
+if(isset($image3)){
+    $number_of_images++;
+    $query3 = "INSERT INTO immagine(`filename`, `descrizione`, `votes`) VALUES (?, ?, 0)";
+    $stmt3 = $conn->prepare($query3);
+    $stmt3->bind_param('ss', $image3, $imagedescription3);
+    $stmt3->execute();
+    $image_id3 = $stmt3->insert_id;
+}
 
 //Inserimento su database del post
+$query = "INSERT INTO post(`titolopost`, `testopost`, `datapost`, `anteprimapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) 
+            VALUES (?, ?, NOW(), '', ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($query);
+$stmt->bind_param('ssiiiiii', $title, $text, $number_of_images, $image_id0, $image_id1, $image_id2, $image_id3, $user);
+if($stmt->execute()){
+    $msg = "Post creato correttamente";
+}
 
+header("location: ../creazione-post.php?formmsg=" . $msg);
 
 $conn->close();
 ?>
