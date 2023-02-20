@@ -49,7 +49,8 @@
                             <a class="pagebutton footerbell" href="./notifications.php">
                             <li class="nav-item i-bell">
                                 <!--'bx-tada': animazione campanella-->
-                                <i class="bx bxs-bell notifications_number"></i>
+                                <i class="bx bxs-bell"></i>
+                                <p class="notifications_number" style="display: none;"></p>
                             </li>
                             </a>
                         </ul>
@@ -74,8 +75,9 @@
                 </a>
                 <a class="pagebutton" href="./notifications.php">
                 <li class="nav-item i-bell">
-                    <i class="bx bxs-bell notifications_number"></i>
+                    <i class="bx bxs-bell"></i>
                     <span>Notifications</span>
+                    <p class="notifications_number" style="display: none;"></p>
                 </li>
                 </a>
                 <a class="pagebutton" href="./creazione-post.php">
@@ -151,7 +153,13 @@
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     bells.forEach(b => {
-                        b.innerHTML = this.responseText;
+                        if(this.responseText > 0){
+                            b.removeAttribute('style');
+                            b.innerHTML = this.responseText;
+                        } else {
+                            b.innerHTML = "";
+                            b.setAttribute('style', 'display: none;');
+                        }
                     });
                 }
             };

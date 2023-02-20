@@ -153,7 +153,21 @@ article {
         padding: 0 16px;
         color: #fff;
         transition: .3s;
+    }
 
+    .notifications_number {
+        position: absolute;
+        top: 15px;
+        right: 60px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #ff2c74;
+        color: #fff;
+        line-height: 15px;
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 12px;
     }
 }
 
@@ -289,6 +303,32 @@ article {
 
     .footerbell {
         display: none;
+    }
+
+    .sidebar .notifications_number {
+        position: absolute;
+        top: 198px;
+        right: 40px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #ff2c74;
+        color: #fff;
+        line-height: 18px;
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 14px;
+        transition: .5s !important;
+    }
+    
+    .sidebar.open .notifications_number {
+        top: 208px;
+        right: 143px;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        font-size: 18px;
+        transition: .5s !important;
     }
 }
 
