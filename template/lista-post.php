@@ -11,7 +11,7 @@
             echo 'notvoteable';
            ?>"
            postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-           src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>" style="width: 25%" />
+           src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php if(isset($post["desc1"])) echo $post["desc1"]; ?>" style="width: 25%" />
            <label for="imgpost<?php echo $post["img1"]; ?>" style="display: none"><?php if($totvotes!=0) echo round(intval($post["votes1"])/$totvotes*100, 2) . '%'; ?></label>
         <img id="imgpost<?php echo $post["img2"]; ?>" class="imgpost 
         <?php 
@@ -19,14 +19,14 @@
             echo 'notvoteable';
             ?>"
             postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-            src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" style="width: 25%"/>
+            src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php if(isset($post["desc2"])) echo $post["desc2"]; ?>" style="width: 25%"/>
             <label for="imgpost<?php echo $post["img2"]; ?>" style="display: none"><?php if($totvotes!=0) echo round(intval($post["votes2"])/$totvotes*100, 2) . '%'; ?></label>
         <img id="imgpost<?php echo $post["img3"]; ?>" class="imgpost 
         <?php if(in_array($post["idpost"], $postv)) 
             echo 'notvoteable';
             ?>"
             postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-            src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php echo $post["desc3"]; ?>" style="width: 25%"/>
+            src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php if(isset($post["desc3"])) echo $post["desc3"]; ?>" style="width: 25%"/>
             <label for="imgpost<?php echo $post["img3"]; ?>" style="display: none"><?php if($totvotes!=0) echo round(intval($post["votes3"])/$totvotes*100, 2) . '%'; ?></label>
         <img id="imgpost<?php echo $post["img4"]; ?>" class="imgpost 
         <?php 
@@ -34,7 +34,7 @@
             echo 'notvoteable';
             ?>"
             postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-            src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php echo $post["desc4"]; ?>" style="width: 25%"/>
+            src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php if(isset($post["desc4"])) echo $post["desc4"]; ?>" style="width: 25%"/>
             <label for="imgpost<?php echo $post["img4"]; ?>" style="display: none"><?php if($totvotes!=0) echo round(intval($post["votes4"])/$totvotes*100, 2) . '%'; ?></label>
         <h2><?php echo $post["titolopost"]; ?></h2>
         <p><?php echo $post["datapost"] ?> - <?php echo $post["username"]; ?></p>
