@@ -83,7 +83,7 @@ article {
 }
 
 .pagebutton.active li{
-    background: #ff328e !important;
+    background: linear-gradient(to right, #970DFA, rgb(191, 13, 250)) !important;
 }
 
 .custom-font {
@@ -316,7 +316,7 @@ article {
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #ff328e;
+    background: linear-gradient(to right, #970DFA, rgb(191, 13, 250));
     width: 100%;
     height: 100%;
     border-radius: 30%;
