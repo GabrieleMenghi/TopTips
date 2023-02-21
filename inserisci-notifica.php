@@ -17,14 +17,19 @@ $testo = "";
 $tiponotifica = $_POST["tiponotifica"];
 $utentenotificante = $_POST["utentenotificante"];
 $utentenotificato = $_POST["utentenotificato"];
+$idpost = $_POST["idpost"];
 
+//Inserimento notifica
 $sql = "INSERT INTO notifica (`testo`, `letta`, `utentenotificante`, `utentenotificato`, `datanotifica`)
         VALUES (?, 0, ?, ?, NOW())";
 
 if($tiponotifica =="votazione"){
     $params["user"] = $dbh->getUsernameByIdUtente($utentenotificante);
+    $params["title"] = $dbh->getTitleByIdPost($idpost);
     foreach($params["user"] as $user){
-        $testo = "L'utente " . $user["username"] . " ha votato un tuo post";
+        foreach($params["title"] as $title){
+            $testo = "L'utente " . $user["username"] . " ha votato il tuo post '" . $title["titolopost"] . "'";
+        }
     }
 }
 $stmt = $conn->prepare($sql);

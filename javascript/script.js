@@ -67,7 +67,7 @@ postimages.forEach(img => {
 
             //Aggiunta notifica su database
             var xhttpnot = new XMLHttpRequest();
-            let parametersnot = "tiponotifica=votazione&utentenotificante=" + img.getAttribute('profilenumber') + "&utentenotificato=" + img.getAttribute('owner');
+            let parametersnot = "tiponotifica=votazione&utentenotificante=" + img.getAttribute('profilenumber') + "&utentenotificato=" + img.getAttribute('owner') + "&idpost=" + img.getAttribute('postnumber');
             
             xhttpnot.open("POST", "inserisci-notifica.php", true);
             xhttpnot.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

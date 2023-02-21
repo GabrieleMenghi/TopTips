@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `toptips`.`followers` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `toptips`.`notifica` (
   `idnotifica` INT NOT NULL AUTO_INCREMENT,
-  `testo` VARCHAR(50) NOT NULL,
+  `testo` VARCHAR(200) NOT NULL,
   `letta` INT NOT NULL,
   `utentenotificante` INT NOT NULL,
   `utentenotificato` INT NOT NULL,

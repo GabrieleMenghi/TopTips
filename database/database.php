@@ -228,6 +228,16 @@ class databaseHelper {
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getTitleByIdPost($idpost){
+        $query = "SELECT * FROM post WHERE idpost=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idpost);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
