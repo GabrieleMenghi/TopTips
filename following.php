@@ -1,19 +1,28 @@
 <?php
 
 require_once("bootstrap.php");
-// in questa pagina mi arrivano i dati relativi alla ricerca
 
-//Prima delle due azioni devo controllare che non vi sia già un legame tra i due
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "toptips";
+$port = 3306;
 
-// devo distinguere due azioni: 1) inizia a seguire   ;    2) smetti di seguire
-$idricevuto_follower = $_POST["follower_id"];
-$parameter["follower"]= $dbh->getIdByUsername($idricevuto_follower);
-$idricevuto_following = $_POST["following_id"];
-$parameter["following"] = $dbh->getIdByUsername($idricevuto_following);
-foreach ($parameter["following"] as $seguito) {
-    foreach ($parameter["follower"] as $seguace) 
-    $dbh->followUser($seguito["idutente"], $seguace["idutente"]);
-    //$dbh->unfollowUser($idricevuto_unfollow, $_SESSION["user"]);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$idseguitore = $_POST["seguitore"];
+$idseguito = $_POST["seguito"];
+
+if($dbh->isFollowing($idseguito, $idseguitore)) {
+    $dbh->unfollowUser($idseguito, $idseguitore);
+} else {
+    $dbh->followUser($idseguito, $idseguitore);
 }
 
+$conn->close();
 ?>

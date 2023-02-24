@@ -116,22 +116,36 @@ class databaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function followUser($following_id, $follower_id) {
-        $query = "INSERT INTO followers (following_id, follower_id) VALUES (?, ?)";
+    public function followUser($seguito, $seguitore) {
+        $query = "INSERT INTO followers (seguito, seguitore) VALUES (?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param("ii", $following_id, $follower_id);
+        $stmt->bind_param("ii", $seguito, $seguitore);
         $result = $stmt->execute();
 
         return $result;
     }
     
-    public function unfollowUser($following_id, $follower_id) {
-        $query = "DELETE FROM followers WHERE following_id = ? AND follower_id = ?";
+    public function unfollowUser($seguito, $seguitore) {
+        $query = "DELETE FROM followers WHERE seguito = ? AND seguitore = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param("ii", $following_id, $follower_id);
+        $stmt->bind_param("ii", $seguito, $seguitore);
         $result = $stmt->execute();
 
         return $result;
+    }
+
+    public function isFollowing($seguito, $seguitore) {
+        $query = "SELECT * FROM followers WHERE seguito = ? AND seguitore = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("ii", $seguito, $seguitore);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getIdByUsername($username){
@@ -158,7 +172,7 @@ class databaseHelper {
             WHERE utente = ?
             ORDER BY datapost DESC";
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param('i',$user["following_id"]);
+            $stmt->bind_param('i',$user["seguito"]);
             $stmt->execute();
             $result = $stmt->get_result();
             $posts = $result->fetch_all(MYSQLI_ASSOC);
@@ -193,7 +207,7 @@ class databaseHelper {
     }
 
     public function getFollowedBy($user_id){
-        $query = "SELECT DISTINCT following_id FROM followers WHERE follower_id=?";
+        $query = "SELECT DISTINCT seguito FROM followers WHERE seguitore=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$user_id);
         $stmt->execute();

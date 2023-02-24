@@ -1,11 +1,39 @@
-<h1 class="px-5 py-4"><?php echo $templateParams["username"]; ?></h1>
+<h1 class="pt-4"><?php echo $templateParams["username"]; ?></h1>
 
-<form action="following.php" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="follower_id" value="<?php echo $_SESSION["user"]; ?>" />
-    <input type="hidden" name="following_id" value="<?php echo $templateParams["username"]; ?>" />
-    <input type="submit" name="follow" value="Segui" />
-    <input type="submit" name="unfollow" value="Smetti di seguire" /> 
-</form>
+<?php 
+$seguitore = $_SESSION["user"];
+$id["seguitore"] = $dbh->getIdByUsername($seguitore);
+$seguito = $templateParams["username"];
+$id["seguito"]= $dbh->getIdByUsername($seguito);
+
+foreach ($id["seguitore"] as $seguitore) {
+    foreach ($id["seguito"] as $seguito) {
+        $idseguitore = $seguitore["idutente"];
+        $idseguito = $seguito["idutente"];
+    }
+}
+?>
+
+<input class="btn btn-primary btnfollow py-2 mt-1 mb-3" type="submit" name="follow" value="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "Smetti di seguire"; } else { echo "Segui"; } ?>" 
+style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background:red"; } else { echo "background:green"; } ?>" />
+<input type="hidden" id="seguitore" name="seguitore" value="<?php echo $idseguitore; ?>" />
+<input type="hidden" id="seguito" name="seguito" value="<?php echo $idseguito; ?>" />
+
+<script>
+    const btnFollow = document.querySelector(".btnfollow");
+    const seguitore = document.querySelector("#seguitore");
+    const seguito = document.querySelector("#seguito");
+
+    btnFollow.addEventListener("click", ()=>{
+        var xhttp = new XMLHttpRequest();
+        let parameters = "seguitore=" + seguitore.value + "&seguito=" + seguito.value;
+        
+        xhttp.open("POST", "following.php", true);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send(parameters);
+        window.location.reload();
+    });
+</script>
 
 <table class="mx-3">
     <tr>
