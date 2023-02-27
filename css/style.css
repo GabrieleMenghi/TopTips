@@ -92,6 +92,16 @@ article {
     opacity: 0.4;
 }
 
+.bx-trash {
+    font-size: 30px;
+    text-align: center;
+}
+
+.bx-trash:hover {
+    color: red;
+    cursor: pointer;
+}
+
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
     .notification {

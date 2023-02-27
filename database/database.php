@@ -244,7 +244,7 @@ class databaseHelper {
     }
 
     public function getTitleByIdPost($idpost){
-        $query = "SELECT * FROM post WHERE idpost=?";
+        $query = "SELECT titolopost FROM post WHERE idpost=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $idpost);
         $stmt->execute();
