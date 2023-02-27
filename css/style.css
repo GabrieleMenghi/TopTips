@@ -102,6 +102,16 @@ article {
     cursor: pointer;
 }
 
+.usernamecontainer a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.usernamecontainer a:hover {
+    color: #444444;
+}
+
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
     .notification {

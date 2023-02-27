@@ -37,14 +37,14 @@
             src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php if(isset($post["desc4"])) echo $post["desc4"]; ?>" style="width: 25%"/>
             <label for="imgpost<?php echo $post["img4"]; ?>" style="display: none"><?php if($totvotes!=0) echo round(intval($post["votes4"])/$totvotes*100, 2) . '%'; ?></label>
         <h2><?php echo $post["titolopost"]; ?></h2>
-        <div class="d-flex justify-content-center">    
+        <div class="d-flex justify-content-center usernamecontainer">    
             <p><?php echo $post["datapost"] . " -"; ?></p><a href="profilo-cercato.php?username=<?php echo $post["username"]; ?>"><?php echo "&nbsp" . $post["username"]; ?></a>
         </div>
         <p><?php echo $post["testopost"]; ?></p>
         <h3>Commenti</h3>
         <?php foreach($templateParams["commenti"] as $commento): 
             if($commento["post"]==$post["idpost"]): ?>
-            <div class="d-flex justify-content-center">  
+            <div class="d-flex justify-content-center usernamecontainer">  
                 <a href="profilo-cercato.php?username=<?php echo $post["username"]; ?>"><p><?php echo $commento["username"] . " - "; ?></p></a><p><?php echo "&nbsp" . $commento["testo"]; ?></p>
             </div>
             <?php endif ?>

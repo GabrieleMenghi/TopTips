@@ -11,7 +11,7 @@ class databaseHelper {
     }
 
     public function getPosts($n=-1){
-        $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, anteprimapost, username,
+        $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, username,
         immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4,
         img1, img2, img3, img4
         FROM post JOIN utente ON post.utente = utente.idutente
@@ -161,7 +161,7 @@ class databaseHelper {
     public function getPostsOfUsers($user_id_array){
         $posts_list = array();
         foreach($user_id_array as $user){
-            $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, anteprimapost, utente, username,
+            $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, utente, username,
             immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4,
             img1, img2, img3, img4, immagine1.descrizione as desc1, immagine2.descrizione as desc2, immagine3.descrizione as desc3, immagine4.descrizione as desc4
             FROM post JOIN utente ON post.utente = utente.idutente

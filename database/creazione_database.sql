@@ -27,7 +27,6 @@ CREATE TABLE IF NOT EXISTS `toptips`.`post` (
   `titolopost` VARCHAR(100) NOT NULL,
   `testopost` MEDIUMTEXT NOT NULL,
   `datapost` DATETIME NOT NULL,
-  `anteprimapost` TINYTEXT NOT NULL,
   `numeroimmagini` INT NOT NULL,
   `img1` INT NOT NULL, 
   `img2` INT NOT NULL, 
