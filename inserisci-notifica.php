@@ -17,7 +17,9 @@ $testo = "";
 $tiponotifica = $_POST["tiponotifica"];
 $utentenotificante = $_POST["utentenotificante"];
 $utentenotificato = $_POST["utentenotificato"];
-$idpost = $_POST["idpost"];
+if(isset($_POST["idpost"])){
+    $idpost = $_POST["idpost"];
+}
 
 //Inserimento notifica
 $sql = "INSERT INTO notifica (`testo`, `letta`, `utentenotificante`, `utentenotificato`, `datanotifica`)
@@ -31,7 +33,13 @@ if($tiponotifica =="votazione"){
             $testo = "L'utente " . $user["username"] . " ha votato il tuo post '" . $title["titolopost"] . "'";
         }
     }
+} else if($tiponotifica =="follow"){
+    $params["user"] = $dbh->getUsernameByIdUtente($utentenotificante);
+    foreach($params["user"] as $user){
+        $testo = "L'utente " . $user["username"] . " ha iniziato a seguirti";
+    }
 }
+
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('sii', $testo, $utentenotificante, $utentenotificato);
 $stmt->execute();

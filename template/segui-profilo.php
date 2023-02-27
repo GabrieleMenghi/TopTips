@@ -31,6 +31,16 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
         xhttp.open("POST", "following.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send(parameters);
+        
+        //Inserimento notifica su database
+        if(btnFollow.value == "Segui"){
+            var xhttpnot = new XMLHttpRequest();
+            let parametersnot = "tiponotifica=follow&utentenotificante=" + seguitore.value + "&utentenotificato=" + seguito.value;
+            
+            xhttpnot.open("POST", "inserisci-notifica.php", true);
+            xhttpnot.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttpnot.send(parametersnot);
+        }
         window.location.reload();
     });
 </script>
