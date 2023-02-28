@@ -16,16 +16,16 @@
     <tr class="border-white border-2">
         <td class="border-white border-2 px-1 py-2 text-center"><img src="./upload/fotoProfiloDefault.jpg" alt=""/></td>
         <td class="custom-font border-white border-2 py-2">Inserisci le tue informazioni</td>
-        <td class="border-white border-2 py-2">Numero seguiti</td>
-        <td class="border-white border-2 py-2">Numero seguaci</td>
+        <td class="border-white border-2 py-2"><a href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
+        <td class="border-white border-2 py-2"><a href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
     </tr>
     <?php else: ?>
         <?php foreach($templateParams["profilo"] as $profilo): ?>
         <tr class="border-white border-2">
             <td class="border-white border-2 px-1 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
             <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
-            <td class="border-white border-2 py-2">Numero seguiti</td>
-            <td class="border-white border-2 py-2">Numero seguaci</td>
+            <td class="border-white border-2 py-2"><a href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
+            <td class="border-white border-2 py-2"><a href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
         </tr>
         <?php endforeach; ?>
     <?php endif;?>

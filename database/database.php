@@ -148,6 +148,46 @@ class databaseHelper {
         }
     }
 
+    public function getNumberOfSeguitiById($idprofilopersonale) {
+        $query = "SELECT COUNT(*) as num_seguiti FROM followers WHERE seguitore = ? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idprofilopersonale);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNumberOfSeguaciById($idprofilopersonale) {
+        $query = "SELECT COUNT(*) as num_seguaci FROM followers WHERE seguito = ? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idprofilopersonale);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getListOfSeguitiById($idprofilopersonale) {
+        $query = "SELECT username FROM utente, followers WHERE seguito = idutente AND seguitore = ? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idprofilopersonale);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getListOfSeguaciById($idprofilopersonale) {
+        $query = "SELECT username FROM utente, followers WHERE seguitore = idutente AND seguito = ? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idprofilopersonale);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getIdByUsername($username){
         $query = "SELECT idutente FROM utente WHERE username = ? ";
         $stmt = $this->db->prepare($query);
