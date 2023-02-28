@@ -29,6 +29,20 @@ $number_of_images = 2;
 
 $msg = "";
 $countfiles = count($_FILES['imagepicker']['name']);
+
+//Controllo lunghezza filenames
+if(strlen($image0) > 50){
+    $image0 = substr($image0, 0, 50);
+}
+if(strlen($image1) > 50){
+    $image1 = substr($image1, 0, 50);
+}
+if(strlen($image2) > 50){
+    $image2 = substr($image2, 0, 50);
+}
+if(strlen($image0) > 50){
+    $image2 = substr($image2, 0, 50);
+}
  
 //Upload delle immagini
 for($i=0;$i<$countfiles;$i++){
