@@ -49,10 +49,11 @@ main article img {
     background-color: white;
     border: 2px solid #040470;
     margin: 2%;
-    width: 400px;
-    height: 370px;
+    width: 280px;
+    height: 210px;
     object-fit: scale-down;
 }
+
 main article img:active {
     transform: scale(1.5);
 }
@@ -114,6 +115,7 @@ article {
 
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
+    
     .notification {
         color: white;
         font-size: 24px;
@@ -175,24 +177,36 @@ article {
         transition: .3s;
     }
 
+    .base {
+        position: relative;
+    }
+
     .notifications_number {
         position: absolute;
-        top: 15px;
-        right: 60px;
+        top: 0%;
+        right: 0%;
+        left: 50%;
+        bottom: 57%;
         width: 15px;
         height: 15px;
-        border-radius: 50%;
         background: #ff2c74;
         color: #fff;
+        border-radius: 50%;
+        font-size: 15px;
         line-height: 15px;
         font-family: sans-serif;
         text-align: center;
-        font-size: 12px;
+    }
+    
+    main article img {
+        width: 280px;
+        height: 210px;
     }
 }
 
 /* DESKTOP VERSION */
 @media only screen and (min-width: 769px){
+    
     .sidebar {
         width: 120px;
         height: 100%;
@@ -241,18 +255,18 @@ article {
         color: #fff;
         transition: .3s;
     }
-
+    
     .sidebar nav .nav-item i {
         font-size: 26px;
     }
-
+    
     .sidebar nav .nav-item span {
         font-size: 18px;
         margin-left: 8px;
         opacity: 0;
         pointer-events: none;
     }
-
+    
     .sidebar.open nav .nav-item span {
         opacity: 1;
         pointer-events: visible;
@@ -273,7 +287,7 @@ article {
         background: rgba(255, 255, 255, 1);
         transition: .3s;
     }
-
+    
     .toggle.open {
         background: rgb(255, 255, 255, .5);
         transition: .3s;
@@ -282,13 +296,13 @@ article {
     .sidebar .toggle i {
         transition: .4s linear;
     }
-
+    
     header {
         display: grid;
         align-items: center;
         justify-content: left;
     }
-
+    
     header .toggle {
         margin-left: 39px;
         margin-right: 70px;
@@ -308,7 +322,7 @@ article {
         margin-left: 120px;
         width: calc(100% - 120px);
     }
-
+    
     main > article {
         margin-left: auto;
         margin-right: auto;
@@ -316,15 +330,15 @@ article {
     footer {
         display: none;
     }
-
+    
     .exit {
         display: none;
     }
-
+    
     .footerbell {
         display: none;
     }
-
+    
     .sidebar .notifications_number {
         position: absolute;
         top: 198px;
@@ -349,6 +363,11 @@ article {
         line-height: 22px;
         font-size: 18px;
         transition: .5s !important;
+    }
+
+    main article img {
+        width: 400px;
+        height: 370px;
     }
 }
 

@@ -22,10 +22,11 @@
                         <div class="logo col-2">
                             <div class="icons">
                                 <div class="icon">
-                                    <div class="bg"></div>
+                                    <a href="home.php"><div class="bg"></div>
                                     <div class="glass">
                                         <img src="./immagini/logo.png"/>
                                     </div>
+                                    </a>
                                 </div>
                             </div>  
                         </div>
@@ -46,13 +47,16 @@
                                 <i class="bx bx-log-out text-white"></i>
                             </li>
                             </a>
-                            <a class="pagebutton footerbell" href="./notifications.php">
-                            <li class="nav-item i-bell">
-                                <!--'bx-tada': animazione campanella-->
-                                <i class="bx bxs-bell"></i>
-                                <p class="notifications_number" style="display: none;"></p>
-                            </li>
-                            </a>
+                            <div class="base">
+                                <a class="pagebutton footerbell" href="./notifications.php">
+                                <li class="nav-item i-bell">
+                                    <!--'bx-tada': animazione campanella-->
+                                    <i class="bx bxs-bell"></i>
+                                    <p class="notifications_number" style="display: none;"></p>
+                                    </div>
+                                </li>
+                                </a>
+                            </div>
                         </ul>
                     </div>
                 </header>

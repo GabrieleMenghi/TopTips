@@ -83,8 +83,8 @@ if(isset($image3)){
 }
 
 //Inserimento su database del post
-$query = "INSERT INTO post(`titolopost`, `testopost`, `datapost`, `anteprimapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) 
-            VALUES (?, ?, NOW(), '', ?, ?, ?, ?, ?, ?)";
+$query = "INSERT INTO post(`titolopost`, `testopost`, `datapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) 
+            VALUES (?, ?, NOW(), ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($query);
 $stmt->bind_param('ssiiiiii', $title, $text, $number_of_images, $image_id0, $image_id1, $image_id2, $image_id3, $user);
 if($stmt->execute()){

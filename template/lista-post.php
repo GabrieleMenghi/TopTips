@@ -51,7 +51,7 @@
         <?php endforeach ?>
         <!--Aggiunta di un commento-->
         <form action="aggiunta-commento.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="commenttext" placeholder="Aggiungi un commento" size="40" required/>
+            <input type="text" name="commenttext" placeholder="Aggiungi un commento" size="30" required/>
             <input type="hidden" name="idpost" value="<?php echo $post["idpost"]; ?>"/>
             <input type="hidden" name="author" value="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"]; else echo 0; ?>" class="autorecommento"/>
             <input type="submit" name="submit" value="Aggiungi commento"/>
