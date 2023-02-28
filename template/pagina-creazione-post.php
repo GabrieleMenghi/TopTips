@@ -32,8 +32,19 @@
         let files = filepicker.files;
         if(n >= 2 && n <= 4){
             for (let i = 0; i < n; i++) {
-                imagepreviews.innerHTML += "<img src='upload/" + files[i].name + "' style='background-color: white; border: 2px solid #040470; margin: 2%; width: 200px; height: 170px; object-fit: scale-down;'/><input type='text' name='imagedescription" + i + "' size='40' placeholder='Inserisci una descrizione per l`immagine'><input type='hidden' name='image" + i + "' value='" + files[i].name + "'/><br>";
+                imagepreviews.innerHTML += "<img src='upload/" + files[i].name + "' class='image-preview' style='background-color: white; border: 2px solid #040470; margin: 2%; width: 200px; height: 170px; object-fit: scale-down;'/><input type='text' name='imagedescription" + i + "' size='40' placeholder='Inserisci una descrizione per l`immagine'><input type='hidden' name='image" + i + "' value='" + files[i].name + "'/><br>";
+            }
+        }
+        
+        let files2 = filepicker.files;
+        const previews = document.querySelectorAll('.image-preview');
+        for (let i = 0; i < n; i++) {
+            let reader = new FileReader();
+            reader.readAsDataURL(files2[i]);
+            reader.onload = function () {
+                previews[i].src = reader.result;
             }
         }
     });
+
 </script>

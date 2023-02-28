@@ -31,22 +31,43 @@ $msg = "";
 $countfiles = count($_FILES['imagepicker']['name']);
 
 //Controllo lunghezza filenames
-if(strlen($image0) > 50){
-    $image0 = substr($image0, 0, 50);
+if(strlen($image0) > 47){
+    $path = $_FILES['imagepicker']['name'][0];
+    $ext = pathinfo($path, PATHINFO_EXTENSION);
+    $image0 = substr($image0, 0, 40) . "." . $ext;
 }
-if(strlen($image1) > 50){
-    $image1 = substr($image1, 0, 50);
+if(strlen($image1) > 47){
+    $path = $_FILES['imagepicker']['name'][1];
+    $ext = pathinfo($path, PATHINFO_EXTENSION);
+    $image1 = substr($image1, 0, 40) . "." . $ext;
 }
-if(strlen($image2) > 50){
-    $image2 = substr($image2, 0, 50);
+if(strlen($image2) > 47){
+    $path = $_FILES['imagepicker']['name'][2];
+    $ext = pathinfo($path, PATHINFO_EXTENSION);
+    $image2 = substr($image2, 0, 40) . "." . $ext;
 }
-if(strlen($image0) > 50){
-    $image2 = substr($image2, 0, 50);
+if(strlen($image0) > 47){
+    $path = $_FILES['imagepicker']['name'][3];
+    $ext = pathinfo($path, PATHINFO_EXTENSION);
+    $image3 = substr($image3, 0, 40) . "." . $ext;
 }
  
 //Upload delle immagini
 for($i=0;$i<$countfiles;$i++){
-    $imageName = basename($_FILES['imagepicker']['name'][$i]);
+    switch($i) {
+        case 0:
+            $imageName = basename($image0);
+            break;
+        case 1:
+            $imageName = basename($image1);
+            break;
+        case 2:
+            $imageName = basename($image2);
+            break;
+        case 3:
+            $imageName = basename($image3);
+            break;
+    }
     $fullPath = "../upload/" . $imageName;
     $imageFileType = strtolower(pathinfo($fullPath,PATHINFO_EXTENSION));
     if (file_exists($fullPath)) {
