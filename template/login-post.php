@@ -43,20 +43,32 @@
 
 <h2 class="py-4">Post personali</h2>
 
-<table class="mx-3 mb-5">
+<table class="mx-3 mb-5 col-10">
     <tr>
-        <th class="border-white border-2 px-3 py-3">Domanda / Consiglio</th>
-        <th class="border-white border-2 px-2 py-3">Immagini</th>
-        <th class="border-white border-2 px-2 py-3">Gestisci</th>
+        <th class="border-white border-2 px-3 py-3 col-2">Domanda / Consiglio</th>
+        <th class="border-white border-2 px-2 py-3 col-6">Immagini</th>
+        <th class="border-white border-2 px-2 py-3 col-2">Gestisci</th>
     </tr>
     <?php foreach($templateParams["post"] as $post): ?>
     <tr class="border-white border-2">
         <td class="border-white border-2"><?php echo $post["titolopost"]; ?></td>
-        <td class="border-white border-2 py-2">
+        <td class="d-flex border-white border-2 py-2">
+            <div class="profileimages">
             <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
+            <div class="text-center"><?php echo $post["votes1"] . " voti"; ?></div>
+            </div>
+            <div class="profileimages">
             <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="" style="max-width:200px;max-height:170px;" />
-            <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
-            <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
+            <div class="text-center"><?php echo $post["votes2"] . " voti"; ?></div>
+            </div>
+            <div class="profileimages" <?php if(!isset($post["file3"])) echo "style='display: none;'"; ?>>
+            <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt=""  />
+            <div class="text-center"><?php echo $post["votes3"] . " voti"; ?></div>
+            </div>
+            <div class="profileimages" <?php if(!isset($post["file4"])) echo "style='display: none;'"; ?> >
+            <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" />
+            <div class="text-center"><?php echo $post["votes4"] . " voti"; ?></div>
+            </div>
         </td>
         <td class="border-white border-2">
             <a href="gestione-post.php?id=<?php echo $post["idpost"]; ?>">Cancella</a>

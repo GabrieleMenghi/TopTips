@@ -113,6 +113,18 @@ article {
     color: #444444;
 }
 
+.profileimages {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 2%;
+}
+
+.profileimages img {
+    width: 180px;
+    height: 120px;
+    object-fit: scale-down;
+}
+
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
     
