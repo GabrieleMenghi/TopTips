@@ -14,51 +14,69 @@
     <div class="conteiner-fluid m-0 p-0 overflow-hidden">
         <div class="row">
             <div class="col-12">
-                <header class="fixed-top bg-dark">
-                    <div class="d-flex align-items-center">
-                        <div class="toggle text-dark">
-                            <i class="bx bx-menu"></i>
-                        </div>
-                        <div class="logo col-2">
-                            <div class="icons">
-                                <div class="icon">
-                                    <a href="home.php"><div class="bg"></div>
-                                    <div class="glass">
-                                        <img src="./immagini/logo.png"/>
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>  
-                        </div>
-                        <h1 class="text-white text-start col-3">TopTips</h1>
-
-                        <!-- Opzione ricerca utente da rivedere graficamente-->            
-                        <div class="col-2">
-                            <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
-                            <input class="form-control me-2" type="text" name="keyword" placeholder="Ricerca utente">
-                            <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
-                            </form>
-                        </div>
-                        <!-- -->
-                        <div class="col-3"></div>
-                        <ul class="col-2 notification nav nav-pills align-content-center">
-                            <a class="pagebutton pt-2" href="./exit.php">
-                            <li class="nav-item exit i-exit">
-                                <i class="bx bx-log-out text-white"></i>
-                            </li>
-                            </a>
-                            <div class="base">
-                                <a class="pagebutton footerbell" href="./notifications.php">
-                                <li class="nav-item i-bell">
-                                    <!--'bx-tada': animazione campanella-->
-                                    <i class="bx bxs-bell"></i>
-                                    <p class="notifications_number" style="display: none;"></p>
-                                    </div>
-                                </li>
-                                </a>
-                            </div>
-                        </ul>
+                <header class="fixed-top bg-dark d-flex align-items-center">
+                    <div class="solodesktop col-1 text-center ms-2">
+                        <i class="toggle bx bx-menu text-dark"></i>
                     </div>
+                    <div class="col-1 ms-2 px-4 d-flex justify-content-center align-items-center border border-4">
+                        <div class="text-center">
+                            <div class="logo">
+                                <div class="icons">
+                                    <div class="icon">
+                                        <a href="home.php">
+                                            <div class="bg"></div>
+                                            <div class="glass">
+                                                <img src="./immagini/logo.png" class="img-fluid">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="solodesktop col-3">
+                        <h1 class="text-white text-start ">TopTips</h1>
+                    </div>
+
+                    <div class="col-1 solomobile border border-4"></div>
+
+                    <div class="solodesktop col-3 border border-4">
+                        <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
+                            <input class="form-control" type="text" name="keyword" placeholder="Ricerca utente">
+                            <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
+                        </form>
+                    </div>
+
+                    <div class="solomobile col-4 border border-4">
+                        <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
+                            <input class="form-control" type="text" name="keyword" placeholder="Ricerca utente">
+                            <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
+                        </form>
+                    </div>
+
+                    <div class="solodesktop col-4"></div> 
+
+                    <div class="solomobile col-1 border border-4"></div> 
+
+                    <div class="solomobile col-2 border border-4">
+                        <a class="pagebutton" href="./exit.php">
+                            <li class="nav-item exit i-exit">
+                                <i class="bx bx-log-out"></i>
+                            </li>
+                        </a>
+                    </div>
+
+                    <div class="solomobile base col-2 border border-4">
+                        <a class="pagebutton footerbell" href="./notifications.php">
+                            <li class="nav-item i-bell">
+                                <i class="bx bxs-bell"></i>
+                                <p class="notifications_number" style="display: none;"></p>
+                            </li>
+                        </a>
+                    </div>
+
+                    <div class="col-1 solomobile border border-4"></div>
+
                 </header>
             </div>
         </div>
@@ -72,35 +90,35 @@
             
             <ul>
                 <a class="pagebutton pagebuttonhome" href="./home.php">
-                <li class="nav-item i-home">
-                    <i class="bx bxs-home text-white"></i>
-                    <span>Home</span>
-                </li>
+                    <li class="nav-item i-home">
+                        <i class="bx bxs-home text-white"></i>
+                        <span>Home</span>
+                    </li>
                 </a>
                 <a class="pagebutton" href="./notifications.php">
-                <li class="nav-item i-bell">
-                    <i class="bx bxs-bell"></i>
-                    <span>Notifications</span>
-                    <p class="notifications_number" style="display: none;"></p>
-                </li>
+                    <li class="nav-item i-bell">
+                        <i class="bx bxs-bell"></i>
+                        <span>Notifications</span>
+                        <p class="notifications_number" style="display: none;"></p>
+                    </li>
                 </a>
                 <a class="pagebutton" href="./creazione-post.php">
-                <li class="nav-item i-post">
-                    <i class='bx bx-plus-circle'></i>
-                    <span>New Post</span>
-                </li>
+                    <li class="nav-item i-post">
+                        <i class='bx bx-plus-circle'></i>
+                        <span>New Post</span>
+                    </li>
                 </a>
                 <a class="pagebutton" href="./login.php">
-                <li class="nav-item i-user">
-                    <i class="bx bxs-user text-white"></i>
-                    <span>Profile</span>
-                </li>
+                    <li class="nav-item i-user">
+                        <i class="bx bxs-user text-white"></i>
+                        <span>Profile</span>
+                    </li>
                 </a>
                 <a class="pagebutton" href="./exit.php">
-                <li class="nav-item i-exit">
-                    <i class="bx bx-log-out text-white"></i>
-                    <span>Exit</span>
-                </li>
+                    <li class="nav-item i-exit">
+                        <i class="bx bx-log-out text-white"></i>
+                        <span>Exit</span>
+                    </li>
                 </a>
             </ul>
         </nav>
@@ -118,25 +136,25 @@
     <div>
         <!--Mobile footer-->
         <div class="row">
-            <div class="col-12">
-                <footer class="footer-mobile bg-dark fixed-bottom">
+            <div class="col-12"> 
+                <footer class="solomobile bg-dark fixed-bottom">
                     <ul class="nav nav-pills">
                         <a class="pagebutton pagebuttonhome col-2 text-center" href="./home.php">
-                        <li class="nav-item i-home">
-                            <i class="bx bxs-home text-white"></i>
-                        </li>
-                        </a>
+                            <li class="nav-item i-home">
+                                <i class="bx bxs-home text-white"></i>
+                            </li>
+                            </a>
                         <div class="col-3"></div>
                         <a class="pagebutton col-2 text-center" href="./creazione-post.php">
-                        <li class="nav-item i-post">
-                            <i class='bx bx-plus-circle text-white'></i>
-                        </li>
+                            <li class="nav-item i-post">
+                                <i class='bx bx-plus-circle text-white'></i>
+                            </li>
                         </a>
                         <div class="col-3"></div>
                         <a class="pagebutton col-2 text-center" href="./login.php">
-                        <li class="nav-item i-user">
-                            <i class="bx bxs-user text-white"></i>
-                        </li>
+                            <li class="nav-item i-user">
+                                <i class="bx bxs-user text-white"></i>
+                            </li>
                         </a>
                     </ul>
                 </footer> 
