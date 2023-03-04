@@ -18,7 +18,7 @@
                     <div class="solodesktop col-1 text-center ms-2">
                         <i class="toggle bx bx-menu text-dark"></i>
                     </div>
-                    <div class="col-1 ms-2 px-4 d-flex justify-content-center align-items-center border border-4">
+                    <div class="col-1 ms-2 px-4 d-flex justify-content-center align-items-center">
                         <div class="text-center">
                             <div class="logo">
                                 <div class="icons">
@@ -38,16 +38,16 @@
                         <h1 class="text-white text-start ">TopTips</h1>
                     </div>
 
-                    <div class="col-1 solomobile border border-4"></div>
+                    <div class="col-1 solomobile"></div>
 
-                    <div class="solodesktop col-3 border border-4">
+                    <div class="solodesktop col-3">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
                             <input class="form-control" type="text" name="keyword" placeholder="Ricerca utente">
                             <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
                         </form>
                     </div>
 
-                    <div class="solomobile col-4 border border-4">
+                    <div class="solomobile col-4">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
                             <input class="form-control" type="text" name="keyword" placeholder="Ricerca utente">
                             <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
@@ -56,9 +56,9 @@
 
                     <div class="solodesktop col-4"></div> 
 
-                    <div class="solomobile col-1 border border-4"></div> 
+                    <div class="solomobile col-1"></div> 
 
-                    <div class="solomobile col-2 border border-4">
+                    <div class="solomobile col-2">
                         <a class="pagebutton" href="./exit.php">
                             <li class="nav-item exit i-exit">
                                 <i class="bx bx-log-out"></i>
@@ -66,7 +66,7 @@
                         </a>
                     </div>
 
-                    <div class="solomobile base col-2 border border-4">
+                    <div class="solomobile base col-2">
                         <a class="pagebutton footerbell" href="./notifications.php">
                             <li class="nav-item i-bell">
                                 <i class="bx bxs-bell"></i>
@@ -75,7 +75,7 @@
                         </a>
                     </div>
 
-                    <div class="col-1 solomobile border border-4"></div>
+                    <div class="col-1 solomobile"></div>
 
                 </header>
             </div>
