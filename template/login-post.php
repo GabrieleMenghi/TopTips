@@ -4,31 +4,27 @@
     <p><?php echo $templateParams["formmsg"]; ?></p>
 <?php endif; ?>
 
-<table class="mx-3">
+<table class="mx-3 mb-3 col-11">
     <tr>
-        <th class="border-white border-2 px-3 py-3">Immagine profilo</th>
-        <th class="border-white border-2 px-3 py-3">Informazioni personali</th>
-        <th class="border-white border-2 px-3 py-3">Seguiti</th>
-        <th class="border-white border-2 px-3 py-3">Seguaci</th>
+        <th class="border-white border-2 py-3 col-3">Immagine profilo</th>
+        <th class="border-white border-2 py-3 col-4">Informazioni personali</th>
+        <th class="border-white border-2 py-3 col-2">Seguiti</th>
+        <th class="border-white border-2 py-3 col-2">Seguaci</th>
     </tr>
     <!-- distinguo se è nuovo oppure no: se lo è allora metto un immagine di default -->
-    <?php if($templateParams["profilo"]==null) :?>
     <tr class="border-white border-2">
-        <td class="border-white border-2 px-1 py-2 text-center"><img src="./upload/fotoProfiloDefault.jpg" alt=""/></td>
-        <td class="custom-font border-white border-2 py-2">Inserisci le tue informazioni</td>
-        <td class="border-white border-2 py-2"><a href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
-        <td class="border-white border-2 py-2"><a href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
-    </tr>
+    <?php if($templateParams["profilo"]==null) :?>
+        <td class="border-white border-2 py-2 text-center col-3"><img src="./upload/fotoProfiloDefault.jpg" style="max-width:100%;max-height:100%;" alt="Foto profilo" class="profileimg"/></td>
+        <td class="custom-font border-white border-2 py-2 col-4">Inserisci le tue informazioni</td>
     <?php else: ?>
         <?php foreach($templateParams["profilo"] as $profilo): ?>
-        <tr class="border-white border-2">
-            <td class="border-white border-2 px-1 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
-            <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
-            <td class="border-white border-2 py-2"><a href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
-            <td class="border-white border-2 py-2"><a href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
-        </tr>
+            <td class="border-white border-2 py-2 text-center col-3"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="Foto profilo" style="max-width:100%;max-height:100%;" class="profileimg"/></td>
+            <td class="border-white border-2 py-2 col-4"><?php echo $profilo["datipersonali"]; ?></td>
         <?php endforeach; ?>
     <?php endif;?>
+        <td class="border-white border-2 py-2 col-2"><a href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
+        <td class="border-white border-2 py-2 col-2"><a href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
+    </tr>
 </table>
 
 <?php if($templateParams["profilo"]==null) :?>
@@ -52,22 +48,22 @@
     <?php foreach($templateParams["post"] as $post): ?>
     <tr class="border-white border-2">
         <td class="border-white border-2"><?php echo $post["titolopost"]; ?></td>
-        <td class="d-flex border-white border-2 py-2">
+        <td class="d-md-flex d-sm-block border-white border-2 py-2">
             <div class="profileimages">
-            <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
-            <div class="text-center"><?php echo $post["votes1"] . " voti"; ?></div>
+                <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>" style="max-width:300px;max-height:170px;"/>
+                <div class="text-center"><?php echo $post["votes1"] . " voti"; ?></div>
             </div>
             <div class="profileimages">
-            <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="" style="max-width:200px;max-height:170px;" />
-            <div class="text-center"><?php echo $post["votes2"] . " voti"; ?></div>
+                <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" style="max-width:200px;max-height:170px;"/>
+                <div class="text-center"><?php echo $post["votes2"] . " voti"; ?></div>
             </div>
             <div class="profileimages" <?php if(!isset($post["file3"])) echo "style='display: none;'"; ?>>
-            <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt=""  />
-            <div class="text-center"><?php echo $post["votes3"] . " voti"; ?></div>
+                <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php echo $post["desc3"]; ?>"/>
+                <div class="text-center"><?php echo $post["votes3"] . " voti"; ?></div>
             </div>
             <div class="profileimages" <?php if(!isset($post["file4"])) echo "style='display: none;'"; ?> >
-            <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" />
-            <div class="text-center"><?php echo $post["votes4"] . " voti"; ?></div>
+                <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php echo $post["desc4"]; ?>"/>
+                <div class="text-center"><?php echo $post["votes4"] . " voti"; ?></div>
             </div>
         </td>
         <td class="border-white border-2">

@@ -113,18 +113,6 @@ article {
     color: #444444;
 }
 
-.profileimages {
-    background-color: white;
-    border: 1px solid black;
-    margin: 0 2%;
-}
-
-.profileimages img {
-    width: 180px;
-    height: 120px;
-    object-fit: scale-down;
-}
-
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
 
@@ -213,6 +201,18 @@ article {
     main article img {
         width: 280px;
         height: 210px;
+    }
+
+    .profileimages {
+        background-color: white;
+        border: 1px solid black;
+        margin: 1.5% 0;
+    }
+
+    .profileimages img {
+        width: 160px;
+        height: 120px;
+        object-fit: scale-down;
     }
 }
 
@@ -368,6 +368,24 @@ article {
     main article img {
         width: 400px;
         height: 370px;
+    }
+
+    .profileimages {
+        background-color: white;
+        border: 1px solid black;
+        margin: 2%;
+    }
+    
+    .profileimages img {
+        width: 180px;
+        height: 120px;
+        object-fit: scale-down;
+    }
+
+    .profileimg {
+        width: 280px;
+        height: 210px;
+        object-fit: scale-down;
     }
 }
 

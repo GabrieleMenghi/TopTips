@@ -44,7 +44,7 @@ class databaseHelper {
     }
 
     public function getPostByUserId($id){
-        $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4
+        $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4, immagine1.descrizione as desc1, immagine2.descrizione as desc2, immagine3.descrizione as desc3, immagine4.descrizione as desc4
         FROM post
         LEFT JOIN immagine AS immagine1 ON post.img1 = immagine1.image_id
         LEFT JOIN immagine AS immagine2 ON post.img2 = immagine2.image_id
