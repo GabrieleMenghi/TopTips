@@ -31,10 +31,56 @@ main > form {
     padding-top: 3%;
 }
 
-button {
-    margin: 2% 0;
+input[type="submit"] {
+    background-color:#8ab6d6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
     border-radius: 5px;
-    padding: 0.1% 1.5%;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:active {
+    background-color: #8ab6d6;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+input[type="button"] {
+    background-color:#8ab6d6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="button"]:active {
+    background-color: #8ab6d6;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+input[disabled] {
+    background-color: #ccc;
+    opacity: 0.5;
+}
+
+input[disabled]:active {
+    background-color: #666;
+    opacity: 0.5;
 }
 
 .success {
@@ -197,7 +243,7 @@ article {
         font-family: sans-serif;
         text-align: center;
     }
-    
+   
     main article img {
         width: 280px;
         height: 210px;
@@ -212,6 +258,12 @@ article {
     .profileimages img {
         width: 160px;
         height: 120px;
+        object-fit: scale-down;
+    }
+
+    .profileimg {
+        width: 280px;
+        height: 210px;
         object-fit: scale-down;
     }
 }
@@ -444,6 +496,6 @@ article {
 
 .logo {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
 }
