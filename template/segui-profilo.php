@@ -56,7 +56,7 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
 
     <?php foreach($templateParams["profilo"] as $profilo): ?>
     <tr class="border-white border-2">
-        <td class="border-white border-2 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
+        <td class="border-white border-2 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="Foto profilo" class="profileimg" style="max-width:100%;max-height:100%;"/></td>
         <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
         <td class="border-white border-2 py-2"><a class="text-dark fw-bold" href="elenco-utenti-seguiti.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguitiById($idseguito) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
         <td class="border-white border-2 py-2"><a class="text-dark fw-bold" href="elenco-utenti-seguaci.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguaciById($idseguito) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
@@ -66,20 +66,22 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
 
 <h2 class="py-4">Post personali</h2>
 
-<table class="mx-3 mb-5">
-    <tr>
-        <th class="border-white border-2 py-3">Domanda / Consiglio</th>
-        <th class="border-white border-2 py-3">Immagini</th>
-    </tr>
-    <?php foreach($templateParams["post"] as $post): ?>
-    <tr class="border-white border-2">
-        <td class="border-white border-2"><?php echo $post["titolopost"]; ?></td>
-        <td class="border-white border-2 py-2">
-            <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
-            <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="" style="max-width:200px;max-height:170px;" />
-            <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
-            <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="" style="max-width:300px;max-height:170px;" />
-        </td>
-    </tr>
-    <?php endforeach; ?>
-</table>
+<div class="col-11">
+    <table class="mx-3 mb-5 table">
+        <tr>
+            <th class="border-white border-2 py-3">Domanda / Consiglio</th>
+            <th class="border-white border-2 py-3">Immagini</th>
+        </tr>
+        <?php foreach($templateParams["post"] as $post): ?>
+        <tr class="border-white border-2">
+            <td class="border-white border-2"><?php echo $post["titolopost"]; ?></td>
+            <td class="border-white border-2 py-2">
+                <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>" class="profileimagesnovotes" style="max-width:300px;max-height:170px;" />
+                <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" class="profileimagesnovotes" style="max-width:300px;max-height:170px;" />
+                <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php echo $post["desc3"]; ?>" class="profileimagesnovotes" <?php if(!isset($post["file3"])) echo "style='display: none;'"; else echo "style='max-width:300px;max-height:170px;'"; ?> />
+                <img src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php echo $post["desc4"]; ?>" class="profileimagesnovotes" <?php if(!isset($post["file4"])) echo "style='display: none;'"; else echo "style='max-width:300px;max-height:170px;'"; ?> />
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
