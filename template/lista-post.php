@@ -57,6 +57,5 @@
             <input type="submit" name="submit" value="Aggiungi commento"/>
             <p><?php if(!isset($_SESSION["idutente"])) echo "Per commentare è necessario effettuare login"; ?></p>
         </form>
-        <a href="#">Vedi post</a>
     </article>
 <?php endforeach; ?>
