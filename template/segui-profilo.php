@@ -46,21 +46,20 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
 
 </script>
 
-<!-- A seguito della ricerca di un utente vedo il suo profilo ... e i seguiti/seguaci? -->
 <table class="mx-3">
     <tr>
-        <th class="border-white border-2 px-3 py-3">Immagine profilo</th>
-        <th class="border-white border-2 px-3 py-3">Informazioni personali</th>
-        <th class="border-white border-2 px-3 py-3">Seguiti</th>
-        <th class="border-white border-2 px-3 py-3">Seguaci</th>
+        <th class="border-white border-2 py-3">Immagine profilo</th>
+        <th class="border-white border-2 py-3">Informazioni personali</th>
+        <th class="border-white border-2 py-3">Seguiti</th>
+        <th class="border-white border-2 py-3">Seguaci</th>
     </tr>
 
     <?php foreach($templateParams["profilo"] as $profilo): ?>
     <tr class="border-white border-2">
-        <td class="border-white border-2 px-1 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
+        <td class="border-white border-2 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" style="max-width:100%;max-height:100%;"/></td>
         <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
-        <td class="border-white border-2 py-2"><a href="elenco-utenti-seguiti.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguitiById($idseguito) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
-        <td class="border-white border-2 py-2"><a href="elenco-utenti-seguaci.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguaciById($idseguito) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
+        <td class="border-white border-2 py-2"><a class="text-dark fw-bold" href="elenco-utenti-seguiti.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguitiById($idseguito) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
+        <td class="border-white border-2 py-2"><a class="text-dark fw-bold" href="elenco-utenti-seguaci.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguaciById($idseguito) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
     </tr>
     <?php endforeach; ?>
 </table>
@@ -69,8 +68,8 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
 
 <table class="mx-3 mb-5">
     <tr>
-        <th class="border-white border-2 px-3 py-3">Domanda / Consiglio</th>
-        <th class="border-white border-2 px-2 py-3">Immagini</th>
+        <th class="border-white border-2 py-3">Domanda / Consiglio</th>
+        <th class="border-white border-2 py-3">Immagini</th>
     </tr>
     <?php foreach($templateParams["post"] as $post): ?>
     <tr class="border-white border-2">

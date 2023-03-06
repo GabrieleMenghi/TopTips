@@ -4,46 +4,46 @@
     <p><?php echo $templateParams["formmsg"]; ?></p>
 <?php endif; ?>
 
-<table class="mx-3 mb-3 col-11">
+<table class="mx-3 mb-3">
     <tr>
-        <th class="border-white border-2 py-3 col-3">Immagine profilo</th>
-        <th class="border-white border-2 py-3 col-4">Informazioni personali</th>
-        <th class="border-white border-2 py-3 col-2">Seguiti</th>
-        <th class="border-white border-2 py-3 col-2">Seguaci</th>
+        <th class="border-white border-2 py-3">Immagine profilo</th>
+        <th class="border-white border-2 py-3">Informazioni personali</th>
+        <th class="border-white border-2 py-3">Seguiti</th>
+        <th class="border-white border-2 py-3">Seguaci</th>
     </tr>
     <!-- distinguo se è nuovo oppure no: se lo è allora metto un immagine di default -->
     <tr class="border-white border-2">
     <?php if($templateParams["profilo"]==null) :?>
-        <td class="border-white border-2 py-2 text-center col-3"><img src="./upload/fotoProfiloDefault.jpg" style="max-width:100%;max-height:100%;" alt="Foto profilo" class="profileimg"/></td>
-        <td class="custom-font border-white border-2 py-2 col-4">Inserisci le tue informazioni</td>
+        <td class="border-white border-2 py-2 text-center"><img src="./upload/fotoProfiloDefault.jpg" style="max-width:100%;max-height:100%;" alt="Foto profilo" class="profileimg"/></td>
+        <td class="custom-font border-white border-2 py-2">Inserisci le tue informazioni</td>
     <?php else: ?>
         <?php foreach($templateParams["profilo"] as $profilo): ?>
-            <td class="border-white border-2 py-2 text-center col-3"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="Foto profilo" style="max-width:100%;max-height:100%;" class="profileimg"/></td>
-            <td class="border-white border-2 py-2 col-4"><?php echo $profilo["datipersonali"]; ?></td>
+            <td class="border-white border-2 py-2 text-center"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="Foto profilo" style="max-width:100%;max-height:100%;" class="profileimg"/></td>
+            <td class="border-white border-2 py-2"><?php echo $profilo["datipersonali"]; ?></td>
         <?php endforeach; ?>
     <?php endif;?>
-        <td class="border-white border-2 py-2 col-2"><a href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
-        <td class="border-white border-2 py-2 col-2"><a href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
+        <td class="border-white border-2 py-2"><a class="text-dark fw-bold" href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
+        <td class="border-white border-2 py-2"><a class="text-dark fw-bold" href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
     </tr>
 </table>
 
 <?php if($templateParams["profilo"]==null) :?>
-    <button class="bg-grey border-1">
-        <a href="gestione-profilo.php?action=1&id=<?php echo $_SESSION["idutente"]; ?>">Inserisci profilo</a>
-    </button>
+    <a href="gestione-profilo.php?action=1&id=<?php echo $_SESSION["idutente"]; ?>">
+        <input type="submit" name="submit" value="Inserisci profilo"></input>
+    </a>
 <?php else: ?>
-    <button class="bg-grey border-1">
-        <a href="gestione-profilo.php?action=2&id=<?php echo $_SESSION["idutente"]; ?>">Modifica profilo</a>
-    </button>
+    <a href="gestione-profilo.php?action=2&id=<?php echo $_SESSION["idutente"]; ?>">
+        <input type="submit" name="submit" value="Modifica profilo"></input>
+    </a>
 <?php endif;?>
 
 <h2 class="py-4">Post personali</h2>
 
-<table class="mx-3 mb-5 col-10">
+<table class="mx-3 mb-5">
     <tr>
-        <th class="border-white border-2 px-3 py-3 col-2">Domanda / Consiglio</th>
-        <th class="border-white border-2 px-2 py-3 col-6">Immagini</th>
-        <th class="border-white border-2 px-2 py-3 col-2">Gestisci</th>
+        <th class="border-white border-2 py-3">Domanda / Consiglio</th>
+        <th class="border-white border-2 py-3">Immagini</th>
+        <th class="border-white border-2 py-3">Gestisci</th>
     </tr>
     <?php foreach($templateParams["post"] as $post): ?>
     <tr class="border-white border-2">

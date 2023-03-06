@@ -21,26 +21,28 @@
 
     <p>Riempi tutti questi campi per creare un account.</p>
 
-    <div class="grid text-start">
-        <div>
-            <label class="col-5 text-end" for="Email">Email*</label>
+    <div class="py-1">
+        <div class="col-12">
+            <label for="Email">Email*</label>
             <input type="email" name="email" value="<?php echo @$_POST['email']; ?>" required>
         </div>
-        <div class="pt-3">
-            <label class="col-5 text-end" for="Username">Username*</label>
+        <div class="col-12 pt-3">
+            <label for="Username">Username*</label>
             <input type="text" name="username" value="<?php echo @$_POST['username']; ?>" required>
         </div>
-        <div class="pt-3">
-            <label class="col-5 text-end" for="Password">Password*</label>
+        <div class="col-12 pt-3">
+            <label for="Password">Password*</label>
             <input type="password" name="password" value="<?php echo @$_POST['password']; ?>" required>
         </div>
-        <div class="pt-3">
-            <label class="col-5 text-end" for="Confirm Password">Conferma Password*</label>
+        <div class="col-12 py-3">
+            <label for="Confirm Password">Conferma Password*</label>
             <input type="password" name="confirm-password" value="<?php echo @$_POST['confirm-password']; ?>" required>
         </div>
     </div>
-    <button type="submit" name="submit">Invia</button>
-    <p>
+
+    <input type="submit" name="submit" value="Invia"></input>
+    
+    <p class="pt-3">
         Hai già un account? 
         <a href="login.php">Login qui</a>
     </p>

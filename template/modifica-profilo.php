@@ -18,14 +18,15 @@
         </li>
         <li class="py-1">
             <input class="submitImage" type="submit" name="submit" id="submitImage" value="Salva profilo" disabled/>
-            <input type="button" class="bg-grey border-1 mx-3" onclick="location.href='login.php'" value="Annulla"/>
+            <input type="button" name="submit" value="Annulla" onclick="location.href='login.php'"></input>
+
         </li>
     </ul>
 
     <input type="hidden" name="action" value="<?php echo $templateParams["azione"]; ?>" />
 
     <?php else: ?>
-        <ul>
+        <ul class="pb-5">
             <li class="text-start">
                 <label for="datipersonali">Dati personali:</label>
                 <textarea id="datipersonali" name="datipersonali"><?php echo $profilo["datipersonali"]; ?></textarea>
@@ -33,11 +34,15 @@
             <li class="py-4 text-start">
                 <label for="imgprofilo">Immagine profilo</label>
                 <input type="file" name="imgprofilo" id="imgprofilo" />
-                <img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" />
+                <div class="mt-3 text-center">
+                    <img class="profileimg text-center" src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" />
+                </div>
             </li>         
             <li class="py-1">
                 <input type="submit" name="submit" value="Modifica profilo" />
-                <button class="bg-grey border-1 mx-3"><a href="login.php">Annulla</a></button>
+                <a href="login.php">
+                    <input type="button" name="submit" value="Annulla"></input>
+                </a>
             </li>       
         </ul>
 
