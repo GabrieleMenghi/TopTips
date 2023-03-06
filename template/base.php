@@ -15,68 +15,81 @@
         <div class="row">
             <div class="col-12">
                 <header class="fixed-top bg-dark d-flex align-items-center">
-                    <div class="solodesktop col-1 text-center ms-2">
-                        <i class="toggle bx bx-menu text-dark"></i>
+                    <!-- Toggle-menu (desktop) -->
+                    <div class="solodesktop col-1 text-center">
+                        <i class="toggle bx bx-menu"></i>
                     </div>
-                    <div class="col-1 ms-2 px-4 d-flex justify-content-center align-items-center">
-                        <div class="text-center">
-                            <div class="logo">
-                                <div class="icons">
-                                    <div class="icon">
-                                        <a href="home.php">
-                                            <div class="bg"></div>
-                                            <div class="glass">
-                                                <img src="./immagini/logo.png" class="img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>  
-                            </div>
+                    <!-- Logo (desktop) -->
+                    <div class="col-1 solodesktop">
+                        <div class="logo">
+                            <div class="icons">
+                                <div class="icon">
+                                    <a href="home.php">
+                                        <div class="bg"></div>
+                                        <div class="glass">
+                                            <img src="./immagini/logo.png" class="img-fluid">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>  
                         </div>
                     </div>
-                    <div class="solodesktop col-3">
-                        <h1 class="text-white text-start ">TopTips</h1>
+                    <!-- Logo (mobile) -->
+                    <div class="col-2 solomobile">
+                        <div class="logo">
+                            <div class="icons">
+                                <div class="icon">
+                                    <a href="home.php">
+                                        <div class="bg"></div>
+                                        <div class="glass">
+                                            <img src="./immagini/logo.png" class="img-fluid">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>  
+                        </div>
                     </div>
-
-                    <div class="col-1 solomobile"></div>
-
+                    <!-- TopTips (desktop) -->
+                    <div class="solodesktop col-3">
+                        <h1 class="text-white text-start">TopTips</h1>
+                    </div>
+                    <!-- Spazio conteggio colonne mobile -->
+                    <div class="solomobile col-1"></div>
+                    <!-- Ricerca (desktop) -->
                     <div class="solodesktop col-3">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
-                            <input class="form-control" type="text" name="keyword" placeholder="Ricerca utente">
-                            <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
+                            <input class="form-control me-1" type="text" name="keyword" placeholder="Ricerca utente">
+                            <button class="btn btn-dark" type="submit"><i class="bx bx-search"></i></button>
                         </form>
                     </div>
-
+                    <!-- Ricerca (mobile) -->
                     <div class="solomobile col-4">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
-                            <input class="form-control" type="text" name="keyword" placeholder="Ricerca utente">
-                            <button class="btn btn-dark" type="submit"><i class='bx bx-search'></i></button>
+                            <input class="form-control me-1" type="text" name="keyword" placeholder="Ricerca utente">
+                            <button class="btn btn-dark" type="submit"><i class="bx bx-search"></i></button>
                         </form>
                     </div>
-
+                    <!-- Spazio conteggio colonne desktop -->                  
                     <div class="solodesktop col-4"></div> 
-
-                    <div class="solomobile col-1"></div> 
-
+                    <!-- Spazio conteggio colonne mobile -->
+                    <div class="solomobile col-1"></div>
+                    <!-- Exit (mobile) -->
                     <div class="solomobile col-2">
                         <a class="pagebutton" href="./exit.php">
-                            <li class="nav-item exit i-exit">
+                            <li class="i-exit">
                                 <i class="bx bx-log-out"></i>
                             </li>
                         </a>
                     </div>
-
+                    <!-- Notifiche (mobile) -->
                     <div class="solomobile base col-2">
-                        <a class="pagebutton footerbell" href="./notifications.php">
-                            <li class="nav-item i-bell">
+                        <a class="pagebutton" href="./notifications.php">
+                            <li class="i-bell">
                                 <i class="bx bxs-bell"></i>
                                 <p class="notifications_number" style="display: none;"></p>
                             </li>
                         </a>
                     </div>
-
-                    <div class="col-1 solomobile"></div>
-
                 </header>
             </div>
         </div>
@@ -97,14 +110,14 @@
                 </a>
                 <a class="pagebutton" href="./notifications.php">
                     <li class="nav-item i-bell">
-                        <i class="bx bxs-bell"></i>
+                        <i class="bx bxs-bell text-white"></i>
                         <span>Notifications</span>
                         <p class="notifications_number" style="display: none;"></p>
                     </li>
                 </a>
                 <a class="pagebutton" href="./creazione-post.php">
                     <li class="nav-item i-post">
-                        <i class='bx bx-plus-circle'></i>
+                        <i class="bx bx-plus-circle text-white"></i>
                         <span>New Post</span>
                     </li>
                 </a>
@@ -133,21 +146,21 @@
         ?>
     </main>
 
-    <div>
-        <!--Mobile footer-->
+    <!--Mobile footer-->
+    <div class="conteiner-fluid m-0 p-0 overflow-hidden">
         <div class="row">
-            <div class="col-12"> 
+            <div class="col-12">
                 <footer class="solomobile bg-dark fixed-bottom">
                     <ul class="nav nav-pills">
                         <a class="pagebutton pagebuttonhome col-2 text-center" href="./home.php">
                             <li class="nav-item i-home">
                                 <i class="bx bxs-home text-white"></i>
                             </li>
-                            </a>
+                        </a>
                         <div class="col-3"></div>
                         <a class="pagebutton col-2 text-center" href="./creazione-post.php">
                             <li class="nav-item i-post">
-                                <i class='bx bx-plus-circle text-white'></i>
+                                <i class="bx bx-plus-circle text-white"></i>
                             </li>
                         </a>
                         <div class="col-3"></div>
