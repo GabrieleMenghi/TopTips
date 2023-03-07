@@ -27,23 +27,23 @@
 
     <?php else: ?>
         <ul class="pb-5">
-            <li class="text-start">
+            <li class="text-center">
                 <label for="datipersonali">Dati personali:</label>
-                <textarea id="datipersonali" name="datipersonali"><?php echo $profilo["datipersonali"]; ?></textarea>
+                <textarea class="align-middle" id="datipersonali" name="datipersonali"><?php echo $profilo["datipersonali"]; ?></textarea>
             </li>
-            <li class="py-4 text-start">
-                <label for="imgprofilo">Immagine profilo</label>
+            <li class="py-4 text-center">
+                <label for="imgprofilo">Immagine profilo:</label>
                 <input type="file" name="imgprofilo" id="imgprofilo" />
                 <div class="mt-3 text-center">
                     <img class="profileimg text-center" src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="" />
                 </div>
-            </li>         
+            </li>
             <li class="py-1">
                 <input type="submit" name="submit" value="Modifica profilo" />
                 <a href="login.php">
                     <input type="button" name="submit" value="Annulla"></input>
                 </a>
-            </li>       
+            </li>
         </ul>
 
         <input type="hidden" name="action" value="<?php echo $templateParams["azione"]; ?>" />
