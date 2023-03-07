@@ -83,6 +83,30 @@ input[disabled]:active {
     opacity: 0.5;
 }
 
+.login label {
+    display: inline-block;
+    font-size: 1rem;
+    width: 7rem;
+}
+  
+.login input {
+    width: 10rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.registration label {
+    display: inline-block;
+    font-size: 1rem;
+    width: 7rem;
+}
+
+.registration input {
+    width: 10rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
 .success {
     color: green;
 }

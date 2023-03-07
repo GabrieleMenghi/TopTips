@@ -21,7 +21,7 @@
 
     <p>Riempi tutti questi campi per creare un account.</p>
 
-    <div class="py-1">
+    <div class="registration py-1">
         <div class="col-12">
             <label for="Email">Email*</label>
             <input type="email" name="email" value="<?php echo @$_POST['email']; ?>" required>
