@@ -73,15 +73,22 @@
                     <div class="solodesktop col-4"></div> 
                     <!-- Spazio conteggio colonne mobile -->
                     <div class="solomobile col-1"></div>
-                    <!-- Exit (mobile) -->
-                    <div class="solomobile col-2">
-                        <a class="pagebutton" href="./exit.php">
-                            <li class="i-exit">
-                                <i class="bx bx-log-out"></i>
-                            </li>
-                        </a>
-                    </div>
-                    <!-- Notifiche (mobile) -->
+
+                    <!-- controllo il valore della variabile di sessione -->
+                    <?php $isUserLoggedIn = isset($_SESSION["isUserLoggedIn"]) && $_SESSION["isUserLoggedIn"] == true; ?>
+                    
+                    <!-- Solo se loggato vedo icona exit e icona notifiche -->
+                    <?php if ($isUserLoggedIn): ?>
+                        <!-- Exit (mobile) -->
+                        <div class="solomobile col-2">
+                            <a class="pagebutton" href="./exit.php">
+                                <li class="i-exit">
+                                    <i class="bx bx-log-out"></i>
+                                </li>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                    <!-- Notifiche (mobile) -->                  
                     <div class="solomobile base col-2">
                         <a class="pagebutton" href="./notifications.php">
                             <li class="i-bell">
@@ -127,12 +134,14 @@
                         <span>Profile</span>
                     </li>
                 </a>
-                <a class="pagebutton" href="./exit.php">
-                    <li class="nav-item i-exit">
-                        <i class="bx bx-log-out text-white"></i>
-                        <span>Exit</span>
-                    </li>
-                </a>
+                <?php if ($isUserLoggedIn): ?>
+                    <a class="pagebutton" href="./exit.php">
+                        <li class="nav-item i-exit">
+                            <i class="bx bx-log-out text-white"></i>
+                            <span>Exit</span>
+                        </li>
+                    </a>
+                <?php endif; ?>
             </ul>
         </nav>
     </div>
