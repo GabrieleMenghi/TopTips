@@ -140,13 +140,25 @@ function deleteAccount(){
 
     $queryUtente = "DELETE FROM utente WHERE idutente = ?";
     $queryProfilo = "DELETE FROM profilo WHERE utente = ?";
+    //Rimozione utente seguito e seguace quando l'utente elimina l'account
+    $querySeguito = "DELETE FROM followers WHERE seguito = ?";
+    $querySeguitore = "DELETE FROM followers WHERE seguitore = ?";
 
     $stmtUtente = $mysqli->prepare($queryUtente);
     $stmtUtente->bind_param("i", $_SESSION["idutente"]);
     $stmtUtente->execute();
+
     $stmtProfilo = $mysqli->prepare($queryProfilo);
     $stmtProfilo->bind_param("i", $_SESSION["idutente"]);
     $stmtProfilo->execute();
+
+    $stmtSeguito = $mysqli->prepare($querySeguito);
+    $stmtSeguito->bind_param("i", $_SESSION["idutente"]);
+    $stmtSeguito->execute();   
+    
+    $stmtSeguitore = $mysqli->prepare($querySeguitore);
+    $stmtSeguitore->bind_param("i", $_SESSION["idutente"]);
+    $stmtSeguitore->execute(); 
 
     if($stmtUtente->affected_rows != 1 || $stmtProfilo->affected_rows != 1){
         return "Si è verificato un errore. Per favore, riprova";
