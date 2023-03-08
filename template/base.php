@@ -14,6 +14,9 @@
     <div class="conteiner-fluid m-0 p-0 overflow-hidden">
         <div class="row">
             <div class="col-12">
+                <!-- controllo il valore della variabile di sessione -->
+                <?php $isUserLoggedIn = isset($_SESSION["isUserLoggedIn"]) && $_SESSION["isUserLoggedIn"] == true; ?>
+                
                 <header class="fixed-top bg-dark d-flex align-items-center">
                     <!-- Toggle-menu (desktop) -->
                     <div class="solodesktop col-1 text-center">
@@ -53,8 +56,12 @@
                     <div class="solodesktop col-3">
                         <h1 class="text-white text-start">TopTips</h1>
                     </div>
-                    <!-- Spazio conteggio colonne mobile -->
-                    <div class="solomobile col-1"></div>
+                    <!-- Spazio conteggio colonne mobile: varia se sono loggato o meno -->
+                    <?php if ($isUserLoggedIn): ?>
+                        <div class="solomobile col-1"></div>
+                    <?php else: ?>
+                        <div class="solomobile col-2"></div>
+                    <?php endif; ?>
                     <!-- Ricerca (desktop) -->
                     <div class="solodesktop col-3">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
@@ -71,13 +78,13 @@
                     </div>
                     <!-- Spazio conteggio colonne desktop -->                  
                     <div class="solodesktop col-4"></div> 
-                    <!-- Spazio conteggio colonne mobile -->
-                    <div class="solomobile col-1"></div>
-
-                    <!-- controllo il valore della variabile di sessione -->
-                    <?php $isUserLoggedIn = isset($_SESSION["isUserLoggedIn"]) && $_SESSION["isUserLoggedIn"] == true; ?>
-                    
-                    <!-- Solo se loggato vedo icona exit e icona notifiche -->
+                    <!-- Spazio conteggio colonne mobile: varia se sono loggato o meno -->
+                    <?php if ($isUserLoggedIn): ?>
+                        <div class="solomobile col-1"></div>
+                    <?php else: ?>
+                        <div class="solomobile col-2"></div>
+                    <?php endif; ?>
+                    <!-- Solo se loggato vedo icona exit in mobile -->
                     <?php if ($isUserLoggedIn): ?>
                         <!-- Exit (mobile) -->
                         <div class="solomobile col-2">
@@ -87,6 +94,8 @@
                                 </li>
                             </a>
                         </div>
+                    <?php else: ?>
+                        <!-- se non sono loggato: niente -->
                     <?php endif; ?>
                     <!-- Notifiche (mobile) -->                  
                     <div class="solomobile base col-2">
@@ -106,8 +115,7 @@
         <nav>
             <div class="nav-title">
                 Menù
-            </div> 
-            
+            </div>        
             <ul>
                 <a class="pagebutton pagebuttonhome" href="./home.php">
                     <li class="nav-item i-home">
@@ -134,6 +142,7 @@
                         <span>Profile</span>
                     </li>
                 </a>
+                <!-- Solo se loggato vedo icona exit nel menù laterale (desktop) -->
                 <?php if ($isUserLoggedIn): ?>
                     <a class="pagebutton" href="./exit.php">
                         <li class="nav-item i-exit">
