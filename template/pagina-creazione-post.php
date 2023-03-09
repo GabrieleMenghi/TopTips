@@ -3,21 +3,32 @@
     <p class="success"><?php if(isset($templateParams["formmsg"])) echo $templateParams["formmsg"]; ?></p>
     <ul>
         <li>
-            <input type="hidden" name="user" value="<?php echo $_SESSION["idutente"]; ?>"/>
-            <label for="titolo">Inserisci il titolo del consiglio</label><input type="text" id="titolo" name="titolo"/>
+            <div class="div-input-post">
+                <input type="hidden" name="user" value="<?php echo $_SESSION["idutente"]; ?>"/>
+                <input type="text" id="titolo" name="titolo" class="input-post" placeholder="Inserisci il titolo del consiglio" autocomplete="off" required/>
+                <label for="titolo" class="post-label">Titolo post</label>
+            </div>
         </li>
         <li>
-            <label for="testopost">Testo post:</label><input type="text" id="testopost" name="testopost" cols="50"></input>
+            <div class="div-input-post">
+                <input type="text" id="testopost" name="testopost" class="input-post" placeholder="Inserisci il testo del consiglio" autocomplete="off" required/>
+                <label for="testopost" class="post-label">Testo post</label>
+            </div>
         </li>
         <li>
-            <label for="imagepicker">Scegli le immagini per il tuo post (min. 2 - max. 4):</label><input type="file" id="imagepicker" name="imagepicker[]" accept="image/png, image/jpeg" multiple required>
-            <h2 class="postcreationmessages" style="color: red; font-size: 18px;"></h2>
+            <div class="div-filepicker">
+                <label for="imagepicker">Scegli le immagini per il tuo post (min. 2 - max. 4):</label>
+                <input type="file" id="imagepicker" name="imagepicker[]" accept="image/png, image/jpeg" multiple required>
+                <h2 class="postcreationmessages" style="color: red; font-size: 18px;"></h2>
+            </div>
         </li>
         <li class="previews">
 
         </li>
         <li>
-            <input class="submitpost" type="submit" name="submit" value="Inserisci post" />
+            <input class="submitpost mt-4" type="submit" name="submit" value="Inserisci post"/>
+            <br>
+            <br>
         </li>
     </ul>
 </form>
@@ -32,7 +43,13 @@
         let files = filepicker.files;
         if(n >= 2 && n <= 4){
             for (let i = 0; i < n; i++) {
-                imagepreviews.innerHTML += "<img src='upload/" + files[i].name + "' class='image-preview' style='background-color: white; border: 2px solid #040470; margin: 2%; width: 200px; height: 170px; object-fit: scale-down;'/><input type='text' name='imagedescription" + i + "' size='40' placeholder='Inserisci una descrizione per l`immagine'><input type='hidden' name='image" + i + "' value='" + files[i].name + "'/><br>";
+                imagepreviews.innerHTML += 
+                "<div class='d-flex justify-content-center'>" +
+                "<img src='upload/" + files[i].name + "' class='image-preview' style='background-color: white; border: 2px solid #040470; margin: 2%; width: 200px; height: 170px; object-fit: scale-down;'/>" +
+                "<div class='div-input-description'>" +
+                "<input id='image" + i + "' type='text' name='imagedescription" + i + "' placeholder='Inserisci una descrizione per l`immagine' class='input-description' required/>" +
+                "<label for='image" + i + "' class='description-label'>Descrizione</label></div>" +
+                "<input type='hidden' name='image" + i + "' value='" + files[i].name + "'/></div><br>";
             }
         }
         

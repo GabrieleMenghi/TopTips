@@ -21,22 +21,22 @@
 
     <p>Riempi tutti questi campi per creare un account.</p>
 
-    <div class="registration py-1">
-        <div class="col-12">
-            <label for="Email">Email*</label>
-            <input type="email" name="email" value="<?php echo @$_POST['email']; ?>" required>
+    <div class="py-1">
+        <div class="div-input-post">
+            <input id="email" type="email" name="email" value="<?php echo @$_POST['email']; ?>" class="input-post" placeholder="Inserisci la tua mail" required/>
+            <label for="email" class="post-label">Email*</label>
         </div>
-        <div class="col-12 pt-3">
-            <label for="Username">Username*</label>
-            <input type="text" name="username" value="<?php echo @$_POST['username']; ?>" required>
+        <div class="div-input-post">
+            <input id="username" type="text" name="username" value="<?php echo @$_POST['username']; ?>" class="input-post" placeholder="Inserisci uno username" required/>
+            <label for="username" class="post-label">Username*</label>
         </div>
-        <div class="col-12 pt-3">
-            <label for="Password">Password*</label>
-            <input type="password" name="password" value="<?php echo @$_POST['password']; ?>" required>
+        <div class="div-input-post">
+            <input id="password" type="password" name="password" value="<?php echo @$_POST['password']; ?>" class="input-post" placeholder="Inserisci una password" required/>
+            <label for="password" class="post-label">Password*</label>
         </div>
-        <div class="col-12 py-3">
-            <label for="Confirm Password">Conferma Password*</label>
-            <input type="password" name="confirm-password" value="<?php echo @$_POST['confirm-password']; ?>" required>
+        <div class="div-input-post">
+            <input id="confirm-password" type="password" name="confirm-password" value="<?php echo @$_POST['confirm-password']; ?>" class="input-post" placeholder="Conferma la password inserita" required/>
+            <label for="confirm-password" class="post-label">Conferma Password*</label>
         </div>
     </div>
 

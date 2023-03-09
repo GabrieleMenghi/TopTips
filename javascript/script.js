@@ -2,7 +2,7 @@ const sidebar = document.querySelector('.sidebar');
 const toggle = document.querySelector('.toggle');
 
 const postimages = document.querySelectorAll('.imgpost');
-const labelimages = document.querySelectorAll('article > label');
+const labelimages = document.querySelectorAll('article label');
 
 const activePage = window.location.pathname;
 const pagebuttons = document.querySelectorAll('.pagebutton');
@@ -34,7 +34,7 @@ postimages.forEach(img => {
     if(img.classList.contains('notvoteable')){
         labelimages.forEach(l => {
             if(img.getAttribute('id') == l.getAttribute('for') && l.getAttribute('for') != "imgpost"){                
-                l.setAttribute('style','display: inline');
+                l.setAttribute('style','display: inline; margin-left: -10px');
             }
         })
     }
@@ -76,13 +76,13 @@ postimages.forEach(img => {
             //Aggiornamento delle label
             labelimages.forEach(l => {
                 if(img.getAttribute('id') == l.getAttribute('for')){
-                    l.setAttribute('style','display: inline');
+                    l.setAttribute('style','display: inline; margin-left: -10px');
                     postimages.forEach(img2 => {
                         if(img2.getAttribute('postnumber') == img.getAttribute('postnumber')){
                             img2.classList.add('notvoteable');
                             labelimages.forEach(l2 => {
                                 if(l2.getAttribute('for') == img2.getAttribute('id')){
-                                    l2.setAttribute('style','display: inline');
+                                    l2.setAttribute('style','display: inline; margin-left: -10px');
                                 }
                             })
                         }

@@ -5,14 +5,14 @@
     
     <p class="py-2">Per favore riempi questi campi per accedere al tuo account</p>
 
-    <div class="login py-1">
-        <div class="col-12">
-            <label class="text-center" for="username">Username</label>
-            <input type="text" name="username" value="<?php echo @$_POST['username']; ?>">
+    <div class="py-1">
+        <div class="div-input-post">
+            <input id="username" type="text" name="username" value="<?php echo @$_POST['username']; ?>" class="input-post" placeholder="Inserisci il tuo username" required/>
+            <label for="username" class="post-label">Username</label>
         </div>
-        <div class="col-12 py-3">
-            <label class="text-center" for="password">Password</label>
-            <input type="password" name="password" value="<?php echo @$_POST['password']; ?>">
+        <div class="div-input-post">
+            <input id="password" type="password" name="password" value="<?php echo @$_POST['password']; ?>" class="input-post" placeholder="Inserisci la tua password" required/>
+            <label for="password" class="post-label">Password</label>
         </div>
     </div>
 

@@ -13,8 +13,9 @@ class databaseHelper {
     public function getPosts($n=-1){
         $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, username,
         immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4,
-        img1, img2, img3, img4
+        img1, img2, img3, img4, imgprofilo, DATEDIFF(CURDATE(), datapost) as datadiff
         FROM post JOIN utente ON post.utente = utente.idutente
+        JOIN profilo ON utente.idutente = profilo.utente
         LEFT JOIN immagine AS immagine1 ON post.img1 = immagine1.image_id
         LEFT JOIN immagine AS immagine2 ON post.img2 = immagine2.image_id
         LEFT JOIN immagine AS immagine3 ON post.img3 = immagine3.image_id
@@ -201,15 +202,17 @@ class databaseHelper {
     public function getPostsOfUsers($user_id_array){
         $posts_list = array();
         foreach($user_id_array as $user){
-            $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, utente, username,
+            $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, post.utente as utente, username,
             immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4,
-            img1, img2, img3, img4, immagine1.descrizione as desc1, immagine2.descrizione as desc2, immagine3.descrizione as desc3, immagine4.descrizione as desc4
+            img1, img2, img3, img4, immagine1.descrizione as desc1, immagine2.descrizione as desc2, immagine3.descrizione as desc3, immagine4.descrizione as desc4, imgprofilo,
+            DATEDIFF(CURDATE(), datapost) as datadiff
             FROM post JOIN utente ON post.utente = utente.idutente
+            JOIN profilo ON utente.idutente = profilo.utente
             LEFT JOIN immagine AS immagine1 ON post.img1 = immagine1.image_id
             LEFT JOIN immagine AS immagine2 ON post.img2 = immagine2.image_id
             LEFT JOIN immagine AS immagine3 ON post.img3 = immagine3.image_id
             LEFT JOIN immagine AS immagine4 ON post.img4 = immagine4.image_id
-            WHERE utente = ?
+            WHERE post.utente = ?
             ORDER BY datapost DESC";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('i',$user["seguito"]);
