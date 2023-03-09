@@ -1,10 +1,10 @@
-<h1 class="pt-4"><?php echo $templateParams["username"]; ?></h1>
+<h1 class="py-4"><?php echo $templateParams["username"]; ?></h1>
 
 <?php 
 $seguitore = $_SESSION["user"];
 $id["seguitore"] = $dbh->getIdByUsername($seguitore);
 $seguito = $templateParams["username"];
-$id["seguito"]= $dbh->getIdByUsername($seguito);
+$id["seguito"] = $dbh->getIdByUsername($seguito);
 
 foreach ($id["seguitore"] as $seguitore) {
     foreach ($id["seguito"] as $seguito) {
@@ -14,7 +14,9 @@ foreach ($id["seguitore"] as $seguitore) {
 }
 ?>
 
-<input class="btn btn-primary btnfollow py-2 mt-1 mb-3" type="submit" name="follow" value="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "Smetti di seguire"; } else { echo "Segui"; } ?>" 
+<?php if($idseguito != $_SESSION["idutente"]): ?>
+
+<input class="btnfollow py-2 mt-1 mb-3" type="submit" name="follow" value="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "Smetti di seguire"; } else { echo "Segui"; } ?>" 
 style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background:red"; } else { echo "background:green"; } ?>" />
 <input type="hidden" id="seguitore" name="seguitore" value="<?php echo $idseguitore; ?>" />
 <input type="hidden" id="seguito" name="seguito" value="<?php echo $idseguito; ?>" />
@@ -46,6 +48,10 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
 
 </script>
 
+<?php else: echo "<script>window.location.href='login.php';</script>"; ?>
+
+<?php endif; ?>
+
 <div class="col-11 mx-3 my-3">
     <table class="table border">
         <tr>
@@ -54,14 +60,19 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
             <th class="border-white border-2 py-3">Seguiti</th>
             <th class="border-white border-2 py-3">Seguaci</th>
         </tr>
-        <?php foreach($templateParams["profilo"] as $profilo): ?>
         <tr class="border-white border-2">
-            <td class="border-white border-2 text-center align-middle"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="Foto profilo" class="profileimg" style="max-width:100%;max-height:100%;"/></td>
-            <td class="border-white border-2 text-center align-middle"><?php echo $profilo["datipersonali"]; ?></td>
+        <?php if($templateParams["profilo"]==null) :?>
+            <td class="border-white border-2 text-center align-middle"><img src="./upload/fotoProfiloDefault.jpg" style="max-width:100%;max-height:100%;" alt="Foto profilo" class="profileimg"/></td>
+            <td class="custom-font border-white border-2 text-center align-middle">Informazioni personali non ancora aggiunte</td>
+        <?php else: ?>
+            <?php foreach($templateParams["profilo"] as $profilo): ?>
+                <td class="border-white border-2 text-center align-middle"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="Foto profilo" style="max-width:100%;max-height:100%;" class="profileimg"/></td>
+                <td class="border-white border-2 text-center align-middle"><?php echo $profilo["datipersonali"]; ?></td>
+            <?php endforeach; ?>
+        <?php endif;?>
             <td class="border-white border-2 text-center align-middle"><a class="text-dark fw-bold" href="elenco-utenti-seguiti.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguitiById($idseguito) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
             <td class="border-white border-2 text-center align-middle"><a class="text-dark fw-bold" href="elenco-utenti-seguaci.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguaciById($idseguito) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
         </tr>
-        <?php endforeach; ?>
     </table>
 </div>
 

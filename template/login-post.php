@@ -1,4 +1,4 @@
-<h1 class="px-5 py-4"><?php echo $_SESSION["user"]?></h1>
+<h1 class="py-4"><?php echo $_SESSION["user"]?></h1>
 
 <?php if(isset($templateParams["formmsg"])):?>
     <p><?php echo $templateParams["formmsg"]; ?></p>
