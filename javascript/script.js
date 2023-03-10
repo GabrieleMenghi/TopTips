@@ -101,7 +101,6 @@ postimages.forEach(img => {
 //Check numero di file nella creazione di un post
 const imgpicker = document.querySelector('#imagepicker');
 const submit = document.querySelector('.submitpost');
-const messages = document.querySelector('.postcreationmessages');
 
 if(imgpicker != null){
     imgpicker.addEventListener('change', (e) => {
@@ -109,15 +108,12 @@ if(imgpicker != null){
 
         if (files.length < 2) {
             submit.setAttribute('disabled', 'true');
-            messages.innerHTML="Inserire almeno 2 file";
             return;
         } else if (files.length > 4) {
             submit.setAttribute('disabled', 'true');
-            messages.innerHTML="Inserire massimo 4 file";
             return;
         } else {
             submit.removeAttribute('disabled');
-            messages.innerHTML="";
         }
     });
 }
@@ -125,7 +121,6 @@ if(imgpicker != null){
 //Controllo e impongo che un nuovo utente inserisca un immagine: solo così può salvare il suo profilo
 const input = document.getElementById('imgprofilo');
 const submitImage = document.getElementById('submitImage');
-const check = document.querySelector('.checkInsertImage');
 
 if(input != null){
     input.addEventListener('change', (e) => {
@@ -133,10 +128,8 @@ if(input != null){
         
         if (f.length > 0) {
         submitImage.removeAttribute('disabled');
-        check.innerHTML="Puoi salvare!";
         } else {
         submitImage.setAttribute('disabled', 'true');
-        check.innerHTML="Inserire la foto profilo!";
         }
     });
 }

@@ -19,14 +19,13 @@
             <div class="div-filepicker">
                 <label for="imagepicker">Scegli le immagini per il tuo post (min. 2 - max. 4):</label>
                 <input type="file" id="imagepicker" name="imagepicker[]" accept="image/png, image/jpeg" multiple required>
-                <h2 class="postcreationmessages" style="color: red; font-size: 18px;"></h2>
             </div>
         </li>
         <li class="previews">
 
         </li>
         <li>
-            <input class="submitpost mt-4" type="submit" name="submit" value="Inserisci post"/>
+            <input class="submitpost mt-4" type="submit" name="submit" value="Inserisci post" disabled/>
             <br>
             <br>
         </li>

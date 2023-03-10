@@ -16,12 +16,10 @@
         <li class="py-4 text-center">
             <label for="imgprofilo">Immagine profilo</label>
             <input type="file" name="imgprofilo" id="imgprofilo"/>
-            <p class="checkInsertImage text-center" style="color: red; font-size: 18px;"></p>  
         </li>
         <li class="py-1">
             <input class="submitImage" type="submit" name="submit" id="submitImage" value="Salva profilo" disabled/>
             <input type="button" name="submit" value="Annulla" onclick="location.href='login.php'"></input>
-
         </li>
     </ul>
 
