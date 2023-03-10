@@ -51,7 +51,7 @@ postimages.forEach(img => {
 
 postimages.forEach(img => {
     img.addEventListener('dblclick', () => {
-        if(!img.classList.contains('notvoteable')) {
+        if(!img.classList.contains('notvoteable') && img.getAttribute('profilenumber') != 0) {
             img.classList.add('notvoteable');
             //Disabilitazione tramite database della possibilità di votare un post già votato
             var xhttp = new XMLHttpRequest();

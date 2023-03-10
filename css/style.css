@@ -19,6 +19,10 @@ main > article {
     background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
 
+main > article:first-of-type {
+    margin-top: 100px;
+}
+
 a {
     text-decoration: none;
 }
@@ -131,8 +135,9 @@ main article img:active {
 }
 
 article {
-    border: 3px solid black;
     border-radius: 10px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .37);
+    padding: 1%;
 }
 
 .imgcontainer .btn {
@@ -466,9 +471,9 @@ main article .divpostimages {
     background: rgba(255, 255, 255, .2);
     margin: 1.5% 5%;
     border-radius: 20px;
-    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, .18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+    padding: 1%;
 }
 
 /* MOBILE VERSION */
@@ -496,6 +501,7 @@ main article .divpostimages {
     }
 
     main > article {
+        width: 85%;
         margin-bottom: 10%;
         margin-left: auto;
         margin-right: auto;
@@ -558,7 +564,21 @@ main article .divpostimages {
    
     main article img {
         width: 280px;
-        height: 210px;
+        height: 130px;
+        border: 2px solid black;
+    }
+
+    main article h2 {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    main article p {
+        font-size: 15px;
+    }
+
+    main article h3 {
+        font-size: 20px;
     }
 
     .profileimages {
@@ -619,6 +639,16 @@ main article .divpostimages {
         margin: 0 0 .5% 0;
         text-align: left;
         font-size: 14px;
+    }
+
+    #imagepicker {
+        margin-bottom: 4%;
+    }
+
+    main article .divpostimages {
+        padding: 1%;
+        margin-bottom: 3%;
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .37);
     }
 }
 
