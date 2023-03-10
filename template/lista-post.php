@@ -1,4 +1,5 @@
 <?php $postv = [];
+        $immaginevotata = null;
     foreach($templateParams["postvotati"] as $postvotati):
     array_push($postv, $postvotati["idpost"]);
     endforeach; 
@@ -34,7 +35,7 @@
                 src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php if(isset($post["desc1"])) echo $post["desc1"]; ?>" style="width: 25%" />
                 <!-- Label 1 -->
                 <label for="imgpost<?php echo $post["img1"]; ?>" 
-                <?php if($immaginevotata==$post["img1"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none'";} ?>>
+                <?php if(isset($immaginevotata) && $immaginevotata==$post["img1"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
                 <?php if($totvotes!=0) echo round(intval($post["votes1"])/$totvotes*100, 2) . '%'; ?></label>
             <!-- Immagine 2 -->
             <img id="imgpost<?php echo $post["img2"]; ?>" class="imgpost 
@@ -44,7 +45,7 @@
                 src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php if(isset($post["desc2"])) echo $post["desc2"]; ?>" style="width: 25%"/>
                 <!-- Label 2 -->
                 <label for="imgpost<?php echo $post["img2"]; ?>" 
-                <?php if($immaginevotata==$post["img2"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none'";} ?>>
+                <?php if(isset($immaginevotata) && $immaginevotata==$post["img2"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
                 <?php if($totvotes!=0) echo round(intval($post["votes2"])/$totvotes*100, 2) . '%'; ?></label>
             <!-- Immagine 3 -->
             <img id="imgpost<?php echo $post["img3"]; ?>" class="imgpost 
@@ -54,7 +55,7 @@
                 src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php if(isset($post["desc3"])) echo $post["desc3"]; ?>" style="width: 25%"/>
                 <!-- Label 3 -->
                 <label for="imgpost<?php echo $post["img3"]; ?>" 
-                <?php if($immaginevotata==$post["img3"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none'";} ?>>
+                <?php if(isset($immaginevotata) && $immaginevotata==$post["img3"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
                 <?php if($totvotes!=0) echo round(intval($post["votes3"])/$totvotes*100, 2) . '%'; ?></label>
             <!-- Immagine 4 -->
             <img id="imgpost<?php echo $post["img4"]; ?>" class="imgpost 
@@ -64,7 +65,7 @@
                 src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php if(isset($post["desc4"])) echo $post["desc4"]; ?>" style="width: 25%"/>
                 <!-- Label 4 -->
                 <label for="imgpost<?php echo $post["img4"]; ?>" 
-                <?php if($immaginevotata==$post["img4"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none'";} ?>>
+                <?php if(isset($immaginevotata) && $immaginevotata==$post["img4"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
                 <?php if($totvotes!=0) echo round(intval($post["votes4"])/$totvotes*100, 2) . '%'; ?></label>
         </div>
 
