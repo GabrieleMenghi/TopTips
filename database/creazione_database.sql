@@ -101,6 +101,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `toptips`.`post_profilo_voti` (
   `idpost` INT NOT NULL,
   `idprofilo` INT NOT NULL,
+  `immaginevotata` INT NOT NULL,
   PRIMARY KEY (`idpost`, `idprofilo`)
 )
 ENGINE = InnoDB;

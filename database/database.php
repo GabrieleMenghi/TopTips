@@ -238,7 +238,7 @@ class databaseHelper {
     }
 
     public function profileVotesPost($idprofile){
-        $query = "SELECT idpost FROM post_profilo_voti WHERE idprofilo=?";
+        $query = "SELECT * FROM post_profilo_voti WHERE idprofilo=?";
 
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$idprofile);

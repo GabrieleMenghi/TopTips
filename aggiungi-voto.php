@@ -13,9 +13,9 @@ if ($conn->connect_error) {
 } 
 
 $sql = "INSERT INTO post_profilo_voti 
-        VALUES (?, ?)";
+        VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('ii',$_POST["post"], $_POST["profilo"]);
+$stmt->bind_param('iii',$_POST["post"], $_POST["profilo"], $_POST["immaginevotata"]);
 $stmt->execute();
 
 $conn->close();
