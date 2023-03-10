@@ -8,9 +8,9 @@
     <p>Crea e modifica il tuo profilo a tuo piacimento!</p>
     <ul>
         <li class="d-flex justify-content-center">
-            <div class="div-input-description">
-                <textarea id="datipersonali" name="datipersonali" class="input-description" placeholder="Inserire dati personali" required></textarea>
-                <label for="datipersonali" class="description-label">Dati personali</label>
+            <div class="div-input-modifica">
+                <textarea id="datipersonali" name="datipersonali" class="input-modifica" placeholder="Inserire dati personali" required></textarea>
+                <label for="datipersonali" class="modifica-label">Dati personali</label>
             </div>
         </li>
         <li class="py-4 text-center">
@@ -20,6 +20,7 @@
         <li class="py-1">
             <input class="submitImage" type="submit" name="submit" id="submitImage" value="Salva profilo" disabled/>
             <input type="button" name="submit" value="Annulla" onclick="location.href='login.php'"></input>
+
         </li>
     </ul>
 
@@ -28,9 +29,9 @@
     <?php else: ?>
         <ul>
             <li class="d-flex justify-content-center">
-                <div class="div-input-description">
-                    <textarea id="datipersonali" name="datipersonali" class="input-description"><?php echo $profilo["datipersonali"]; ?></textarea>
-                    <label for="datipersonali" class="description-label">Dati personali</label>
+                <div class="div-input-modifica">
+                    <textarea id="datipersonali" name="datipersonali" class="input-modifica"><?php echo $profilo["datipersonali"]; ?></textarea>
+                    <label for="datipersonali" class="modifica-label">Dati personali</label>
                 </div>
             </li>
             <li class="py-4 text-center">

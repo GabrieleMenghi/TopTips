@@ -72,11 +72,13 @@ input[type="button"]:active {
 }
 
 input[disabled] {
-    background-color: rgba(204, 204, 204, 0.5);
+    background-color: #ccc;
+    opacity: 0.5;
 }
 
 input[disabled]:active {
-    background-color: rgba(204, 204, 204, 0.5);
+    background-color: #666;
+    opacity: 0.5;
 }
 
 .login label {
@@ -388,6 +390,77 @@ article {
     font-size: 14px;
 }
 /*Fine personalizzazione descrizione*/
+
+/*Inizio personalizzazione modifica profilo*/
+.div-input-modifica {
+    width: 30%;
+    position: relative;
+    height: 10%;
+    margin: auto 0;
+}
+
+.modifica-label {
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all .2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #000;
+}
+
+.input-modifica {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    color: black;
+    min-height: 40px;
+}
+
+.modifica-label::before {
+    content: "";
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.input-modifica:focus {
+    border: 2px solid #970DFA;
+}
+
+.input-modifica:focus+.modifica-label {
+    top: -10px;
+    color: #970DFA;
+    font-size: 14px;
+}
+
+.input-modifica::placeholder {
+    font-size: 16px;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.input-modifica:focus::placeholder {
+    opacity: 1;
+    animation-delay: .2s;
+}
+
+.input-modifica:focus+.modifica-label,
+.input-modifica:valid+.modifica-label {
+    top: -10px;
+    color: #970DFA;
+    font-size: 14px;
+}
+/*Fine personalizzazione modifica profilo*/
 
 main article .divpostimages {
     background: rgba(255, 255, 255, .2);
