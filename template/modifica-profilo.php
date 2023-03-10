@@ -7,11 +7,13 @@
     <?php if($profilo==null): ?>
     <p>Crea e modifica il tuo profilo a tuo piacimento!</p>
     <ul>
-        <li class="text-start">
-            <label for="datipersonali">Dati personali:</label>
-            <textarea id="datipersonali" name="datipersonali"></textarea>
+        <li class="d-flex justify-content-center">
+            <div class="div-input-description">
+                <textarea id="datipersonali" name="datipersonali" class="input-description" placeholder="Inserire dati personali" required></textarea>
+                <label for="datipersonali" class="description-label">Dati personali</label>
+            </div>
         </li>
-        <li class="py-4 text-start">
+        <li class="py-4 text-center">
             <label for="imgprofilo">Immagine profilo</label>
             <input type="file" name="imgprofilo" id="imgprofilo"/>
             <p class="checkInsertImage text-center" style="color: red; font-size: 18px;"></p>  
@@ -26,10 +28,12 @@
     <input type="hidden" name="action" value="<?php echo $templateParams["azione"]; ?>" />
 
     <?php else: ?>
-        <ul class="pb-5">
-            <li class="text-center">
-                <label for="datipersonali">Dati personali:</label>
-                <textarea class="align-middle" id="datipersonali" name="datipersonali"><?php echo $profilo["datipersonali"]; ?></textarea>
+        <ul>
+            <li class="d-flex justify-content-center">
+                <div class="div-input-description">
+                    <textarea id="datipersonali" name="datipersonali" class="input-description"><?php echo $profilo["datipersonali"]; ?></textarea>
+                    <label for="datipersonali" class="description-label">Dati personali</label>
+                </div>
             </li>
             <li class="py-4 text-center">
                 <label for="imgprofilo">Immagine profilo:</label>
