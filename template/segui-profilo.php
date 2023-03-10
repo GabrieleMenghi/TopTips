@@ -43,7 +43,7 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
             xhttpnot.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttpnot.send(parametersnot);
         }
-        window.location.reload();
+        document.location.reload(true);
     });
 
 </script>

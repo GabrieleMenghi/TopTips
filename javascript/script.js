@@ -90,7 +90,7 @@ postimages.forEach(img => {
                                 }
                             })
                         }
-                        window.location.reload();
+                        document.location.reload(true);
                     })
                 }
             });
