@@ -76,13 +76,11 @@ input[type="button"]:active {
 }
 
 input[disabled] {
-    background-color: #ccc;
-    opacity: 0.5;
+    background-color: rgba(204, 204, 204, 0.5);
 }
 
 input[disabled]:active {
-    background-color: #666;
-    opacity: 0.5;
+    background-color: rgba(204, 204, 204, 0.5);
 }
 
 .login label {
