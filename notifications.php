@@ -9,6 +9,7 @@ if(isUserLoggedIn()){
     $templateParams["notifiche"]= $dbh->getNotificationsById($_SESSION["idutente"]);
 } else {
     $templateParams["nome"] = "template/richiesta-login.php";
+    $templateParams["page"] = "notifications.php";
 }
 require("template/base.php");
 ?>

@@ -11,6 +11,8 @@ if(isUserLoggedIn()){
     }
 } else {
     $templateParams["nome"] = "template/richiesta-login.php";
+    $templateParams["page"] = "creazione-post.php";
+
 }
 require("template/base.php");
 ?>

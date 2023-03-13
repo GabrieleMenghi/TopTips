@@ -8,7 +8,11 @@ if(isset($_POST["submit"])){
 
 if(isUserLoggedIn()){
     $templateParams["titolo"] = "TopTips - Profilo admin";
-    $templateParams["nome"] = "template/login-post.php";
+    if(isset($_GET["page"])){
+        header("location: " . $_GET["page"]);
+    } else {
+        $templateParams["nome"] = "template/login-post.php";
+    }
     $templateParams["profilo"] = $dbh->getProfileByUserId($_SESSION["idutente"]);
     $templateParams["post"] = $dbh->getPostByUserId($_SESSION["idutente"]);
     $_SESSION["isUserLoggedIn"] = true;
