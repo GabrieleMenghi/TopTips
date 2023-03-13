@@ -23,7 +23,7 @@
 
     <div class="py-1">
         <div class="div-input-post">
-            <input id="email" type="email" name="email" value="<?php echo @$_POST['email']; ?>" class="input-post" placeholder="Inserisci la tua mail" required/>
+            <input id="email" type="text" name="email" value="<?php echo @$_POST['email']; ?>" class="input-post" placeholder="Inserisci la tua mail" required/>
             <label for="email" class="post-label">Email*</label>
         </div>
         <div class="div-input-post">

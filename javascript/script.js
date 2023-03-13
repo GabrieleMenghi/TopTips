@@ -57,7 +57,7 @@ postimages.forEach(img => {
             var xhttp = new XMLHttpRequest();
             let parameters = "post=" + img.getAttribute('postnumber') + "&profilo=" + img.getAttribute('profilenumber') + "&immaginevotata=" + (img.getAttribute('id')).substring(7);
             
-            xhttp.open("POST", "aggiungi-voto.php", true);
+            xhttp.open("POST", "utils/aggiungi-voto.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send(parameters);
             
@@ -65,7 +65,7 @@ postimages.forEach(img => {
             var xhttpinc = new XMLHttpRequest();
             let parametersinc = "immagine=" + img.id.substring(7)+ "&post=" + img.getAttribute('postnumber');
             
-            xhttpinc.open("POST", "incremento-voti.php", true);
+            xhttpinc.open("POST", "utils/incremento-voti.php", true);
             xhttpinc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttpinc.send(parametersinc);
 
@@ -73,7 +73,7 @@ postimages.forEach(img => {
             var xhttpnot = new XMLHttpRequest();
             let parametersnot = "tiponotifica=votazione&utentenotificante=" + img.getAttribute('profilenumber') + "&utentenotificato=" + img.getAttribute('owner') + "&idpost=" + img.getAttribute('postnumber');
             
-            xhttpnot.open("POST", "inserisci-notifica.php", true);
+            xhttpnot.open("POST", "utils/inserisci-notifica.php", true);
             xhttpnot.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttpnot.send(parametersnot);
 

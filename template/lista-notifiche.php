@@ -26,7 +26,7 @@
         checks.forEach(c => {
             if(c.checked == true){
                 var xhttp = new XMLHttpRequest();
-                var url = "refresh-notify.php";
+                var url = "utils/refresh-notify.php";
                 c.setAttribute('checked', 'true');
                 c.setAttribute('disabled', 'true');
                 
@@ -44,7 +44,7 @@
     function deleteNotify(notifyid){
         var xhttp = new XMLHttpRequest();
         let parameters = "idnotifica=" + notifyid;
-        xhttp.open("POST", "elimina-notifica.php", true);
+        xhttp.open("POST", "utils/elimina-notifica.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send(parameters);
         document.location.reload(true);

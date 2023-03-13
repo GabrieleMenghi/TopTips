@@ -216,7 +216,7 @@
                     });
                 }
             };
-            xhttp.open("POST", "notification-number.php", true);
+            xhttp.open("POST", "utils/notification-number.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send(user);
 

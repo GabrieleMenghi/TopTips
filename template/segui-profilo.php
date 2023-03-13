@@ -39,7 +39,7 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
             var xhttpnot = new XMLHttpRequest();
             let parametersnot = "tiponotifica=follow&utentenotificante=" + seguitore.value + "&utentenotificato=" + seguito.value;
             
-            xhttpnot.open("POST", "inserisci-notifica.php", true);
+            xhttpnot.open("POST", "utils/inserisci-notifica.php", true);
             xhttpnot.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttpnot.send(parametersnot);
         }
