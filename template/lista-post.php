@@ -2,11 +2,13 @@
         $immaginevotata = null;
     foreach($templateParams["postvotati"] as $postvotati):
     array_push($postv, $postvotati["idpost"]);
-    endforeach; 
+    endforeach;
+    $i=0;
     foreach ($templateParams["posts"] as $post):
         $totvotes = intval($post["votes1"]) + intval($post["votes2"]) + intval($post["votes3"]) + intval($post["votes4"]);
     ?>
     <article>
+        <?php $i++;?> 
         <header>
             <div class="headerpost">
                 <img src="<?php echo UPLOAD_DIR.$post["imgprofilo"]; ?>" alt="Immagine profilo"/>
@@ -82,8 +84,8 @@
             <form action="aggiunta-commento.php" method="POST" enctype="multipart/form-data">
                 <div class="d-flex justify-content-center mb-4">
                 <div class="input-comment me-3">
-                    <input id="comment" type="text" autocomplete="off" name="commenttext" placeholder="Aggiungi un commento" required/>
-                    <label for="comment" class="commentlabel">Commento</label>
+                    <input id="comment<?php echo $i; ?>" type="text" autocomplete="off" name="commenttext" placeholder="Aggiungi un commento" required/>
+                    <label for="comment<?php echo $i; ?>" class="commentlabel">Commento</label>
                 </div>
                 <input type="hidden" name="idpost" value="<?php echo $post["idpost"]; ?>"/>
                 <input type="hidden" name="author" value="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"]; else echo 0; ?>" class="autorecommento"/>
