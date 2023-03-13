@@ -30,7 +30,7 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
         var xhttp = new XMLHttpRequest();
         let parameters = "seguitore=" + seguitore.value + "&seguito=" + seguito.value;
         
-        xhttp.open("POST", "following.php", true);
+        xhttp.open("POST", "utils/following.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send(parameters);
         
