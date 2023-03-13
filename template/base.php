@@ -63,16 +63,16 @@
                         <div class="solomobile col-2"></div>
                     <?php endif; ?>
                     <!-- Ricerca (desktop) -->
-                    <div class="solodesktop col-3">
+                    <div class="solodesktop ricerca col-3">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
-                            <input class="form-control me-1" type="text" name="keyword" placeholder="Ricerca utente">
+                            <input class="formricerca me-1" type="text" name="keyword" placeholder="Ricerca utente">
                             <button class="btn btn-dark" type="submit"><i class="bx bx-search"></i></button>
                         </form>
                     </div>
                     <!-- Ricerca (mobile) -->
-                    <div class="solomobile col-4">
+                    <div class="solomobile ricerca col-4">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
-                            <input class="form-control me-1" type="text" name="keyword" placeholder="Ricerca utente">
+                            <input class="formricerca me-1" type="text" name="keyword" placeholder="Ricerca utente">
                             <button class="btn btn-dark" type="submit"><i class="bx bx-search"></i></button>
                         </form>
                     </div>

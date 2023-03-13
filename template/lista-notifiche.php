@@ -1,5 +1,5 @@
 <div class="conteiner-fluid m-0 p-0 overflow-hidden container-notify">
-    <div class="col-12">
+    <div class="col-12 py-3">
         <div class="d-flex">
             <p class="col-8 fs-5 m-auto">Testo della notifica</p>
             <p class="col-2 fs-5 m-auto">Letta</p>

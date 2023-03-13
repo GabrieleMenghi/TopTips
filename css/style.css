@@ -111,6 +111,26 @@ textarea {
     width: 40%;
 }
 
+.formricerca {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+    
+.formricerca:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #970DFA; 
+}
+
+.ricerca button:hover {
+    background-color: #970DFA;
+}
+
 .success {
     color: green;
 }
@@ -656,8 +676,7 @@ main article .divpostimages {
     .sidebar {
         width: 120px;
         height: 100%;
-        backdrop-filter: blur(40px);
-        background: rgba(10, 10, 10, .65);
+        background: rgba(10, 10, 10, 0.65);
         box-shadow: 0 8px 32px rgb(2, 4, 24);
         border-right: 2px solid rgba(255, 255, 255, .09);
         transition: .4s ease-in-out;
@@ -666,6 +685,7 @@ main article .divpostimages {
 
     .sidebar.open {
         width: 360px;
+        background: rgba(10, 10, 10, 0.75);
     }
 
     .sidebar .nav-title {

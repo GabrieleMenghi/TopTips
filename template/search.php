@@ -6,13 +6,13 @@ if(count($templateParams["utentiTrovati"])==0){ ?>
 }
 else{
     foreach($templateParams["utentiTrovati"] as $ricerca): ?>
-    <h2> 
+    <h3>
         <?php if($ricerca["username"]==$_SESSION["user"]):
         ?>
         <?php else: ?>
             <p class="py-2"><a href="profilo-cercato.php?username=<?php echo $ricerca["username"];?>"><?php echo $ricerca["username"];?></a></p>
         <?php endif; ?>
-    </h2>
+    </h3>
 <?php endforeach;
 }
 
