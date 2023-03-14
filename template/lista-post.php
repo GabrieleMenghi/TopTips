@@ -81,18 +81,33 @@
                 <?php endif ?>
             <?php endforeach ?>
             <!--Aggiunta di un commento-->
-            <form action="aggiunta-commento.php" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data" target="_blank">
                 <div class="d-flex justify-content-center mb-4">
                 <div class="input-comment me-3">
                     <input id="comment<?php echo $i; ?>" type="text" autocomplete="off" name="commenttext" placeholder="Aggiungi un commento" required/>
                     <label for="comment<?php echo $i; ?>" class="commentlabel">Commento</label>
                 </div>
-                <input type="hidden" name="idpost" value="<?php echo $post["idpost"]; ?>"/>
-                <input type="hidden" name="author" value="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"]; else echo 0; ?>" class="autorecommento"/>
-                <input type="submit" name="submit" value="Aggiungi commento"/>
+                <input class="commentidpost<?php echo $i; ?>" type="hidden" name="idpost" value="<?php echo $post["idpost"]; ?>"/>
+                <input class="commentauthor<?php echo $i; ?>" type="hidden" name="author" value="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"]; else echo 0; ?>" class="autorecommento"/>
+                <input type="submit" name="submit" value="Aggiungi commento" onclick="addComment(<?php echo $i; ?>)"/>
             </div>
             <p><?php if(!isset($_SESSION["idutente"])) echo "Per commentare è necessario effettuare login"; ?></p>
             </form>
         </footer>
     </article>
 <?php endforeach; ?>
+
+<script>
+    function addComment(index) {
+        const commentinput = document.querySelector('#comment' + index);
+        const commentidpost = document.querySelector('.commentidpost' + index);
+        const commentauthor = document.querySelector('.commentauthor' + index);
+
+        var xhttp = new XMLHttpRequest();
+        let parameters = "idpost=" + commentidpost.value + "&author=" + commentauthor.value + "&commenttext=" + commentinput.value;
+        xhttp.open("POST", "utils/aggiungi-commento.php", true);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send(parameters);
+        document.location.reload(true);
+    }
+</script>

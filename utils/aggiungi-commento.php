@@ -1,5 +1,5 @@
 <?php
-require_once("bootstrap.php");
+require_once("../bootstrap.php");
 $post = $_POST["idpost"];
 $autore = $_POST["author"];;
 $testo = $_POST["commenttext"];
@@ -16,5 +16,4 @@ if($autore != 0){
         $dbh->insertNotify($testonotifica, $autore, $postinfo["utente"]);
     }
 }
-header("location: home.php");
 ?>
