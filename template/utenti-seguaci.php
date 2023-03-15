@@ -6,7 +6,8 @@
         <?php else: ?>
             <ul class="list-group list-group-flush">
                 <?php foreach($templateParams["seguaci"] as $seguaci): ?>
-                    <li class="py-4 ricercautente"> 
+                    <li class="py-4 ricercautente">
+                        <img src="<?php echo UPLOAD_DIR.$seguaci['imgprofilo']; ?>" alt="Immagine profilo"/>
                         <a class="text-dark text-decoration-underline" href="profilo-cercato.php?username=<?php echo $seguaci["username"];?>"><?php echo $seguaci["username"];?></a>
                     </li>
                 <?php endforeach; ?>
