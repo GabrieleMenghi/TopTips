@@ -8,6 +8,10 @@ body {
     background-color: rgba(30, 30, 250, .2);
 }
 
+.titlename {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 main {
     text-align: center;
     box-sizing: border-box;

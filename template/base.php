@@ -54,7 +54,7 @@
                     </div>
                     <!-- TopTips (desktop) -->
                     <div class="solodesktop col-3">
-                        <h1 class="text-white text-start">TopTips</h1>
+                        <h1 class="text-white text-start titlename">TopTips</h1>
                     </div>
                     <!-- Spazio conteggio colonne mobile: varia se sono loggato o meno -->
                     <?php if ($isUserLoggedIn): ?>
