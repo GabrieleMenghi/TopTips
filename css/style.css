@@ -678,6 +678,15 @@ main article .divpostimages {
         margin-bottom: 3%;
         box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .37);
     }
+
+    .ricercautente img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, .4);
+        margin-right: 3%;
+    }
 }
 
 /* DESKTOP VERSION */
@@ -891,6 +900,15 @@ main article .divpostimages {
     
     .headerpost p {
         margin: 1% 0;
+    }
+
+    .ricercautente img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, .4);
+        margin-right: 5%;
     }
 }
 
