@@ -1,19 +1,20 @@
-<?php
-
-if(count($templateParams["utentiTrovati"])==0){ ?>
-    <h2 class="pt-4">Nessun risultato trovato</h2>
-<?php
-}
-else{
-    foreach($templateParams["utentiTrovati"] as $ricerca): ?>
-    <h3>
-        <?php if($ricerca["username"]==$_SESSION["user"]):
-        ?>
+<div class="container">
+    <h2 class="card-header">Risultati ricerca</h2>
+    <div class="card-body">
+        <?php if(count($templateParams["utentiTrovati"])==0): ?>
+            <h3 class="card-title">Nessun risultato trovato!</h3>
         <?php else: ?>
-            <p class="py-2"><a href="profilo-cercato.php?username=<?php echo $ricerca["username"];?>"><?php echo $ricerca["username"];?></a></p>
+            <ul class="list-group list-group-flush">
+                <?php foreach($templateParams["utentiTrovati"] as $ricerca): ?>
+                    <?php if($ricerca["username"]==$_SESSION["user"]): ?>
+                        <!-- non mi devo autocercare --> 
+                    <?php else: ?>
+                        <li class="py-4 ricercautente">
+                            <a class="text-dark text-decoration-underline" href="profilo-cercato.php?username=<?php echo $ricerca["username"];?>"><?php echo $ricerca["username"];?></a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
         <?php endif; ?>
-    </h3>
-<?php endforeach;
-}
-
-?>
+    </div>
+</div>

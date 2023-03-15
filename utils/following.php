@@ -1,7 +1,5 @@
 <?php
-
-require_once("bootstrap.php");
-
+require_once("../bootstrap.php");
 $servername = "localhost";
 $username = "root";
 $password = "";

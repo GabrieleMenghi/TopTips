@@ -1,16 +1,16 @@
-<h2>Lista utenti seguaci:</h2>
-<?php
-
-if(count($templateParams["seguaci"])==0){ ?>
-    <h2 class="pt-4">Qualcuno deve iniziare a seguirti!</h2>
-<?php
-}
-else{
-    foreach($templateParams["seguaci"] as $seguaci): ?>
-    <h3> 
-        <p class="py-2"><a href="profilo-cercato.php?username=<?php echo $seguaci["username"];?>"><?php echo $seguaci["username"];?></a></p>
-    </h3>
-<?php endforeach;
-}
-
-?>
+<div class="container">
+    <h2 class="card-header">Lista utenti seguaci</h2>
+    <div class="card-body">
+        <?php if(count($templateParams["seguaci"])==0): ?>
+            <h3 class="card-title">Qualcuno deve iniziare a seguirti!</h3>
+        <?php else: ?>
+            <ul class="list-group list-group-flush">
+                <?php foreach($templateParams["seguaci"] as $seguaci): ?>
+                    <li class="py-4 ricercautente"> 
+                        <a class="text-dark text-decoration-underline" href="profilo-cercato.php?username=<?php echo $seguaci["username"];?>"><?php echo $seguaci["username"];?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+    </div>
+</div>
