@@ -108,7 +108,8 @@ class databaseHelper {
 
     public function searchUser($keyword){
         $query = "SELECT username, imgprofilo FROM utente LEFT JOIN profilo ON utente.idutente = profilo.utente 
-        WHERE username LIKE ? ";
+        WHERE username LIKE ? 
+        ORDER BY username";
         $stmt = $this->db->prepare($query);
         $keyword = $keyword."%";
         $stmt->bind_param('s',$keyword);
