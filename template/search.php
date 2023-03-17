@@ -10,7 +10,8 @@
                         <!-- non mi devo autocercare --> 
                     <?php else: ?>
                         <li class="py-4 ricercautente">
-                            <img src="<?php echo UPLOAD_DIR.$ricerca['imgprofilo']; ?>" alt="Immagine profilo"/>
+                            <img src="<?php if(!isset($ricerca['imgprofilo'])) echo UPLOAD_DIR."fotoProfiloDefault.jpg";
+                            else echo UPLOAD_DIR.$ricerca['imgprofilo']; ?>" alt="Immagine profilo"/>
                             <a class="text-dark text-decoration-underline" href="profilo-cercato.php?username=<?php echo $ricerca["username"];?>"><?php echo $ricerca["username"];?></a>
                         </li>
                     <?php endif; ?>
