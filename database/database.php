@@ -170,7 +170,9 @@ class databaseHelper {
     }
 
     public function getListOfSeguitiById($idprofilopersonale) {
-        $query = "SELECT username, imgprofilo FROM utente, followers, profilo WHERE seguito = idutente AND utente.idutente = profilo.utente AND seguitore = ? ";
+        $query = "SELECT username, imgprofilo FROM utente JOIN followers ON seguito = idutente LEFT JOIN profilo ON utente.idutente = profilo.utente 
+        WHERE seguitore = ?
+        ORDER BY username";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$idprofilopersonale);
         $stmt->execute();
