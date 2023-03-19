@@ -24,7 +24,7 @@ main > article {
 }
 
 main > article:first-of-type {
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 a {
@@ -500,8 +500,22 @@ main article .divpostimages {
 
 .ricercautente {
     padding: 0.5rem 1rem;
-    margin-bottom: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.esitoricerca {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.linkutente {
+    font-size: 18px;
+    font-style: italic;
+    color: black;
+}
+
+.linkutente:hover {
+    color: #878787;
 }
 
 /* MOBILE VERSION */
@@ -686,6 +700,10 @@ main article .divpostimages {
         border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, .4);
         margin-right: 3%;
+    }
+
+    .ricercacontainer {
+        width: 70%;
     }
 }
 
@@ -909,6 +927,10 @@ main article .divpostimages {
         border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, .4);
         margin-right: 5%;
+    }
+
+    .ricercacontainer {
+        width: 45%;
     }
 }
 

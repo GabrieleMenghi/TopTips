@@ -1,18 +1,22 @@
-<div class="container">
-    <h2 class="card-header">Lista utenti seguiti</h2>
-    <div class="card-body">
+<div class="container-fluid">
+    <h2>Lista utenti seguiti</h2>
+    <div>
         <?php if(count($templateParams["seguiti"])==0): ?>
-            <h3 class="card-title">Inizia a seguire qualche utente!</h3>
+            <p class="esitoricerca mt-5 py-2">Nessun utente seguito!</p>
         <?php else: ?>
-            <ul class="list-group list-group-flush">
-                <?php foreach($templateParams["seguiti"] as $seguiti): ?>
-                    <li class="py-4 ricercautente">
-                        <img src="<?php if(!isset($seguiti['imgprofilo'])) echo UPLOAD_DIR."fotoProfiloDefault.jpg";
-                        else echo UPLOAD_DIR.$seguiti['imgprofilo']; ?>" alt="Immagine profilo"/>
-                        <a class="text-dark text-decoration-underline" href="profilo-cercato.php?username=<?php echo $seguiti["username"];?>"><?php echo $seguiti["username"];?></a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
+            <div class="d-flex justify-content-center">
+                <ul class="ricercacontainer">
+                    <?php foreach($templateParams["seguiti"] as $seguiti): ?>
+                        <div class="text-start">
+                            <li class="py-4 ricercautente">
+                                <img src="<?php if(!isset($seguiti['imgprofilo'])) echo UPLOAD_DIR."fotoProfiloDefault.jpg";
+                                else echo UPLOAD_DIR.$seguiti['imgprofilo']; ?>" alt="Immagine profilo"/>
+                                <a class="linkutente" href="profilo-cercato.php?username=<?php echo $seguiti["username"];?>"><?php echo $seguiti["username"];?></a>
+                            </li>
+                        </div>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         <?php endif; ?>
     </div>
 </div>
