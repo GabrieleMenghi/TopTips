@@ -1,17 +1,17 @@
 <div class="conteiner-fluid m-0 p-0 overflow-hidden container-notify">
     <div class="col-12 pb-4">
         <div class="d-flex">
-            <p class="col-8 fs-5 m-auto">Testo della notifica</p>
-            <p class="col-2 fs-5 m-auto">Letta</p>
-            <p class="col-2 fs-5 m-auto">Elimina</p>
+            <h2 class="col-8 m-auto">Testo della notifica</h2>
+            <h2 class="col-2 m-auto">Letta</h2>
+            <h2 class="col-2 m-auto">Elimina</h2>
         </div>
     </div>
 </div>
 <?php foreach($templateParams["notifiche"] as $notifica): ?>
-    <div class="col-12 my-3">
+    <div class="col-12 my-1 py-2 divnotifica">
         <div class="d-flex justify-content-center align-items-center">
-            <p class="col-8 m-auto"><?php echo $notifica["testo"]; ?></p>
-            <input class="check col-2 check-notify" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" value="Read" <?php if ($notifica["letta"] == '1') echo "checked='true'"; ?>/>
+            <p class="col-8 m-auto" id="notifytext<?php echo $notifica['idnotifica']; ?>" <?php if ($notifica["letta"] == '1') echo "style='font-weight: normal;'"; else echo "style='font-weight: bold;'"; ?> ><?php echo $notifica["testo"]; ?></p>
+            <input class="check col-2 check-notify" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" <?php if ($notifica["letta"] == '1') echo "checked"; ?> onchange="readNotify(<?php echo $notifica['idnotifica'];?>)"/>
             <div class="col-2">    
                 <i class="bx bx-trash" idnotify="<?php echo $notifica["idnotifica"];?>" onclick="deleteNotify(<?php echo $notifica['idnotifica'];?>)"></i>
             </div>
@@ -20,26 +20,34 @@
 <?php endforeach; ?>
 
 <script type="text/javascript">
-    function loadDoc() {
-        setInterval(function(){
-        const checks = document.querySelectorAll('.check');
-        checks.forEach(c => {
-            if(c.checked == true){
-                var xhttp = new XMLHttpRequest();
-                var url = "utils/refresh-notify.php";
-                c.setAttribute('checked', 'true');
-                c.setAttribute('disabled', 'true');
-                
-                let value = c.getAttribute('id').substring(11, c.getAttribute('id').length);
-                let parameters = "notifica=" + value;
-                xhttp.open("POST", url);
-                xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhttp.send(parameters);
-            }
-        });
-        },1000);
+    function readNotify(idnotify) {
+        const notifytext = document.querySelector('#notifytext' + idnotify);
+        const checker = document.querySelector('#read_notify' + idnotify);
+        
+        if(checker.getAttribute('checked') == '') {
+            checker.removeAttribute('checked');
+        } else {
+            checker.setAttribute('checked', '');
+        }
+
+        if(checker.getAttribute('checked') == '') {
+            notifytext.setAttribute('style', 'font-weight: normal;');
+        } else {
+            notifytext.setAttribute('style', 'font-weight: bold;');
+        }
+
+        var xhttp = new XMLHttpRequest();
+        var url = "utils/refresh-notify.php";
+        let parameters = "notifica=" + idnotify;
+        if(checker.getAttribute('checked') == ''){
+            parameters += "&valore=1";
+        } else {
+            parameters += "&valore=0";
+        }
+        xhttp.open("POST", url);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send(parameters);
     }
-    loadDoc();
 
     function deleteNotify(notifyid){
         var xhttp = new XMLHttpRequest();

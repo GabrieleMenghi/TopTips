@@ -13,10 +13,10 @@ if ($conn->connect_error) {
 } 
 
 $sql = "UPDATE notifica
-        SET letta = 1
+        SET letta = ?
         WHERE idnotifica=?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('i',$_POST["notifica"]);
+$stmt->bind_param('ii', $_POST["valore"], $_POST["notifica"]);
 $stmt->execute();
 
 $conn->close();

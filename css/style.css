@@ -518,6 +518,20 @@ main article .divpostimages {
     color: #878787;
 }
 
+.divnotifica {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.divnotifica p {
+    font-size: 18px;
+    font-style: italic;
+}
+
+.container-notify h2{
+    font-size: 22px;
+    font-weight: bold;
+}
+
 /* MOBILE VERSION */
 @media only screen and (max-width: 768px) {
 
@@ -704,6 +718,14 @@ main article .divpostimages {
 
     .ricercacontainer {
         width: 70%;
+    }
+
+    .divnotifica p {
+        font-size: 15px;
+    }
+
+    .container-notify h2{
+        font-size: 18px;
     }
 }
 
