@@ -284,6 +284,14 @@ input[id^="comment"]:valid+.commentlabel{
 /*Fine personalizzazione commento*/
 
 /*Inizio personalizzazione nuovo post*/
+.div-input-post {
+    width: 40%;
+    position: relative;
+    height: 10%;
+    margin: auto 0;
+    margin: 1% auto;
+}
+
 .post-label {
     position: absolute;
     left: 10px;
@@ -303,8 +311,8 @@ input[id^="comment"]:valid+.commentlabel{
     border-radius: 5px;
     font-size: 18px;
     outline: none;
-    transition: all .3s;
     color: #000;
+    min-height: 40px;
 }
 
 .post-label::before {
@@ -420,7 +428,7 @@ input[id^="comment"]:valid+.commentlabel{
 
 /*Inizio personalizzazione modifica profilo*/
 .div-input-modifica {
-    width: 30%;
+    width: 50%;
     position: relative;
     height: 10%;
     margin: auto 0;
@@ -727,6 +735,13 @@ main article .divpostimages {
     .container-notify h2{
         font-size: 18px;
     }
+
+    .div-input-modifica {
+        width: 75%;
+        position: relative;
+        height: 10%;
+        margin: auto 0;
+    }
 }
 
 /* DESKTOP VERSION */
@@ -910,12 +925,12 @@ main article .divpostimages {
         margin: 0 1.5%;
     }
 
-    .div-input-post {
+    /*.div-input-post {
         width: 30%;
         height: 50px;
         position: relative;
         margin: 1.5% auto;
-    }
+    }*/
 
     main article header {
         width: 100%;

@@ -1,24 +1,24 @@
 <div class="container-fluid">
     <form action="utils/ricezione-post.php" method="POST" enctype="multipart/form-data">
-        <h1>Inserisci un nuovo post</h1>
+        <h2>Inserisci un nuovo post</h2>
         <p class="success"><?php if(isset($templateParams["formmsg"])) echo $templateParams["formmsg"]; ?></p>
         <ul>
-            <li>
+            <li class="d-flex justify-content-center">
                 <div class="div-input-post mt-5">
                     <input type="hidden" name="user" value="<?php echo $_SESSION["idutente"]; ?>"/>
                     <input type="text" id="titolo" name="titolo" class="input-post" placeholder="Inserisci il titolo del consiglio" autocomplete="off" required/>
                     <label for="titolo" class="post-label">Titolo post</label>
                 </div>
             </li>
-            <li>
+            <li class="d-flex justify-content-center">
                 <div class="div-input-post">
-                    <input type="text" id="testopost" name="testopost" class="input-post" placeholder="Inserisci il testo del consiglio" autocomplete="off" required/>
+                    <textarea id="testopost" name="testopost" class="input-post" placeholder="Inserisci il testo del consiglio" autocomplete="off" required></textarea>
                     <label for="testopost" class="post-label">Testo post</label>
                 </div>
             </li>
             <li>
                 <div class="div-filepicker">
-                    <label for="imagepicker">Scegli le immagini per il tuo post (min. 2 - max. 4):</label>
+                    <label class="mb-3" for="imagepicker">Scegli le immagini per il tuo post (min. 2 - max. 4):</label>
                     <input type="file" id="imagepicker" name="imagepicker[]" accept="image/png, image/jpeg" multiple required>
                 </div>
             </li>
