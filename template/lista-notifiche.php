@@ -1,5 +1,5 @@
 <div class="conteiner-fluid m-0 p-0 overflow-hidden container-notify">
-    <div class="col-12 py-3">
+    <div class="col-12 pb-4">
         <div class="d-flex">
             <p class="col-8 fs-5 m-auto">Testo della notifica</p>
             <p class="col-2 fs-5 m-auto">Letta</p>
@@ -8,7 +8,7 @@
     </div>
 </div>
 <?php foreach($templateParams["notifiche"] as $notifica): ?>
-    <div class="col-12 my-1">
+    <div class="col-12 my-3">
         <div class="d-flex justify-content-center align-items-center">
             <p class="col-8 m-auto"><?php echo $notifica["testo"]; ?></p>
             <input class="check col-2 check-notify" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" value="Read" <?php if ($notifica["letta"] == '1') echo "checked='true'"; ?>/>

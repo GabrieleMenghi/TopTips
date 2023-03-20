@@ -62,22 +62,15 @@
                     <?php else: ?>
                         <div class="solomobile col-2"></div>
                     <?php endif; ?>
-                    <!-- Ricerca (desktop) -->
-                    <div class="solodesktop ricerca col-3">
-                        <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
-                            <input class="formricerca me-1" type="text" name="keyword" placeholder="Ricerca utente">
-                            <button class="btn btn-dark" type="submit"><i class="bx bx-search"></i></button>
-                        </form>
-                    </div>
-                    <!-- Ricerca (mobile) -->
-                    <div class="solomobile ricerca col-4">
+                    <!-- Ricerca (desktop e mobile) -->
+                    <div class="ricerca col-4">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
                             <input class="formricerca me-1" type="text" name="keyword" placeholder="Ricerca utente">
                             <button class="btn btn-dark" type="submit"><i class="bx bx-search"></i></button>
                         </form>
                     </div>
                     <!-- Spazio conteggio colonne desktop -->                  
-                    <div class="solodesktop col-4"></div> 
+                    <div class="solodesktop col-3"></div> 
                     <!-- Spazio conteggio colonne mobile: varia se sono loggato o meno -->
                     <?php if ($isUserLoggedIn): ?>
                         <div class="solomobile col-1"></div>
@@ -156,7 +149,7 @@
     </div>
     
     <!--Main da riempire al dipendere dal parametro di nome-->
-    <main>
+    <main class="pt-3 pb-1">
         <?php 
             if (isset($templateParams["nome"])){
                 require($templateParams["nome"]);
