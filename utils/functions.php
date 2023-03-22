@@ -126,8 +126,7 @@ function loginUser($username, $password){
 
 function logoutUser(){
     session_destroy();
-    echo "<script>window.location.href='login.php';</script>";
-    //header("location: login.php");
+    header("location: login.php");
     exit();
 }
 
@@ -160,14 +159,13 @@ function deleteAccount(){
     $stmtSeguitore->bind_param("i", $_SESSION["idutente"]);
     $stmtSeguitore->execute(); 
 
-    if($stmtUtente->affected_rows != 1 || $stmtProfilo->affected_rows != 1){
+    if($stmtUtente->affected_rows != 1){
         return "Si è verificato un errore. Per favore, riprova";
     }
     else{
         session_destroy();
-        echo "<script>window.location.href='delete-account.php';</script>";
-        //header("location: delete-account.php");
-        exit;
+        header("location: delete-account.php");
+        exit();
     }
 }
 

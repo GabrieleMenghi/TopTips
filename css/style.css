@@ -285,10 +285,9 @@ input[id^="comment"]:valid+.commentlabel{
 
 /*Inizio personalizzazione nuovo post*/
 .div-input-post {
-    width: 40%;
+    width: 25%;
     position: relative;
     height: 10%;
-    margin: auto 0;
     margin: 1% auto;
 }
 
@@ -674,7 +673,6 @@ main article .divpostimages {
 
     .div-input-post {
         width: 50%;
-        height: 50px;
         position: relative;
         margin: 1.5% auto;
     }
@@ -924,13 +922,6 @@ main article .divpostimages {
         border: 1px solid black;
         margin: 0 1.5%;
     }
-
-    /*.div-input-post {
-        width: 30%;
-        height: 50px;
-        position: relative;
-        margin: 1.5% auto;
-    }*/
 
     main article header {
         width: 100%;

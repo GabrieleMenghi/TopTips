@@ -4,7 +4,7 @@
         <p class="success"><?php if(isset($templateParams["formmsg"])) echo $templateParams["formmsg"]; ?></p>
         <ul>
             <li class="d-flex justify-content-center">
-                <div class="div-input-post mt-5">
+                <div class="div-input-post mt-4">
                     <input type="hidden" name="user" value="<?php echo $_SESSION["idutente"]; ?>"/>
                     <input type="text" id="titolo" name="titolo" class="input-post" placeholder="Inserisci il titolo del consiglio" autocomplete="off" required/>
                     <label for="titolo" class="post-label">Titolo post</label>
