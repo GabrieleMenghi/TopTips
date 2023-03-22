@@ -21,7 +21,7 @@
                 <header class="fixed-top bg-dark d-flex align-items-center">
                     <!-- Toggle-menu (desktop) -->
                     <div class="solodesktop col-1 text-center">
-                        <i class="toggle bx bx-menu"></i>
+                        <i class="toggle bx bx-menu" aria-label="Menù"></i>
                     </div>
                     <!-- Logo (desktop) -->
                     <div class="col-1 solodesktop">
@@ -67,7 +67,7 @@
                     <div class="ricerca col-4">
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
                             <input class="formricerca me-1" type="text" name="keyword" placeholder="Ricerca utente">
-                            <button class="btn btn-dark" type="submit"><i class="bx bx-search"></i></button>
+                            <button class="btn btn-dark" type="submit"><i class="bx bx-search" aria-label="Search"></i></button>
                         </form>
                     </div>
                     <!-- Spazio conteggio colonne desktop -->                  
@@ -84,7 +84,7 @@
                         <div class="solomobile col-2">
                             <a class="pagebutton" href="./exit.php">
                                 <li class="i-exit">
-                                    <i class="bx bx-log-out"></i>
+                                    <i class="bx bx-log-out" aria-label="Logout"></i>
                                 </li>
                             </a>
                         </div>
@@ -95,7 +95,7 @@
                     <div class="solomobile base col-2">
                         <a class="pagebutton" href="./notifications.php">
                             <li class="i-bell">
-                                <i class="bx bxs-bell"></i>
+                                <i class="bx bxs-bell" aria-label="Notifications"></i>
                                 <p class="notifications_number" style="display: none;"></p>
                             </li>
                         </a>
@@ -113,26 +113,26 @@
             <ul>
                 <a class="pagebutton pagebuttonhome" href="./home.php">
                     <li class="nav-item i-home">
-                        <i class="bx bxs-home text-white"></i>
+                        <i class="bx bxs-home text-white" aria-label="Home"></i>
                         <span>Home</span>
                     </li>
                 </a>
                 <a class="pagebutton" href="./notifications.php">
                     <li class="nav-item i-bell">
-                        <i class="bx bxs-bell text-white"></i>
+                        <i class="bx bxs-bell text-white" aria-label="Notifications"></i>
                         <span>Notifications</span>
                         <p class="notifications_number" style="display: none;"></p>
                     </li>
                 </a>
                 <a class="pagebutton" href="./creazione-post.php">
                     <li class="nav-item i-post">
-                        <i class="bx bx-plus-circle text-white"></i>
+                        <i class="bx bx-plus-circle text-white" aria-label="New post"></i>
                         <span>New Post</span>
                     </li>
                 </a>
                 <a class="pagebutton" href="./login.php">
                     <li class="nav-item i-user">
-                        <i class="bx bxs-user text-white"></i>
+                        <i class="bx bxs-user text-white" aria-label="Profile"></i>
                         <span>Profile</span>
                     </li>
                 </a>
@@ -140,7 +140,7 @@
                 <?php if ($isUserLoggedIn): ?>
                     <a class="pagebutton" href="./exit.php">
                         <li class="nav-item i-exit">
-                            <i class="bx bx-log-out text-white"></i>
+                            <i class="bx bx-log-out text-white" aria-label="Logout"></i>
                             <span>Exit</span>
                         </li>
                     </a>
@@ -166,19 +166,19 @@
                     <ul class="nav nav-pills">
                         <a class="pagebutton pagebuttonhome col-2 text-center" href="./home.php">
                             <li class="nav-item i-home">
-                                <i class="bx bxs-home text-white"></i>
+                                <i class="bx bxs-home text-white" aria-label="Home"></i>
                             </li>
                         </a>
                         <div class="col-3"></div>
                         <a class="pagebutton col-2 text-center" href="./creazione-post.php">
                             <li class="nav-item i-post">
-                                <i class="bx bx-plus-circle text-white"></i>
+                                <i class="bx bx-plus-circle text-white" aria-label="New post"></i>
                             </li>
                         </a>
                         <div class="col-3"></div>
                         <a class="pagebutton col-2 text-center" href="./login.php">
                             <li class="nav-item i-user">
-                                <i class="bx bxs-user text-white"></i>
+                                <i class="bx bxs-user text-white" aria-label="Profile"></i>
                             </li>
                         </a>
                     </ul>
