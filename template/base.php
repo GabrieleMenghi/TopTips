@@ -31,7 +31,7 @@
                                     <a href="home.php">
                                         <div class="bg"></div>
                                         <div class="glass">
-                                            <img src="./immagini/logo.png" class="img-fluid">
+                                            <img src="./immagini/logo.png" class="img-fluid" alt="Logo">
                                         </div>
                                     </a>
                                 </div>
@@ -46,7 +46,7 @@
                                     <a href="home.php">
                                         <div class="bg"></div>
                                         <div class="glass">
-                                            <img src="./immagini/logo.png" class="img-fluid">
+                                            <img src="./immagini/logo.png" class="img-fluid" alt="Logo">
                                         </div>
                                     </a>
                                 </div>
