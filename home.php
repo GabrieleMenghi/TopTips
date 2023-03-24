@@ -8,13 +8,13 @@ if(isUserLoggedIn()){
     $seguiti = $dbh->getFollowedBy($_SESSION["idutente"]);
     $templateParams["posts"] = $dbh->getPostsOfUsers($seguiti);
     $templateParams["postvotati"] = $dbh->profileVotesPost($_SESSION["idutente"]);
-    $templateParams["seguiti"] = $seguiti;
-
+    
 } else {
     $templateParams["posts"] = $dbh->getPosts();
     $templateParams["postvotati"] = [];
 }
 
 $templateParams["commenti"] = $dbh->getComments();
+
 require("template/base.php");
 ?>

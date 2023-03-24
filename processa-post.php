@@ -4,7 +4,7 @@ require_once("bootstrap.php");
 if(!isUserLoggedIn()){
     header("location: login.php");
 }
-
+//Eliminazione definitiva del post selezionato
 $idpost = $_POST["idpost"];
 $dbh->deletePost($idpost);
 
