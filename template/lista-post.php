@@ -1,3 +1,13 @@
+<?php if($templateParams["seguiti"] == []){ ?>
+    <section class="container-fluid">
+        <h2 class="mb-3"><?php echo $_SESSION["user"]; ?>, questa è la tua pagina home.</h2>
+        <p>Al momento risulta essere vuota perchè non segui nessuno o gli utenti da te seguiti
+        non hanno ancora pubblicato nessun post.</p>
+        <p>Se vuoi puoi cercare nuovi utenti <a href="processa-ricerca.php">qui</a>.</p>
+    </section>
+<?php }
+else {?>
+
 <?php $postv = [];
         $immaginevotata = null;
     foreach($templateParams["postvotati"] as $postvotati):
@@ -95,7 +105,8 @@
             </form>
         </footer>
     </article>
-<?php endforeach; ?>
+<?php endforeach; 
+} ?>
 
 <script>
     function addComment(index) {

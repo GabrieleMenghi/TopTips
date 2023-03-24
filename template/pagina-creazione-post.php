@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <form action="utils/ricezione-post.php" method="POST" enctype="multipart/form-data">
         <h2>Inserisci un nuovo post</h2>
         <p class="success"><?php if(isset($templateParams["formmsg"])) echo $templateParams["formmsg"]; ?></p>
@@ -27,8 +27,6 @@
             </li>
             <li>
                 <input class="submitpost mt-4" type="submit" name="submit" value="Inserisci post" disabled/>
-                <br>
-                <br>
             </li>
         </ul>
     </form>

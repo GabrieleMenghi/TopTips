@@ -1,3 +1,12 @@
+<?php if($templateParams["notifiche"]==[]){ ?>
+    <section class="container-fluid">
+        <h2 class="mb-3"><?php echo $_SESSION["user"]; ?>, non hai ancora ricevuto notifiche.</h2>
+        <p>Per ricevere notifiche è necessario che altri utenti ti seguano o votino o commentino un tuo post.</p>
+        <a href="creazione-post.php">Crea subito un nuovo post!</a>
+    </section>
+<?php } 
+else{?>
+
 <div class="conteiner-fluid m-0 p-0 overflow-hidden container-notify">
     <div class="col-12 pb-4">
         <div class="d-flex">
@@ -17,7 +26,8 @@
             </div>
         </div>
     </div>
-<?php endforeach; ?>
+<?php endforeach; 
+}?>
 
 <script type="text/javascript">
     function readNotify(idnotify) {
