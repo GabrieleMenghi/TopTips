@@ -28,7 +28,12 @@ main > article:first-of-type {
 }
 
 a {
+    color: #970DFA;
     text-decoration: none;
+}
+
+a:hover {
+    color: #970DFA;
 }
 
 span > a {

@@ -8,12 +8,13 @@
         ?>
        
         <?php if(@$response == "success"): ?>
-            <p class="success py-2">Registrazione avvenuta con successo! <a href="login.php">Login qui</a></p>
+            <p class="success pt-2">Registrazione avvenuta con successo!</p>
+            <a href="login.php">Login qui</a>
         <?php else: ?>
             <p class="error py-2"><?php echo @$response; ?></p>
         <?php endif; ?>
 
-        <p>Riempi tutti questi campi per creare un account.</p>
+        <p class="pt-2">Riempi tutti questi campi per creare un account.</p>
 
         <div class="py-1">
             <div class="div-input-post">
@@ -36,10 +37,12 @@
 
         <input type="submit" name="submit" value="Invia"></input>
         
-        <p class="pt-3">
-            Hai già un account? 
-            <a href="login.php">Login qui</a>
-        </p>
+        <?php if (@$response != "success"): ?>
+            <p class="pt-3">
+                Hai già un account? 
+                <a href="login.php">Login qui</a>
+            </p>
+        <?php endif; ?>
 
     </form>
 </div>

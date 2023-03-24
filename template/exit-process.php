@@ -16,12 +16,13 @@ if(isset($_GET["confirm-account-deletion"])){
 ?>
 
 <div class="container-fluid">
-    <h1>Benvenuto, <?php echo $_SESSION["user"]?></h1>
+    <h2><?php echo $_SESSION["user"]; ?>, stai per uscire da TopTips!</h2>
 
     <p class="mt-4">
-        Questa pagina è visibile solo se si è loggati.
-        Una volta loggati allora si permetterà all'utente la possibilità di effettuare logout o, alla peggio,
-        di eliminare il proprio account.
+        Cliccando su logout ti disconnetterai da TopTips.
+    </p>
+    <p class="mt-2">
+        Se lo ritieni necessario, puoi eliminare il tuo account ma perderai tutto ciò che avevi creato.
     </p>
 
     <p>

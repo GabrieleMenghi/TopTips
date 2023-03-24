@@ -3,7 +3,7 @@
         <h2>Elimina post</h2>
         <p class="pt-4">Sei sicuro di voler eliminare il post?</p>
         <ul>
-            <li class="py-1">
+            <li class="py-1 me-4">
                 <input type="submit" name="submit" value="Conferma" />
                 <a href="login.php">
                     <input type="button" name="submit" value="Annulla"></input>
