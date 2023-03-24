@@ -7,7 +7,7 @@
 <?php } 
 else{?>
 
-<div class="conteiner-fluid m-0 p-0 overflow-hidden container-notify">
+<div class="conteiner-fluid container-notify">
     <div class="col-12 pb-4">
         <div class="d-flex">
             <h2 class="col-8 m-auto">Testo della notifica</h2>

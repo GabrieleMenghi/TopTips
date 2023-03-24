@@ -1,5 +1,4 @@
 <?php
-
 require_once("bootstrap.php");
 
 if(isset($_POST["submit"])){
@@ -27,5 +26,4 @@ else{
 }
 
 require("template/base.php");
-
 ?>

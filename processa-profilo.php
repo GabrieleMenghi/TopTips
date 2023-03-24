@@ -1,11 +1,10 @@
 <?php
-
 require_once("bootstrap.php");
 
 if(!isUserLoggedIn() || !isset($_POST["action"])){
     header("location: login.php");
 }
-
+//Creazione del profilo
 if($_POST["action"]==1){
     $utente = $_SESSION["idutente"];
     $datipersonali = htmlspecialchars($_POST["datipersonali"]);
@@ -23,7 +22,7 @@ if($_POST["action"]==1){
     }
     header("location: login.php?formmsg=".$msg);
 }
-
+//Modifica del profilo
 if($_POST["action"]==2){
     $utente = $_SESSION["idutente"];
     $datipersonali = htmlspecialchars($_POST["datipersonali"]);

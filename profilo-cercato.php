@@ -1,5 +1,4 @@
 <?php
-
 require_once("bootstrap.php");
 
 if(!isUserLoggedIn()){
@@ -18,5 +17,4 @@ $templateParams["titolo"] = "TopTips - Profilo di ".$username_cercato;
 $templateParams["nome"] = "template/segui-profilo.php";
 
 require("template/base.php");
-
 ?>

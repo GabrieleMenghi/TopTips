@@ -1,5 +1,4 @@
 <?php
-
 require_once("bootstrap.php");
 
 if(!isUserLoggedIn()){
@@ -13,5 +12,4 @@ $msg = "Cancellazione del post avvenuta correttamente!";
 header("location: login.php?formmsg=".$msg);
 
 require("template/base.php");
-
 ?>

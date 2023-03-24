@@ -15,7 +15,7 @@
     <div class="conteiner-fluid m-0 p-0 overflow-hidden">
         <div class="row">
             <div class="col-12">
-                <!-- controllo il valore della variabile di sessione -->
+                <!-- controllo valore variabile di sessione: solo se loggato sarà possibile effettuare logout -->
                 <?php $isUserLoggedIn = isset($_SESSION["isUserLoggedIn"]) && $_SESSION["isUserLoggedIn"] == true; ?>
                 
                 <header class="fixed-top bg-dark d-flex align-items-center">
@@ -57,7 +57,7 @@
                     <div class="solodesktop col-3">
                         <h1 class="text-white text-start titlename">TopTips</h1>
                     </div>
-                    <!-- Spazio conteggio colonne mobile: varia se sono loggato o meno -->
+                    <!-- Spazio vuoto conteggio colonne mobile: varia se sono loggato o meno -->
                     <?php if ($isUserLoggedIn): ?>
                         <div class="solomobile col-1"></div>
                     <?php else: ?>
@@ -70,9 +70,9 @@
                             <button class="btn btn-dark" type="submit"><i class="bx bx-search" aria-label="Search"></i></button>
                         </form>
                     </div>
-                    <!-- Spazio conteggio colonne desktop -->                  
+                    <!-- Spazio vuoto conteggio colonne desktop -->                  
                     <div class="solodesktop col-3"></div> 
-                    <!-- Spazio conteggio colonne mobile: varia se sono loggato o meno -->
+                    <!-- Spazio vuoto conteggio colonne mobile: varia se sono loggato o meno -->
                     <?php if ($isUserLoggedIn): ?>
                         <div class="solomobile col-1"></div>
                     <?php else: ?>
@@ -88,8 +88,6 @@
                                 </li>
                             </a>
                         </div>
-                    <?php else: ?>
-                        <!-- se non sono loggato: niente -->
                     <?php endif; ?>
                     <!-- Notifiche (mobile) -->                  
                     <div class="solomobile base col-2">
@@ -104,7 +102,7 @@
             </div>
         </div>
     </div>
-    
+    <!-- Menù laterale -->
     <div class="sidebar" user="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"]; else echo 0; ?>">        
         <nav>
             <div class="nav-title">
@@ -149,7 +147,7 @@
         </nav>
     </div>
     
-    <!--Main da riempire al dipendere dal parametro di nome-->
+    <!-- Main da riempire al dipendere dal parametro "nome" -->
     <main class="pt-3 pb-1">
         <?php 
             if (isset($templateParams["nome"])){
@@ -158,7 +156,7 @@
         ?>
     </main>
 
-    <!--Mobile footer-->
+    <!-- Mobile footer -->
     <div class="conteiner-fluid m-0 p-0 overflow-hidden">
         <div class="row">
             <div class="col-12">

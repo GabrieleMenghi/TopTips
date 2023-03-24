@@ -1,8 +1,6 @@
 <?php
 require_once("bootstrap.php");
-
 $templateParams["titolo"] = "TopTips - Nuovo Post";
-
 
 if(isUserLoggedIn()){
     $templateParams["nome"] = "template/pagina-creazione-post.php";
@@ -12,7 +10,6 @@ if(isUserLoggedIn()){
 } else {
     $templateParams["nome"] = "template/richiesta-login.php";
     $templateParams["page"] = "creazione-post.php";
-
 }
 require("template/base.php");
 ?>

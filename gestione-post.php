@@ -1,5 +1,4 @@
 <?php
-
 require_once("bootstrap.php");
 
 if(!isUserLoggedIn()){
@@ -11,5 +10,4 @@ $templateParams["nome"] = "template/elimina-post.php";
 $templateParams["parameter"] = $_GET["id"];
 
 require("template/base.php");
-
 ?>

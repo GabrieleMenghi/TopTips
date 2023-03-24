@@ -74,9 +74,9 @@ ENGINE = InnoDB;
 -- Table `toptips`.`followers`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `toptips`.`followers` (
-  `idazione` INT NOT NULL AUTO_INCREMENT, -- id relazione/azione follow --
-  `seguitore` INT NOT NULL, -- id dell'utente che segue un altro utente = id di colui che intraprende l'azione di follower --
-  `seguito` INT NOT NULL, -- id dell'utente che viene seguito --
+  `idazione` INT NOT NULL AUTO_INCREMENT,
+  `seguitore` INT NOT NULL,
+  `seguito` INT NOT NULL,
   PRIMARY KEY (`idazione`)
   )
   ENGINE = InnoDB;

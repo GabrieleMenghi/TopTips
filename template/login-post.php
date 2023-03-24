@@ -1,4 +1,4 @@
-<h1><?php echo $_SESSION["user"]?></h1>
+<h1><?php echo $_SESSION["user"]; ?></h1>
 
 <?php if(isset($templateParams["formmsg"])):?>
     <p class="py-2 success"><?php echo $templateParams["formmsg"]; ?></p>
@@ -15,7 +15,7 @@
                     <th id="seguaci" scope="col" class="border-white border-2 py-3">Seguaci</th>
                 </tr>
             </thead>
-            <!-- distinguo se è nuovo oppure no: se lo è allora metto un immagine di default -->
+            <!-- Distinzione se utente nuovo oppure no: se lo è allora vi sarà un immagine di profilo di default -->
             <tbody>
                 <tr class="border-white border-2">
                     <?php if($templateParams["profilo"]==null) :?>

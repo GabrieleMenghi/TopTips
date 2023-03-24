@@ -1,5 +1,4 @@
 <?php
-
 require_once("bootstrap.php");
 
 if(!isUserLoggedIn() || !isset($_GET["action"])){
@@ -19,5 +18,4 @@ $templateParams["nome"] = "template/modifica-profilo.php";
 $templateParams["azione"] = $_GET["action"];
 
 require("template/base.php");
-
 ?>

@@ -1,9 +1,8 @@
 <?php if($templateParams["seguiti"] == []){ ?>
     <section class="container-fluid">
-        <h2 class="mb-3"><?php echo $_SESSION["user"]; ?>, questa è la tua pagina home.</h2>
+        <h2 class="mb-3"><?php echo $_SESSION["user"]; ?>, questa è la tua home.</h2>
         <p>Al momento risulta essere vuota perchè non segui nessuno o gli utenti da te seguiti
-        non hanno ancora pubblicato nessun post.</p>
-        <p>Se vuoi puoi cercare nuovi utenti <a href="processa-ricerca.php">qui</a>.</p>
+        non hanno ancora pubblicato nessun post!</p>
     </section>
 <?php }
 else {?>
