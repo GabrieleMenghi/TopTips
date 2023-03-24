@@ -89,15 +89,15 @@ style="<?php if ($dbh->isFollowing($idseguito, $idseguitore)) { echo "background
         <table class="table">
             <thead>
                 <tr>
-                    <th id="domdanda_consiglio" scope="col" class="border-white border-2 py-3">Domanda / Consiglio</th>
+                    <th id="domdanda_consiglio_col" scope="col" class="border-white border-2 py-3">Domanda / Consiglio</th>
                     <th id="images" scope="col" class="border-white border-2 py-3">Immagini</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($templateParams["post"] as $post): ?>
                     <tr class="border-white border-2">
-                        <th id="domada_consiglio" scope="row" class="border-white border-2 text-center align-middle"><?php echo $post["titolopost"]; ?></th>
-                        <td headers="images domanda_consiglio" class="border-white border-2 text-center align-middle">
+                        <th id="domada_consiglio_row" scope="row" class="border-white border-2 text-center align-middle"><?php echo $post["titolopost"]; ?></th>
+                        <td headers="images domanda_consiglio_row" class="border-white border-2 text-center align-middle">
                             <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>" class="profileimagesnovotes" style="max-width:300px;max-height:170px;" />
                             <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" class="profileimagesnovotes" style="max-width:300px;max-height:170px;" />
                             <img src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php echo $post["desc3"]; ?>" class="profileimagesnovotes" <?php if(!isset($post["file3"])) echo "style='display: none;'"; else echo "style='max-width:300px;max-height:170px;'"; ?> />
