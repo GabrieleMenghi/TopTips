@@ -27,10 +27,6 @@ main > article:first-of-type {
     margin-top: 20px;
 }
 
-main > section > span > a {
-    color: #970DFA;
-}
-
 a {
     color: #970DFA;
     text-decoration: none;
