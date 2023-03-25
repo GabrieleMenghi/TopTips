@@ -6,7 +6,7 @@ if(!isUserLoggedIn()){
 }
 
 $templateParams["titolo"] = "TopTips - Ricerca utente";
-$templateParams["keyword"] = $_POST["keyword"];
+$templateParams["keyword"] = $_GET["keyword"];
 $templateParams["utentiTrovati"] = $dbh->searchUser($templateParams["keyword"]);
 $templateParams["nome"] = "template/search.php";
 

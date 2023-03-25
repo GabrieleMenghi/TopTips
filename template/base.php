@@ -65,8 +65,9 @@
                     <?php endif; ?>
                     <!-- Ricerca (desktop e mobile) -->
                     <div class="ricerca col-4">
-                        <form class="d-flex form-inline" action="processa-ricerca.php" method="POST">
-                            <input class="formricerca me-1" type="text" name="keyword" placeholder="Ricerca utente">
+                        <form class="d-flex form-inline" action="processa-ricerca.php" method="get">
+                            <label for="search-input" class="visually-hidden">Cerca utente:</label>
+                            <input id="search-input" class="formricerca me-1" type="search" name="keyword" placeholder="Ricerca utente" />
                             <button class="btn btn-dark" type="submit"><i class="bx bx-search" aria-label="Search"></i></button>
                         </form>
                     </div>
