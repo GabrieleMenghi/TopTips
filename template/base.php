@@ -21,7 +21,7 @@
                 <header class="fixed-top bg-dark d-flex align-items-center">
                     <!-- Toggle-menu (desktop) -->
                     <div class="solodesktop col-1 text-center">
-                        <i class="toggle bx bx-menu" aria-label="Menù"></i>
+                        <box-icon class="toggle bx bx-menu" aria-label="Menù"></box-icon>
                     </div>
                     <!-- Logo (desktop) -->
                     <div class="col-1 solodesktop">
@@ -68,7 +68,7 @@
                         <form class="d-flex form-inline" action="processa-ricerca.php" method="get">
                             <label for="search-input" class="visually-hidden">Cerca utente:</label>
                             <input id="search-input" class="formricerca me-1" type="search" name="keyword" placeholder="Ricerca utente" />
-                            <button class="btn btn-dark" type="submit"><i class="bx bx-search" aria-label="Search"></i></button>
+                            <button class="btn btn-dark" type="submit"><box-icon class="bx bx-search" aria-label="Search"></box-icon></button>
                         </form>
                     </div>
                     <!-- Spazio vuoto conteggio colonne desktop -->                  
@@ -85,7 +85,7 @@
                         <div class="solomobile col-2">
                             <a class="pagebutton" href="./exit.php">
                                 <li class="i-exit">
-                                    <i class="bx bx-log-out" aria-label="Logout"></i>
+                                    <box-icon class="bx bx-log-out" aria-label="Logout"></box-icon>
                                 </li>
                             </a>
                         </div>
@@ -94,7 +94,7 @@
                     <div class="solomobile base col-2">
                         <a class="pagebutton" href="./notifications.php">
                             <li class="i-bell">
-                                <i class="bx bxs-bell" aria-label="Notifications"></i>
+                                <box-icon class="bx bxs-bell" aria-label="Notifications"></box-icon>
                                 <p class="notifications_number" style="display: none;"></p>
                             </li>
                         </a>
@@ -112,26 +112,26 @@
             <ul>
                 <a class="pagebutton pagebuttonhome" href="./home.php">
                     <li class="nav-item i-home">
-                        <i class="bx bxs-home text-white" aria-label="Home"></i>
+                        <box-icon class="bx bxs-home text-white" aria-label="Home"></box-icon>
                         <span>Home</span>
                     </li>
                 </a>
                 <a class="pagebutton" href="./notifications.php">
                     <li class="nav-item i-bell">
-                        <i class="bx bxs-bell text-white" aria-label="Notifications"></i>
+                        <box-icon class="bx bxs-bell text-white" aria-label="Notifications"></box-icon>
                         <span>Notifications</span>
                         <p class="notifications_number" style="display: none;"></p>
                     </li>
                 </a>
                 <a class="pagebutton" href="./creazione-post.php">
                     <li class="nav-item i-post">
-                        <i class="bx bx-plus-circle text-white" aria-label="New post"></i>
+                        <box-icon class="bx bx-plus-circle text-white" aria-label="New post"></box-icon>
                         <span>New Post</span>
                     </li>
                 </a>
                 <a class="pagebutton" href="./login.php">
                     <li class="nav-item i-user">
-                        <i class="bx bxs-user text-white" aria-label="Profile"></i>
+                        <box-icon class="bx bxs-user text-white" aria-label="Profile"></box-icon>
                         <span>Profile</span>
                     </li>
                 </a>
@@ -139,7 +139,7 @@
                 <?php if ($isUserLoggedIn): ?>
                     <a class="pagebutton" href="./exit.php">
                         <li class="nav-item i-exit">
-                            <i class="bx bx-log-out text-white" aria-label="Logout"></i>
+                            <box-icon class="bx bx-log-out text-white" aria-label="Logout"></box-icon>
                             <span>Exit</span>
                         </li>
                     </a>
@@ -165,19 +165,19 @@
                     <ul class="nav nav-pills">
                         <a class="pagebutton pagebuttonhome col-2 text-center" href="./home.php">
                             <li class="nav-item i-home">
-                                <i class="bx bxs-home text-white" aria-label="Home"></i>
+                                <box-icon class="bx bxs-home text-white" aria-label="Home"></box-icon>
                             </li>
                         </a>
                         <div class="col-3"></div>
                         <a class="pagebutton col-2 text-center" href="./creazione-post.php">
                             <li class="nav-item i-post">
-                                <i class="bx bx-plus-circle text-white" aria-label="New post"></i>
+                                <box-icon class="bx bx-plus-circle text-white" aria-label="New post"></box-icon>
                             </li>
                         </a>
                         <div class="col-3"></div>
                         <a class="pagebutton col-2 text-center" href="./login.php">
                             <li class="nav-item i-user">
-                                <i class="bx bxs-user text-white" aria-label="Profile"></i>
+                                <box-icon class="bx bxs-user text-white" aria-label="Profile"></box-icon>
                             </li>
                         </a>
                     </ul>

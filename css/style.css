@@ -799,7 +799,7 @@ main article .divpostimages {
         transition: .3s;
     }
     
-    .sidebar nav .nav-item i {
+    .sidebar nav .nav-item box-icon {
         font-size: 26px;
     }
     
@@ -836,7 +836,7 @@ main article .divpostimages {
         transition: .3s;
     }
 
-    .sidebar .toggle i {
+    .sidebar .toggle box-icon {
         transition: .4s linear;
     }
     
