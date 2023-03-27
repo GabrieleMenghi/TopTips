@@ -21,8 +21,9 @@ else{?>
         <div class="d-flex justify-content-center align-items-center">
             <p class="col-8 m-auto" id="notifytext<?php echo $notifica['idnotifica']; ?>" <?php if ($notifica["letta"] == '1') echo "style='font-weight: normal;'"; else echo "style='font-weight: bold;'"; ?> ><?php echo $notifica["testo"]; ?></p>
             <input class="check col-2 check-notify" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" <?php if ($notifica["letta"] == '1') echo "checked"; ?> onchange="readNotify(<?php echo $notifica['idnotifica'];?>)"/>
+            <label for="read_notify<?php echo $notifica["idnotifica"];?>" class="visually-hidden">Check notifica</label>
             <div class="col-2">    
-                <i class="bx bx-trash" idnotify="<?php echo $notifica["idnotifica"];?>" onclick="deleteNotify(<?php echo $notifica['idnotifica'];?>)" aria-label="Delete notify"></i>
+                <box-icon class="bx bx-trash" idnotify="<?php echo $notifica["idnotifica"];?>" onclick="deleteNotify(<?php echo $notifica['idnotifica'];?>)" aria-label="Delete notify"></box-icon>
             </div>
         </div>
     </div>
