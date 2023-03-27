@@ -28,7 +28,7 @@
                         <div class="logo">
                             <div class="icons">
                                 <div class="icon">
-                                    <a href="home.php">
+                                    <a href="home.php" title="Home page">
                                         <div class="bg"></div>
                                         <div class="glass">
                                             <img src="./immagini/logo.png" class="img-fluid" alt="Logo">
@@ -43,7 +43,7 @@
                         <div class="logo">
                             <div class="icons">
                                 <div class="icon">
-                                    <a href="home.php">
+                                    <a href="home.php" title="Home page">
                                         <div class="bg"></div>
                                         <div class="glass">
                                             <img src="./immagini/logo.png" class="img-fluid" alt="Logo">
@@ -83,7 +83,7 @@
                     <?php if ($isUserLoggedIn): ?>
                         <!-- Exit (mobile) -->
                         <div class="solomobile col-2">
-                            <a class="pagebutton" href="./exit.php">
+                            <a class="pagebutton" href="./exit.php" title="Log-out page">
                                 <li class="i-exit">
                                     <box-icon class="bx bx-log-out" aria-label="Logout"></box-icon>
                                 </li>
@@ -92,7 +92,7 @@
                     <?php endif; ?>
                     <!-- Notifiche (mobile) -->                  
                     <div class="solomobile base col-2">
-                        <a class="pagebutton" href="./notifications.php">
+                        <a class="pagebutton" href="./notifications.php" title="Notifications page">
                             <li class="i-bell">
                                 <box-icon class="bx bxs-bell" aria-label="Notifications"></box-icon>
                                 <p class="notifications_number" style="display: none;"></p>
@@ -110,26 +110,26 @@
                 Menù
             </div>        
             <ul>
-                <a class="pagebutton pagebuttonhome" href="./home.php">
+                <a class="pagebutton pagebuttonhome" href="./home.php" title="Home page">
                     <li class="nav-item i-home">
                         <box-icon class="bx bxs-home text-white" aria-label="Home"></box-icon>
                         <span>Home</span>
                     </li>
                 </a>
-                <a class="pagebutton" href="./notifications.php">
+                <a class="pagebutton" href="./notifications.php" title="Notifications page">
                     <li class="nav-item i-bell">
                         <box-icon class="bx bxs-bell text-white" aria-label="Notifications"></box-icon>
                         <span>Notifications</span>
                         <p class="notifications_number" style="display: none;"></p>
                     </li>
                 </a>
-                <a class="pagebutton" href="./creazione-post.php">
+                <a class="pagebutton" href="./creazione-post.php" title="Post creation page">
                     <li class="nav-item i-post">
                         <box-icon class="bx bx-plus-circle text-white" aria-label="New post"></box-icon>
                         <span>New Post</span>
                     </li>
                 </a>
-                <a class="pagebutton" href="./login.php">
+                <a class="pagebutton" href="./login.php" title="Log-in page">
                     <li class="nav-item i-user">
                         <box-icon class="bx bxs-user text-white" aria-label="Profile"></box-icon>
                         <span>Profile</span>
@@ -137,7 +137,7 @@
                 </a>
                 <!-- Solo se loggato vedo icona exit nel menù laterale (desktop) -->
                 <?php if ($isUserLoggedIn): ?>
-                    <a class="pagebutton" href="./exit.php">
+                    <a class="pagebutton" href="./exit.php" title="Log-out page">
                         <li class="nav-item i-exit">
                             <box-icon class="bx bx-log-out text-white" aria-label="Logout"></box-icon>
                             <span>Exit</span>
@@ -163,19 +163,19 @@
             <div class="col-12">
                 <footer class="solomobile bg-dark fixed-bottom">
                     <ul class="nav nav-pills">
-                        <a class="pagebutton pagebuttonhome col-2 text-center" href="./home.php">
+                        <a class="pagebutton pagebuttonhome col-2 text-center" href="./home.php" title="Home page">
                             <li class="nav-item i-home">
                                 <box-icon class="bx bxs-home text-white" aria-label="Home"></box-icon>
                             </li>
                         </a>
                         <div class="col-3"></div>
-                        <a class="pagebutton col-2 text-center" href="./creazione-post.php">
+                        <a class="pagebutton col-2 text-center" href="./creazione-post.php" title="Post creation page">
                             <li class="nav-item i-post">
                                 <box-icon class="bx bx-plus-circle text-white" aria-label="New post"></box-icon>
                             </li>
                         </a>
                         <div class="col-3"></div>
-                        <a class="pagebutton col-2 text-center" href="./login.php">
+                        <a class="pagebutton col-2 text-center" href="./login.php" title="Log-in page">
                             <li class="nav-item i-user">
                                 <box-icon class="bx bxs-user text-white" aria-label="Profile"></box-icon>
                             </li>
