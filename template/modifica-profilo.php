@@ -46,7 +46,7 @@
                 </li>
                 <li class="py-1">
                     <label for="modificaprofilo" class="visually-hidden">Modifica profilo</label>
-                    <input type="submit" name="submit" value="Modifica profilo" />
+                    <input id="modificaprofilo" type="submit" name="submit" value="Modifica profilo" />
                     <a href="login.php">
                         <label for="annulla" class="visually-hidden">Annulla</label>
                         <input id="annulla" type="button" name="submit" value="Annulla" />
