@@ -20,8 +20,10 @@
                 <input type="file" name="imgprofilo" id="imgprofilo"/>
             </li>
             <li class="py-1">
-                <input class="submitImage" type="submit" name="submit" id="submitImage" value="Salva profilo" disabled/>
-                <input type="button" name="submit" value="Annulla" onclick="location.href='login.php'"></input>
+                <label for="salvaprofilo" class="visually-hidden">Salva profilo</label>
+                <input id="salvaprofilo" class="submitImage" type="submit" name="submit" id="submitImage" value="Salva profilo" disabled/>
+                <label for="annulla" class="visually-hidden">Annulla</label>
+                <input type="button" name="submit" value="Annulla" onclick="location.href='login.php'" />
             </li>
         </ul>
 
@@ -43,9 +45,11 @@
                     </div>
                 </li>
                 <li class="py-1">
+                    <label for="modificaprofilo" class="visually-hidden">Modifica profilo</label>
                     <input type="submit" name="submit" value="Modifica profilo" />
                     <a href="login.php">
-                        <input type="button" name="submit" value="Annulla"></input>
+                        <label for="annulla" class="visually-hidden">Annulla</label>
+                        <input id="annulla" type="button" name="submit" value="Annulla" />
                     </a>
                 </li>
             </ul>

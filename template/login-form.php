@@ -13,7 +13,8 @@
                 <label for="password" class="post-label">Password</label>
             </div>
         </div>
-        <input type="submit" name="submit" value="Invia"></input>
+        <label for="inviadati" class="visually-hidden">Invia</label>
+        <input id="inviadati" type="submit" name="submit" value="Invia" />
         <p class="pt-3">
             Nessun account?
             <a href="registrazione.php">Creane uno!</a>

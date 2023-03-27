@@ -19,7 +19,7 @@
             <li>
                 <div class="div-filepicker">
                     <label class="mb-3" for="imagepicker">Scegli le immagini per il tuo post (min. 2 - max. 4):</label>
-                    <input type="file" id="imagepicker" name="imagepicker[]" accept="image/png, image/jpeg" multiple required>
+                    <input type="file" id="imagepicker" name="imagepicker[]" accept="image/png, image/jpeg" multiple required />
                 </div>
             </li>
             <li class="previews">

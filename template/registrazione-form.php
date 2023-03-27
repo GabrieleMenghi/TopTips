@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <input type="submit" name="submit" value="Invia"></input>
+        <input type="submit" name="submit" value="Invia" />
         
         <?php if (@$response != "success"): ?>
             <p class="pt-3">

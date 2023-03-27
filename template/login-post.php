@@ -37,11 +37,13 @@
 
 <?php if($templateParams["profilo"]==null) :?>
     <a href="gestione-profilo.php?action=1&id=<?php echo $_SESSION["idutente"]; ?>">
-        <input type="submit" name="submit" value="Inserisci profilo"></input>
+    <label for="inserisciprofilo" class="visually-hidden">Inserisci profilo</label>
+    <input id="inserisciprofilo" type="submit" name="submit" value="Inserisci profilo" />
     </a>
 <?php else: ?>
     <a href="gestione-profilo.php?action=2&id=<?php echo $_SESSION["idutente"]; ?>">
-        <input type="submit" name="submit" value="Modifica profilo"></input>
+    <label for="modificaprofilo" class="visually-hidden">Modifica profilo</label>
+    <input id="modificaprofilo" type="submit" name="submit" value="Modifica profilo" />
     </a>
 <?php endif;?>
 
@@ -52,7 +54,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th id="domdanda_consiglio_col" scope="col" class="border-white border-2 py-3">Domanda / Consiglio</th>
+                    <th id="domdanda_consiglio" scope="col" class="border-white border-2 py-3">Domanda / Consiglio</th>
                     <th id="images" scope="col" class="border-white border-2 py-3">Immagini</th>
                     <th id="gestione" scope="col" class="border-white border-2 py-3">Gestisci</th>
                 </tr>
@@ -60,8 +62,8 @@
             <tbody>
                 <?php foreach($templateParams["post"] as $post): ?>
                     <tr class="border-white border-2">
-                        <th id="domanda_consiglio_row" scope="row" class="border-white border-2 text-center align-middle"><?php echo $post["titolopost"]; ?></th>
-                        <td headers="images domanda_consiglio_row" class="py-2">
+                        <th id="domanda_consiglio_testo" headers="domanda_consiglio" scope="row" class="border-white border-2 text-center align-middle"><?php echo $post["titolopost"]; ?></th>
+                        <td headers="images domanda_consiglio_testo" class="py-2">
                             <div class="profileimages" style="max-width:300px;max-height:170px;">
                                 <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>" style="max-width:300px;max-height:170px;"/>
                                 <div class="text-center"><?php echo $post["votes1"] . " voti"; ?></div>
