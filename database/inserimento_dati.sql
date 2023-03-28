@@ -1,10 +1,8 @@
-INSERT INTO `utente` (`idutente`, `username`, `password`, `email`) VALUES
+/*L'utente va creato direttamente dal sito, in modo che la password venga opportunamente codificata*/
+/*INSERT INTO `utente` (`idutente`, `username`, `password`, `email`) VALUES
 (1,'gio_muccioli', 'admin1', 'giovannimuccioli@gmail.com'),
 (2,'gabri_menghi2', 'admin2', 'gabrielemenghi@gmail.com'),
-(3,'prova', '123', 'prova@gmail.com');
-
-ALTER TABLE `utente`
-  MODIFY `idutente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+(3,'prova', '123', 'prova@gmail.com');*/
 
 INSERT INTO `post` (`idpost`, `titolopost`, `testopost`, `datapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) VALUES
 (1, 'Quali scarpe sono più belle?', '\Vorrei comprare un paio di scarpe, ma sono indeciso sul colore. Come marca sono convinto delle nike e su questo non ho dubbi.\r\n\r\n', '2022-12-11', '2', 1, 2, null, null, 1),
