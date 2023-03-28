@@ -21,9 +21,9 @@
             </li>
             <li class="py-1">
                 <label for="salvaprofilo" class="visually-hidden">Salva profilo</label>
-                <input id="salvaprofilo" class="submitImage" type="submit" name="submit" id="submitImage" value="Salva profilo" disabled/>
+                <input id="salvaprofilo" class="submitImage" type="submit" name="submit" value="Salva profilo" disabled/>
                 <label for="annulla" class="visually-hidden">Annulla</label>
-                <input type="button" name="submit" value="Annulla" onclick="location.href='login.php'" />
+                <input id="annulla" type="button" name="submit" value="Annulla" onclick="location.href='login.php'" />
             </li>
         </ul>
 

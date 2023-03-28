@@ -42,11 +42,6 @@ postimages.forEach(img => {
             }
         })
     }
-
-    if(img.getAttribute('src')=='./upload/'){
-        img.setAttribute('style', 'display: none');
-
-    }
 })
 
 postimages.forEach(img => {
@@ -120,16 +115,16 @@ if(imgpicker != null){
 
 //Controllo e impongo che un nuovo utente inserisca un immagine: solo così può salvare il suo profilo
 const input = document.getElementById('imgprofilo');
-const submitImage = document.getElementById('submitImage');
+const salvaprofilo = document.getElementById('salvaprofilo');
 
 if(input != null){
     input.addEventListener('change', (e) => {
         const f = input.files;
         
         if (f.length > 0) {
-        submitImage.removeAttribute('disabled');
+        salvaprofilo.removeAttribute('disabled');
         } else {
-        submitImage.setAttribute('disabled', 'true');
+        salvaprofilo.setAttribute('disabled', 'true');
         }
     });
 }
