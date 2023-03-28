@@ -43,7 +43,7 @@
             <?php if(in_array($post["idpost"], $postv)) 
                 echo 'notvoteable';?>"
                 postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php if(isset($post["desc1"])) echo $post["desc1"]; ?>" style="width: 25%" />
+                src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" longdesc="<?php if(isset($post["desc1"])) echo $post["desc1"]; ?>" style="width: 25%" />
                 <!-- Label 1 -->
                 <label for="imgpost<?php echo $post["img1"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img1"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
@@ -53,7 +53,7 @@
             <?php if(in_array($post["idpost"], $postv))  
                 echo 'notvoteable';?>"
                 postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php if(isset($post["desc2"])) echo $post["desc2"]; ?>" style="width: 25%"/>
+                src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" longdesc="<?php if(isset($post["desc2"])) echo $post["desc2"]; ?>" style="width: 25%"/>
                 <!-- Label 2 -->
                 <label for="imgpost<?php echo $post["img2"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img2"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
@@ -63,7 +63,7 @@
             <?php if(in_array($post["idpost"], $postv)) 
                 echo 'notvoteable';?>"
                 postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php if(isset($post["desc3"])) echo $post["desc3"]; ?>" style="width: 25%"/>
+                src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" longdesc="<?php if(isset($post["desc3"])) echo $post["desc3"]; ?>" style="width: 25%"/>
                 <!-- Label 3 -->
                 <label for="imgpost<?php echo $post["img3"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img3"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
@@ -73,7 +73,7 @@
             <?php if(in_array($post["idpost"], $postv)) 
                 echo 'notvoteable';?>"
                 postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php if(isset($post["desc4"])) echo $post["desc4"]; ?>" style="width: 25%"/>
+                src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" longdesc="<?php if(isset($post["desc4"])) echo $post["desc4"]; ?>" style="width: 25%"/>
                 <!-- Label 4 -->
                 <label for="imgpost<?php echo $post["img4"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img4"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>

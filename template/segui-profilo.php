@@ -22,34 +22,48 @@ foreach ($id["seguitore"] as $seguitore) {
     <input type="hidden" id="seguitore" name="seguitore" value="<?php echo $idseguitore; ?>" />
     <input type="hidden" id="seguito" name="seguito" value="<?php echo $idseguito; ?>" />
 
-<script>
-    const btnFollow = document.querySelector(".btnfollow");
-    const seguitore = document.querySelector("#seguitore");
-    const seguito = document.querySelector("#seguito");
+    <script>
+        const btnFollow = document.querySelector(".btnfollow");
+        const seguitore = document.querySelector("#seguitore");
+        const seguito = document.querySelector("#seguito");
 
-    btnFollow.addEventListener("click", ()=>{
-        var xhttp = new XMLHttpRequest();
-        let parameters = "seguitore=" + seguitore.value + "&seguito=" + seguito.value;
-        
-        xhttp.open("POST", "utils/following.php", true);
-        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhttp.send(parameters);
-        
-        //Inserimento notifica su database
-        if(btnFollow.value == "Segui"){
-            var xhttpnot = new XMLHttpRequest();
-            let parametersnot = "tiponotifica=follow&utentenotificante=" + seguitore.value + "&utentenotificato=" + seguito.value;
+        btnFollow.addEventListener("click", ()=>{
+            var xhttp = new XMLHttpRequest();
+            let parameters = "seguitore=" + seguitore.value + "&seguito=" + seguito.value;
             
-            xhttpnot.open("POST", "utils/inserisci-notifica.php", true);
-            xhttpnot.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhttpnot.send(parametersnot);
-        }
-        document.location.reload(true);
-    });
+            xhttp.open("POST", "utils/following.php", true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Aggiorna il valore del pulsante
+                    if (btnFollow.value == "Segui") {
+                        btnFollow.value = "Smetti di seguire";
+                        btnFollow.style.background = "red";
+                    } else {
+                        btnFollow.value = "Segui";
+                        btnFollow.style.background = "green";
+                    }
+                }
+            };
 
-</script>
+            xhttp.send(parameters);
+            
+            //Inserimento notifica su database
+            if(btnFollow.value == "Segui"){
+                var xhttpnot = new XMLHttpRequest();
+                let parametersnot = "tiponotifica=follow&utentenotificante=" + seguitore.value + "&utentenotificato=" + seguito.value;
+                
+                xhttpnot.open("POST", "utils/inserisci-notifica.php", true);
+                xhttpnot.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhttpnot.send(parametersnot);
+            }
+            document.location.reload(true);
+        });
 
-<?php else: echo "<script>window.location.href='login.php';</script>"; ?>
+    </script>
+
+<?php else: header("location: login.php"); exit(); ?>
 
 <?php endif; ?>
 
