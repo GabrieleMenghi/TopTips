@@ -56,5 +56,5 @@ Oggi come oggi si da sempre più importanza al parere degli altri. TopTips fa su
 Che sia per sapere quale può essere il migliore abito per una serata elegante o quale serie guardare per una serata tranquilla con il proprio partner, TopTips è il social che ti aiuterà a risolvere il tuo dilemma!
 
 ### Componenti
-Giovanni Muccioli:      giovanni.muccioli@studio.unibo.it
+Giovanni Muccioli:      giovanni.muccioli@studio.unibo.it  
 Gabriele Menghi:        gabriele.menghi@studio.unibo.it
