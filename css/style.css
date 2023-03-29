@@ -545,7 +545,7 @@ main article .divpostimages {
 }
 
 /* MOBILE VERSION */
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     .sidebar {
         display: none;
@@ -748,7 +748,7 @@ main article .divpostimages {
 }
 
 /* DESKTOP VERSION */
-@media only screen and (min-width: 769px){
+@media screen and (min-width: 769px){
     
     .sidebar {
         width: 120px;
