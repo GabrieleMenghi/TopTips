@@ -47,8 +47,8 @@ else{?>
             notifytext.setAttribute('style', 'font-weight: bold;');
         }
 
-        var xhttp = new XMLHttpRequest();
-        var url = "utils/refresh-notify.php";
+        let xhttp = new XMLHttpRequest();
+        let url = "utils/refresh-notify.php";
         let parameters = "notifica=" + idnotify;
         if(checker.getAttribute('checked') == ''){
             parameters += "&valore=1";
@@ -61,7 +61,7 @@ else{?>
     }
 
     function deleteNotify(notifyid){
-        var xhttp = new XMLHttpRequest();
+        let xhttp = new XMLHttpRequest();
         let parameters = "idnotifica=" + notifyid;
         xhttp.open("POST", "utils/elimina-notifica.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

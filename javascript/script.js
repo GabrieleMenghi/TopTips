@@ -49,7 +49,7 @@ postimages.forEach(img => {
         if(!img.classList.contains('notvoteable') && img.getAttribute('profilenumber') != 0) {
             img.classList.add('notvoteable');
             //Disabilitazione tramite database della possibilità di votare un post già votato
-            var xhttp = new XMLHttpRequest();
+            let xhttp = new XMLHttpRequest();
             let parameters = "post=" + img.getAttribute('postnumber') + "&profilo=" + img.getAttribute('profilenumber') + "&immaginevotata=" + (img.getAttribute('id')).substring(7);
             
             xhttp.open("POST", "utils/aggiungi-voto.php", true);
@@ -57,7 +57,7 @@ postimages.forEach(img => {
             xhttp.send(parameters);
             
             //Incremento voto su database
-            var xhttpinc = new XMLHttpRequest();
+            let xhttpinc = new XMLHttpRequest();
             let parametersinc = "immagine=" + img.id.substring(7)+ "&post=" + img.getAttribute('postnumber');
             
             xhttpinc.open("POST", "utils/incremento-voti.php", true);
@@ -65,7 +65,7 @@ postimages.forEach(img => {
             xhttpinc.send(parametersinc);
 
             //Aggiunta notifica su database
-            var xhttpnot = new XMLHttpRequest();
+            let xhttpnot = new XMLHttpRequest();
             let parametersnot = "tiponotifica=votazione&utentenotificante=" + img.getAttribute('profilenumber') + "&utentenotificato=" + img.getAttribute('owner') + "&idpost=" + img.getAttribute('postnumber');
             
             xhttpnot.open("POST", "utils/inserisci-notifica.php", true);
@@ -113,7 +113,7 @@ if(imgpicker != null){
     });
 }
 
-//Controllo e impongo che un nuovo utente inserisca un immagine: solo così può salvare il suo profilo
+//Controllo e impongo che un nuovo utente inserisca un immagine: solo così può sallete il suo profilo
 const input = document.getElementById('imgprofilo');
 const salvaprofilo = document.getElementById('salvaprofilo');
 

@@ -28,7 +28,7 @@ foreach ($id["seguitore"] as $seguitore) {
         const seguito = document.querySelector("#seguito");
 
         btnFollow.addEventListener("click", ()=>{
-            var xhttp = new XMLHttpRequest();
+            let xhttp = new XMLHttpRequest();
             let parameters = "seguitore=" + seguitore.value + "&seguito=" + seguito.value;
             
             xhttp.open("POST", "utils/following.php", true);
@@ -51,7 +51,7 @@ foreach ($id["seguitore"] as $seguitore) {
             
             //Inserimento notifica su database
             if(btnFollow.value == "Segui"){
-                var xhttpnot = new XMLHttpRequest();
+                let xhttpnot = new XMLHttpRequest();
                 let parametersnot = "tiponotifica=follow&utentenotificante=" + seguitore.value + "&utentenotificato=" + seguito.value;
                 
                 xhttpnot.open("POST", "utils/inserisci-notifica.php", true);

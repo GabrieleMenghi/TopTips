@@ -194,7 +194,7 @@
         function loadDoc() {
             setInterval(function(){
             const bells = document.querySelectorAll('.notifications_number');
-            var xhttp = new XMLHttpRequest();
+            let xhttp = new XMLHttpRequest();
             const sidebar = document.querySelector('.sidebar');
             let user = "utente=" + sidebar.getAttribute('user');
 

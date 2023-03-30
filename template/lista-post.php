@@ -117,7 +117,7 @@
         const commentidpost = document.querySelector('.commentidpost' + index);
         const commentauthor = document.querySelector('.commentauthor' + index);
 
-        var xhttp = new XMLHttpRequest();
+        let xhttp = new XMLHttpRequest();
         let parameters = "idpost=" + commentidpost.value + "&author=" + commentauthor.value + "&commenttext=" + commentinput.value;
         xhttp.open("POST", "utils/aggiungi-commento.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
