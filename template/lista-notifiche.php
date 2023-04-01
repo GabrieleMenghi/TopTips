@@ -16,19 +16,21 @@ else{?>
         </div>
     </div>
 </div>
-<?php foreach($templateParams["notifiche"] as $notifica): ?>
-    <div class="col-12 my-1 py-2 divnotifica">
-        <div class="d-flex justify-content-center align-items-center">
-            <p class="col-8 m-auto" id="notifytext<?php echo $notifica['idnotifica']; ?>" <?php if ($notifica["letta"] == '1') echo "style='font-weight: normal;'"; else echo "style='font-weight: bold;'"; ?> ><?php echo $notifica["testo"]; ?></p>
-            <input class="check col-2 check-notify" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" <?php if ($notifica["letta"] == '1') echo "checked"; ?> onchange="readNotify(<?php echo $notifica['idnotifica'];?>)"/>
-            <label for="read_notify<?php echo $notifica["idnotifica"];?>" class="visually-hidden">Check notifica</label>
-            <div class="col-2">    
-                <box-icon class="bx bx-trash" idnotify="<?php echo $notifica["idnotifica"];?>" onclick="deleteNotify(<?php echo $notifica['idnotifica'];?>)" aria-label="Delete notify"></box-icon>
+<div class="container-fluid pb-5">
+    <?php foreach($templateParams["notifiche"] as $notifica): ?>
+        <div class="col-12 my-1 py-2 divnotifica">
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="col-8 m-auto" id="notifytext<?php echo $notifica['idnotifica']; ?>" <?php if ($notifica["letta"] == '1') echo "style='font-weight: normal;'"; else echo "style='font-weight: bold;'"; ?> ><?php echo $notifica["testo"]; ?></p>
+                <input class="check col-2 check-notify" type="checkbox" id="read_notify<?php echo $notifica["idnotifica"];?>" name="read_notify" <?php if ($notifica["letta"] == '1') echo "checked"; ?> onchange="readNotify(<?php echo $notifica['idnotifica'];?>)"/>
+                <label for="read_notify<?php echo $notifica["idnotifica"];?>" class="visually-hidden">Check notifica</label>
+                <div class="col-2">    
+                    <box-icon class="bx bx-trash" idnotify="<?php echo $notifica["idnotifica"];?>" onclick="deleteNotify(<?php echo $notifica['idnotifica'];?>)" aria-label="Delete notify"></box-icon>
+                </div>
             </div>
         </div>
-    </div>
-<?php endforeach; 
-}?>
+    <?php endforeach; 
+    }?>
+</div>
 
 <script type="text/javascript">
     function readNotify(idnotify) {
