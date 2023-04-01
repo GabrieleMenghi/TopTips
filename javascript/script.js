@@ -113,7 +113,7 @@ if(imgpicker != null){
     });
 }
 
-//Controllo e impongo che un nuovo utente inserisca un immagine: solo così può sallete il suo profilo
+//Controllo e impongo che un nuovo utente inserisca un immagine: solo così può salvare il suo profilo
 const input = document.getElementById('imgprofilo');
 const salvaprofilo = document.getElementById('salvaprofilo');
 

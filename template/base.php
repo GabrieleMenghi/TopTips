@@ -189,7 +189,7 @@
     </div>
 
     <!-- JS File -->
-    <script type="text/javascript" src="./javascript/script.js"></script>
+    <script src="./javascript/script.js"></script>
     <script type="text/javascript">
         function loadDoc() {
             setInterval(function(){

@@ -22,7 +22,7 @@ foreach ($id["seguitore"] as $seguitore) {
     <input type="hidden" id="seguitore" name="seguitore" value="<?php echo $idseguitore; ?>" />
     <input type="hidden" id="seguito" name="seguito" value="<?php echo $idseguito; ?>" />
 
-    <script>
+    <script type="text/javascript">
         const btnFollow = document.querySelector(".btnfollow");
         const seguitore = document.querySelector("#seguitore");
         const seguito = document.querySelector("#seguito");

@@ -111,7 +111,7 @@
     </article>
 <?php endforeach; ?>
 
-<script>
+<script type="text/javascript">
     function addComment(index) {
         const commentinput = document.querySelector('#comment' + index);
         const commentidpost = document.querySelector('.commentidpost' + index);

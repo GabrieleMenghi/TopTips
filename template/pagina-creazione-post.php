@@ -32,7 +32,7 @@
     </form>
 </div>
 
-<script>
+<script type="text/javascript">
     const filepicker = document.getElementById('imagepicker');
     const imagepreviews = document.querySelector('.previews');
 
