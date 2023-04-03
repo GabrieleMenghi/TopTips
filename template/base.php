@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!-- Stile personalizzato -->
-<link href="./css/style.css" rel="stylesheet" />
-<!-- BoxIcons v2.1.2 -->
-<link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Stile personalizzato -->
+    <link href="./css/style.css" rel="stylesheet" />
+    <!-- BoxIcons v2.1.2 -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
 
-<title><?php echo $templateParams["titolo"]; ?></title>
+    <title><?php echo $templateParams["titolo"]; ?></title>
 </head>
 <body>
     <div class="conteiner-fluid m-0 p-0 overflow-hidden">
@@ -33,7 +33,7 @@
                                     <a href="home.php" title="Home page">
                                         <div class="bg"></div>
                                         <div class="glass">
-                                            <img src="./immagini/logo.png" class="img-fluid" alt="Logo"/>
+                                            <img src="./immagini/logo.png" class="img-fluid" alt="TopTips home"/>
                                         </div>
                                     </a>
                                 </div>
@@ -48,7 +48,7 @@
                                     <a href="home.php" title="Home page">
                                         <div class="bg"></div>
                                         <div class="glass">
-                                            <img src="./immagini/logo.png" class="img-fluid" alt="Logo"/>
+                                            <img src="./immagini/logo.png" class="img-fluid" alt="TopTips home"/>
                                         </div>
                                     </a>
                                 </div>
