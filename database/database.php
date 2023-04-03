@@ -85,7 +85,6 @@ class databaseHelper {
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$idpost);
         $stmt->execute();
-        var_dump($stmt->error);
         return true;
     }
 
