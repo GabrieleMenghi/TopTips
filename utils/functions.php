@@ -4,7 +4,7 @@ function isUserLoggedIn(){
 }
 
 function connect(){
-    $mysqli = new mysqli("localhost", "root", "", "toptips", 3306);
+    $mysqli = new mysqli("localhost", "root", "", "toptips");
     if($mysqli->connect_errno != 0){
         die("Connessione fallita al db");
         return false;
