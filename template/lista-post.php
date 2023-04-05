@@ -43,9 +43,9 @@
             <?php if(in_array($post["idpost"], $postv)) 
                 echo 'notvoteable';?>"
                 postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php if(isset($post["desc1"])) echo $post["desc1"]; ?>"  />
+                src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>"  />
                 <!--Descrizione immagine 1-->
-                <p class="imgdescription"><?php if(isset($post["desc1"])) echo $post["desc1"]; ?></p>
+                <p class="imgdescription"><?php echo $post["desc1"]; ?></p>
                 <!-- Label 1 -->
                 <label for="imgpost<?php echo $post["img1"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img1"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
@@ -55,9 +55,9 @@
             <?php if(in_array($post["idpost"], $postv))  
                 echo 'notvoteable';?>"
                 postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php if(isset($post["desc2"])) echo $post["desc2"]; ?>" />
+                src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" />
                 <!--Descrizione immagine 2-->
-                <p class="imgdescription"><?php if(isset($post["desc2"])) echo $post["desc2"]; ?></p>
+                <p class="imgdescription"><?php echo $post["desc2"]; ?></p>
                 <!-- Label 2 -->
                 <label for="imgpost<?php echo $post["img2"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img2"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
@@ -68,9 +68,9 @@
                 <?php if(in_array($post["idpost"], $postv)) 
                     echo 'notvoteable';?>"
                     postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                    src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php if(isset($post["desc3"])) echo $post["desc3"]; ?>" />
+                    src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php echo $post["desc3"]; ?>" />
                     <!--Descrizione immagine 3-->
-                    <p class="imgdescription"><?php if(isset($post["desc3"])) echo $post["desc3"]; ?></p>
+                    <p class="imgdescription"><?php echo $post["desc3"]; ?></p>
                     <!-- Label 3 -->
                     <label for="imgpost<?php echo $post["img3"]; ?>" 
                     <?php if(isset($immaginevotata) && $immaginevotata==$post["img3"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
@@ -82,9 +82,9 @@
                 <?php if(in_array($post["idpost"], $postv)) 
                     echo 'notvoteable';?>"
                     postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                    src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php if(isset($post["desc4"])) echo $post["desc4"]; ?>" />
+                    src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php echo $post["desc4"]; ?>" />
                     <!--Descrizione immagine 4-->
-                    <p class="imgdescription"><?php if(isset($post["desc4"])) echo $post["desc4"]; ?></p>
+                    <p class="imgdescription"><?php echo $post["desc4"]; ?></p>
                     <!-- Label 4 -->
                     <label for="imgpost<?php echo $post["img4"]; ?>" 
                     <?php if(isset($immaginevotata) && $immaginevotata==$post["img4"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>

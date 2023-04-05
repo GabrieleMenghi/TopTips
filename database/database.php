@@ -12,7 +12,7 @@ class databaseHelper {
 
     public function getPosts($n=-1){
         $query = "SELECT idpost, titolopost, immagine1.filename AS file1, immagine2.filename AS file2, immagine3.filename AS file3, immagine4.filename AS file4, testopost, datapost, username,
-        immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4,
+        immagine1.votes as votes1, immagine2.votes as votes2, immagine3.votes as votes3, immagine4.votes as votes4, immagine1.descrizione as desc1, immagine2.descrizione as desc2, immagine3.descrizione as desc3, immagine4.descrizione as desc4,
         img1, img2, img3, img4, imgprofilo, DATEDIFF(CURDATE(), datapost) as datadiff
         FROM post JOIN utente ON post.utente = utente.idutente
         JOIN profilo ON utente.idutente = profilo.utente
