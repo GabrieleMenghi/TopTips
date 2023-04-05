@@ -16,7 +16,7 @@
     foreach ($templateParams["posts"] as $post):
         $totvotes = intval($post["votes1"]) + intval($post["votes2"]) + intval($post["votes3"]) + intval($post["votes4"]);
     ?>
-    <article>
+    <article id="post<?php echo $post["idpost"];?>" >
         <?php $i++;?> 
         <header>
             <div class="headerpost">
@@ -53,7 +53,7 @@
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img1"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
                 <?php if($totvotes!=0) echo round(intval($post["votes1"])/$totvotes*100, 2) . '%'; ?></label>
             </div>
-            
+
             <!-- Immagine 2 -->
             <div class="divimgpost">
                 <figure>   

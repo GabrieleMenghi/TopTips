@@ -111,7 +111,8 @@ foreach ($id["seguitore"] as $seguitore) {
             <tbody>
                 <?php foreach($templateParams["post"] as $post): ?>
                     <tr class="border-white border-2">
-                        <th id="domanda_consiglio_testo<?php echo $post['idpost']; ?>" headers="domanda_consiglio" scope="row" class="border-white border-2 text-center align-middle"><?php echo $post["titolopost"]; ?></th>
+                        <th id="domanda_consiglio_testo<?php echo $post['idpost']; ?>" headers="domanda_consiglio" scope="row" class="border-white border-2 text-center align-middle">
+                        <?php if ($dbh->isFollowing($idseguito, $idseguitore)){ echo "<a href='home.php?#post" . $post['idpost'] . "' style='font-weight:normal;'>".$post['titolopost'] . "</a>";} else echo $post['titolopost'];?></th>
                         <td headers="images domanda_consiglio_testo<?php echo $post['idpost']; ?>" class="border-white border-2 text-center align-middle">
                             <img src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>" class="profileimagesnovotes" style="max-width:300px;max-height:170px;" />
                             <img src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" class="profileimagesnovotes" style="max-width:300px;max-height:170px;" />
