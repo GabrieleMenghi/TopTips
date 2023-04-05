@@ -150,9 +150,9 @@ textarea {
 
 main article img {
     background-color: white;
-    border: 3px solid black;
-    margin: 2%;
-    width: 280px;
+    border: 2.5px solid black;
+    margin: 2% 2% 4% 2%;
+    width: 25%;
     height: 210px;
     object-fit: scale-down;
 }
@@ -503,7 +503,6 @@ input[id^="comment"]:valid+.commentlabel{
 
 main article .divpostimages {
     background: rgba(255, 255, 255, .4);
-
     margin: 1.5% 5%;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, .18);
@@ -632,9 +631,10 @@ main article .divpostimages {
     }
    
     main article img {
-        width: 280px;
+        width: 40%;
         height: 130px;
         border: 2px solid black;
+        margin: 2% 2% 8% 2%;
     }
 
     main article h2 {
@@ -746,6 +746,38 @@ main article .divpostimages {
         height: 10%;
         margin: auto 0;
     }
+
+    main article > div > .divimgpost {
+        position: relative;
+    }
+    
+    main article  label {
+        position: absolute;
+        top: 350%;
+        left: 40%;
+        font-size: 14.5px;
+    }
+
+    main article > div  div{
+        display: inline;
+    }
+
+    .imgdescription {
+        width: 80%;
+        position: absolute;
+        opacity: 80%;
+        bottom: 220%;
+        left: 10%;
+        background-color: #555;
+        color: #eee;
+        font-size: 10px;
+        padding: 1px;
+    }
+    
+    /*.imgdescription:hover {
+        opacity: 80%;
+        transition:all ease .4s;
+    }*/
 }
 
 /* DESKTOP VERSION */
@@ -897,11 +929,6 @@ main article .divpostimages {
         transition: .5s !important;
     }
 
-    main article img {
-        width: 400px;
-        height: 370px;
-    }
-
     .profileimages {
         background-color: white;
         border: 1px solid black;
@@ -965,6 +992,53 @@ main article .divpostimages {
 
     .ricercacontainer {
         width: 45%;
+    }
+
+    main article > div > div {
+        position: relative;
+    }
+
+    main article  label {
+        position: absolute;
+        top: 550%;
+        left: 40%;
+    }
+
+    main article > div  div{
+        display: inline;
+    }
+
+    .imgdescription {
+        width: 80%;
+        position: absolute;
+        opacity: 0;
+        bottom: 350%;
+        left: 10%;
+        background-color: #555;
+        color: #eee;
+        transition:all ease .4s;
+        font-size: 15px;
+        padding: 2px;
+    }
+    
+    .divimgpost:hover .imgdescription {
+        opacity: 90%;
+        transition:all ease .4s;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px){
+    main article img {
+        margin: 2% 2% 10% 2%;
+    }
+
+    main article  label {
+        top: 500%;
+    }
+
+    .imgdescription {
+        bottom: 400%;
+        font-size: 14px;
     }
 }
 

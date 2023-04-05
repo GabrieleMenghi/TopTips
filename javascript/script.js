@@ -35,9 +35,9 @@ postimages.forEach(img => {
         labelimages.forEach(l => {
             if(img.getAttribute('id') == l.getAttribute('for') && l.getAttribute('for') != "imgpost"){   
                 if(l.getAttribute('voted')==='yes'){
-                    l.setAttribute('style','display: inline; margin-left: -10px; font-weight: bold;');
+                    l.setAttribute('style','display: inline; font-weight: bold;');
                 } else {            
-                    l.setAttribute('style','display: inline; margin-left: -10px');
+                    l.setAttribute('style','display: inline;');
                 }
             }
         })
@@ -81,7 +81,7 @@ postimages.forEach(img => {
                             img2.classList.add('notvoteable');
                             labelimages.forEach(l2 => {
                                 if(l2.getAttribute('for') == img2.getAttribute('id')){
-                                    l2.setAttribute('style','display: inline; margin-left: -10px;');
+                                    l2.setAttribute('style','display: inline;');
                                 }
                             })
                         }
