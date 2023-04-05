@@ -39,56 +39,71 @@
             <p><?php echo $post["testopost"]; ?></p>
 
             <!-- Immagine 1 -->
-            <div class="divimgpost"><img id="imgpost<?php echo $post["img1"]; ?>" class="imgpost 
-            <?php if(in_array($post["idpost"], $postv)) 
-                echo 'notvoteable';?>"
-                postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>"  />
-                <!--Descrizione immagine 1-->
-                <p class="imgdescription"><?php echo $post["desc1"]; ?></p>
+            <div class="divimgpost">
+                <figure>    
+                    <img id="imgpost<?php echo $post["img1"]; ?>" class="imgpost 
+                    <?php if(in_array($post["idpost"], $postv)) 
+                        echo 'notvoteable';?>"
+                        postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
+                        src="<?php echo UPLOAD_DIR.$post["file1"]; ?>" alt="<?php echo $post["desc1"]; ?>"  />
+                    <figcaption class="imgdescription"><?php echo $post["desc1"]; ?></figcaption>
+                </figure>
                 <!-- Label 1 -->
                 <label for="imgpost<?php echo $post["img1"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img1"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
-                <?php if($totvotes!=0) echo round(intval($post["votes1"])/$totvotes*100, 2) . '%'; ?></label></div>
+                <?php if($totvotes!=0) echo round(intval($post["votes1"])/$totvotes*100, 2) . '%'; ?></label>
+            </div>
+            
             <!-- Immagine 2 -->
-            <div class="divimgpost"><img id="imgpost<?php echo $post["img2"]; ?>" class="imgpost 
-            <?php if(in_array($post["idpost"], $postv))  
-                echo 'notvoteable';?>"
-                postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" />
-                <!--Descrizione immagine 2-->
-                <p class="imgdescription"><?php echo $post["desc2"]; ?></p>
+            <div class="divimgpost">
+                <figure>   
+                    <img id="imgpost<?php echo $post["img2"]; ?>" class="imgpost 
+                    <?php if(in_array($post["idpost"], $postv))  
+                        echo 'notvoteable';?>"
+                        postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
+                        src="<?php echo UPLOAD_DIR.$post["file2"]; ?>" alt="<?php echo $post["desc2"]; ?>" />
+                    <figcaption class="imgdescription"><?php echo $post["desc2"]; ?></figcaption>
+                </figure>
                 <!-- Label 2 -->
                 <label for="imgpost<?php echo $post["img2"]; ?>" 
                 <?php if(isset($immaginevotata) && $immaginevotata==$post["img2"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
-                <?php if($totvotes!=0) echo round(intval($post["votes2"])/$totvotes*100, 2) . '%'; ?></label></div>
+                <?php if($totvotes!=0) echo round(intval($post["votes2"])/$totvotes*100, 2) . '%'; ?></label>
+            </div>
+
             <!-- Immagine 3 (può non essere presente) -->
-           <?php if($post['img3']!=null): ?>
-                <div class="divimgpost"><img id="imgpost<?php echo $post["img3"]; ?>" class="imgpost 
-                <?php if(in_array($post["idpost"], $postv)) 
-                    echo 'notvoteable';?>"
-                    postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                    src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php echo $post["desc3"]; ?>" />
-                    <!--Descrizione immagine 3-->
-                    <p class="imgdescription"><?php echo $post["desc3"]; ?></p>
+            <?php if($post['img3']!=null): ?>
+                <div class="divimgpost">
+                    <figure>   
+                        <img id="imgpost<?php echo $post["img3"]; ?>" class="imgpost 
+                            <?php if(in_array($post["idpost"], $postv)) 
+                            echo 'notvoteable';?>"
+                            postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
+                            src="<?php echo UPLOAD_DIR.$post["file3"]; ?>" alt="<?php echo $post["desc3"]; ?>" />
+                        <figcaption class="imgdescription"><?php echo $post["desc3"]; ?></figcaption>
+                    </figure>
                     <!-- Label 3 -->
                     <label for="imgpost<?php echo $post["img3"]; ?>" 
                     <?php if(isset($immaginevotata) && $immaginevotata==$post["img3"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
-                    <?php if($totvotes!=0) echo round(intval($post["votes3"])/$totvotes*100, 2) . '%'; ?></label></div>
+                    <?php if($totvotes!=0) echo round(intval($post["votes3"])/$totvotes*100, 2) . '%'; ?></label>
+                </div>
             <?php endif; ?>
+
             <!-- Immagine 4 (può non essere presente) -->
             <?php if($post['img4']!=null): ?>
-                <div class="divimgpost"><img id="imgpost<?php echo $post["img4"]; ?>" class="imgpost 
-                <?php if(in_array($post["idpost"], $postv)) 
-                    echo 'notvoteable';?>"
-                    postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
-                    src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php echo $post["desc4"]; ?>" />
-                    <!--Descrizione immagine 4-->
-                    <p class="imgdescription"><?php echo $post["desc4"]; ?></p>
+                <div class="divimgpost">
+                    <figure>   
+                        <img id="imgpost<?php echo $post["img4"]; ?>" class="imgpost 
+                            <?php if(in_array($post["idpost"], $postv)) 
+                            echo 'notvoteable';?>"
+                            postnumber="<?php echo $post["idpost"];?>" profilenumber="<?php if(isset($_SESSION["idutente"])) echo $_SESSION["idutente"];?>" owner="<?php if(isset($post["utente"])) echo $post["utente"];?>"
+                            src="<?php echo UPLOAD_DIR.$post["file4"]; ?>" alt="<?php echo $post["desc4"]; ?>" />
+                        <figcaption class="imgdescription"><?php echo $post["desc4"]; ?></figcaption>
+                    </figure>
                     <!-- Label 4 -->
                     <label for="imgpost<?php echo $post["img4"]; ?>" 
                     <?php if(isset($immaginevotata) && $immaginevotata==$post["img4"]) { echo "style='font-weight: bold' voted='yes'"; } else { echo "style='display: none;'";} ?>>
-                    <?php if($totvotes!=0) echo round(intval($post["votes4"])/$totvotes*100, 2) . '%'; ?></label></div>
+                    <?php if($totvotes!=0) echo round(intval($post["votes4"])/$totvotes*100, 2) . '%'; ?></label>
+                </div>
             <?php endif; ?>
 
         </div>
