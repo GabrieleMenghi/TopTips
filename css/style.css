@@ -1026,7 +1026,9 @@ figure {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px){
+/* TABLET VERSION */
+@media screen and (min-width: 768px) and (max-width: 1023.98px){
+
     main article img {
         margin: 2% 2% 10% 2%;
     }
