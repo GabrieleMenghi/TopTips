@@ -783,6 +783,7 @@ figure {
 @media screen and (min-width: 768px){
     
     .sidebar {
+        z-index: 2;
         width: 120px;
         height: 100%;
         background: rgba(10, 10, 10, 0.65);
