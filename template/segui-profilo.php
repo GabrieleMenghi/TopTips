@@ -86,7 +86,7 @@ foreach ($id["seguitore"] as $seguitore) {
                     <?php else: ?>
                         <?php foreach($templateParams["profilo"] as $profilo): ?>
                             <td headers="img_profilo" class="border-white border-2 text-center align-middle"><img src="<?php echo UPLOAD_DIR.$profilo["imgprofilo"]; ?>" alt="Foto profilo" style="max-width:100%;max-height:100%;" class="profileimg"/></td>
-                            <td headers="info_personali" class="border-white border-2 text-center align-middle"><?php echo $profilo["datipersonali"]; ?></td>
+                            <td headers="info_personali" class="border-white border-2 text-center align-middle"><?php echo nl2br($profilo["datipersonali"]); ?></td>
                         <?php endforeach; ?>
                     <?php endif; ?>
                     <td headers="seguiti" class="border-white border-2 text-center align-middle"><a class="text-dark fw-bold" href="elenco-utenti-seguiti.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguitiById($idseguito) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
