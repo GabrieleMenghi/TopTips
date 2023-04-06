@@ -1,17 +1,16 @@
 /*L'utente va creato direttamente dal sito, in modo che la password venga opportunamente codificata*/
 /*INSERT INTO `utente` (`idutente`, `username`, `password`, `email`) VALUES
 (1,'gio_muccioli', 'admin1', 'giovannimuccioli@gmail.com'),
-(2,'gabri_menghi2', 'admin2', 'gabrielemenghi@gmail.com'),
+(2,'gabri_menghi', 'admin2', 'gabrielemenghi@gmail.com'),
 (3,'prova', '123', 'prova@gmail.com');*/
 
 INSERT INTO `post` (`idpost`, `titolopost`, `testopost`, `datapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) VALUES
 (1, 'Quali scarpe sono più belle?', '\Vorrei comprare un paio di scarpe, ma sono indeciso sul colore. Come marca sono convinto delle nike e su questo non ho dubbi.\r\n\r\n', '2022-12-11', '2', 1, 2, null, null, 1),
 (2, 'Che scarpe da calcio mi consigliate?', '\Mi serve un paio di scarpe da calcio poichè nell ultimo allenamento mi si sono rotte. Sono indeciso sia sul colore che sulla marca: nike o puma...cosa mi consigliate?\r\n\r\n', '2022-12-11', '3', 3, 4, 5, null, 1),
 (3, 'Che dolce posso cucinare?', '\In una giornata così piovosa come oggi ho deciso di cucinare un dolce assieme alla mia ragazza, solo che siamo indecisi su che dolce cucinare. Abbiamo diverse opzioni: la sacher, la torta della nonna, una torta gelato, oppure una cheescake. Son tutte buonissime e non sappiamo scegliere la migliore anche se siamo propensi alla cheesecake. Quale possiamo fare?"\"\r\n\r\n', '2022-12-11', '4', 6, 7, 8, 9, 1),
-(5, 'Titolo: prova per modifica profilo ed eliminazione post','Testo: questa è una prova per verificare la modifica del profilo e l eliminazione del post', '2023-01-26', 2 , 1, 2,NULL,NULL, 3);
 
-INSERT INTO `post` (`titolopost`, `testopost`, `datapost`, `anteprimapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) VALUES
-('Il dilemma più grande', 'Tè al limone o tè alla pesca?\r\n\r\n', '2022-12-25', '2', 10, 11, null, null, 2);
+INSERT INTO `post` (`titolopost`, `testopost`, `datapost`, `numeroimmagini`, `img1`, `img2`, `img3`, `img4`, `utente`) VALUES
+('Tè al limone o tè alla pesca?', 'Una delle domande più discusse: tè al limone o tè alla pesca? Di che team fate parte?', '2022-12-25', '2', 10, 11, null, null, 2);
 
 INSERT INTO `commento` (`post`, `utente`, `datacommento`, `testo`) VALUES
 (4, 2, '2022-12-25 11:36:00', 'Io sono team pesca');

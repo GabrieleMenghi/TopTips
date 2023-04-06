@@ -10,7 +10,7 @@ if(isUserLoggedIn()){
     $templateParams["postvotati"] = $dbh->profileVotesPost($_SESSION["idutente"]);
     
 } else {
-    $templateParams["posts"] = $dbh->getPosts();
+    $templateParams["posts"] = $dbh->getPosts(3);
     $templateParams["postvotati"] = [];
 }
 

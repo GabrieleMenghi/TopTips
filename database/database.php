@@ -51,7 +51,8 @@ class databaseHelper {
         LEFT JOIN immagine AS immagine2 ON post.img2 = immagine2.image_id
         LEFT JOIN immagine AS immagine3 ON post.img3 = immagine3.image_id
         LEFT JOIN immagine AS immagine4 ON post.img4 = immagine4.image_id 
-        WHERE utente=?";
+        WHERE utente=?
+        ORDER BY datapost DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i',$id);
         $stmt->execute();

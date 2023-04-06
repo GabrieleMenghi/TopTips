@@ -157,7 +157,7 @@ main article img {
     object-fit: scale-down;
 }
 
-main article img:active {
+main article .divpostimages img:active {
     transform: scale(1.5);
 }
 

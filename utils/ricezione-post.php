@@ -125,7 +125,7 @@ if($stmt->execute()){
     $msg = "Post creato correttamente";
 }
 
-header("location: ../creazione-post.php?formmsg=" . $msg);
+header("location: ../login.php?formmsg=" . $msg);
 
 $conn->close();
 ?>
