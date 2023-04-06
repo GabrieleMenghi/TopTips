@@ -174,7 +174,7 @@ function uploadImage($path, $image){
     $fullPath = $path.$imageName;
     
     $maxKB = 500;
-    $acceptedExtensions = array("jpg", "jpeg", "png", "gif");
+    $acceptedExtensions = array("jpg", "jpeg", "png", "gif", "jfif");
     $result = 0;
     $msg = "";
 
