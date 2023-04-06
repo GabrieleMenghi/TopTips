@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <form action="#" method="POST" autocomplete="off">
+    <form action="login.php" method="POST" autocomplete="off">
         <h2>Accedi</h2>  
         <p class="py-2 error"><?php echo @$response ?></p>    
         <p>Per favore riempi questi campi per accedere al tuo account</p>

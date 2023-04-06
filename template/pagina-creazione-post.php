@@ -1,7 +1,6 @@
 <div class="container-fluid mb-5">
     <form action="utils/ricezione-post.php" method="POST" enctype="multipart/form-data">
         <h2>Inserisci un nuovo post</h2>
-        <p class="success"><?php if(isset($templateParams["formmsg"])) echo $templateParams["formmsg"]; ?></p>
         <ul>
             <li class="d-flex justify-content-center">
                 <div class="div-input-post mt-4">
