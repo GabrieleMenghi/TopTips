@@ -6,13 +6,19 @@ const labelimages = document.querySelectorAll('article label');
 
 const activePage = window.location.pathname;
 const pagebuttons = document.querySelectorAll('.pagebutton');
-const homebutton = document.querySelector('.pagebuttonhome');
+const homebutton = document.querySelectorAll('.pagebuttonhome');
+const loginbutton = document.querySelectorAll('.pagebuttonlogin');
+
 
 pagebuttons.forEach(b => {
     if(b.href.includes(`${activePage}`) && activePage != "/TopTips/"){
         b.classList.add('active');
     } else if(activePage == "/TopTips/"){
-        homebutton.classList.add('active');
+        homebutton[0].classList.add('active');
+        homebutton[1].classList.add('active');
+    } else if(activePage == "/TopTips/registrazione.php"){
+        loginbutton[0].classList.add('active');
+        loginbutton[1].classList.add('active');
     }
 })
 

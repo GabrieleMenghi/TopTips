@@ -131,7 +131,7 @@
                         <span>New Post</span>
                     </li>
                 </a>
-                <a class="pagebutton" href="./login.php" title="Log-in page">
+                <a class="pagebutton pagebuttonlogin" href="./login.php" title="Log-in page">
                     <li class="nav-item i-user">
                         <box-icon class="bx bxs-user text-white" aria-label="Profile"></box-icon>
                         <span>Profile</span>
@@ -177,7 +177,7 @@
                             </li>
                         </a>
                         <div class="col-3"></div>
-                        <a class="pagebutton col-2 text-center" href="./login.php" title="Log-in page">
+                        <a class="pagebutton pagebuttonlogin col-2 text-center" href="./login.php" title="Log-in page">
                             <li class="nav-item i-user">
                                 <box-icon class="bx bxs-user text-white" aria-label="Profile"></box-icon>
                             </li>
