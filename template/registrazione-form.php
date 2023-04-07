@@ -2,8 +2,8 @@
     <form action="#" method="POST" autocomplete="off">
         <h2>Crea account</h2>  
 
-        <?php if(isset($_POST['submit'])){
-            $response = registerUser($_POST['email'], $_POST['username'], $_POST['password'], $_POST['confirm-password']);
+        <?php if(isset($_POST["submit"])){
+            $response = registerUser($_POST["email"], $_POST["username"], $_POST["password"], $_POST["confirm-password"]);
         }
         ?>
        

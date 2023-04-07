@@ -8,5 +8,6 @@ if(!isUserLoggedIn()){
 else {
     header("location: exit.php");
 }
+
 require("template/base.php");
 ?>

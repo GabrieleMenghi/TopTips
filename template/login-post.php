@@ -27,8 +27,8 @@
                             <td headers="info_personali" class="border-white border-2 text-center align-middle"><?php echo nl2br($profilo["datipersonali"]); ?></td>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                        <td headers="seguiti" class="border-white border-2 text-center align-middle"><a class="text-dark fw-bold" href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
-                        <td headers="seguaci" class="border-white border-2 text-center align-middle"><a class="text-dark fw-bold" href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
+                        <td headers="seguiti" class="border-white border-2 text-center align-middle"><a style="font-size: 18px" href="elenco-utenti-seguiti.php"><?php foreach ($dbh->getNumberOfSeguitiById($_SESSION["idutente"]) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
+                        <td headers="seguaci" class="border-white border-2 text-center align-middle"><a style="font-size: 18px" href="elenco-utenti-seguaci.php"><?php foreach ($dbh->getNumberOfSeguaciById($_SESSION["idutente"]) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
                 </tr>
             </tbody>
         </table>

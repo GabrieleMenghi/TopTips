@@ -7,7 +7,8 @@ if(isUserLoggedIn()){
     if(isset($_GET["formmsg"])){
         $templateParams["formmsg"] = $_GET["formmsg"];
     }
-} else {
+} 
+else {
     $templateParams["nome"] = "template/richiesta-login.php";
     $templateParams["page"] = "creazione-post.php";
 }

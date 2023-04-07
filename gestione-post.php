@@ -7,7 +7,7 @@ if(!isUserLoggedIn()){
 
 $templateParams["titolo"] = "TopTips - Elimina post";
 $templateParams["nome"] = "template/elimina-post.php";
-$templateParams["parameter"] = $_GET["id"];
+$templateParams["numeroIdPost"] = $_GET["id"];
 
 require("template/base.php");
 ?>

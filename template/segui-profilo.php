@@ -89,8 +89,8 @@ foreach ($id["seguitore"] as $seguitore) {
                             <td headers="info_personali" class="border-white border-2 text-center align-middle"><?php echo nl2br($profilo["datipersonali"]); ?></td>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                    <td headers="seguiti" class="border-white border-2 text-center align-middle"><a class="text-dark fw-bold" href="elenco-utenti-seguiti.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguitiById($idseguito) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
-                    <td headers="seguaci" class="border-white border-2 text-center align-middle"><a class="text-dark fw-bold" href="elenco-utenti-seguaci.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguaciById($idseguito) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
+                    <td headers="seguiti" class="border-white border-2 text-center align-middle"><a style="font-size: 18px" href="elenco-utenti-seguiti.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguitiById($idseguito) as $num_seguiti) { echo $num_seguiti["num_seguiti"]; }?></a></td>
+                    <td headers="seguaci" class="border-white border-2 text-center align-middle"><a style="font-size: 18px" href="elenco-utenti-seguaci.php?utente=<?php echo $idseguito; ?>"><?php foreach ($dbh->getNumberOfSeguaciById($idseguito) as $num_seguaci) { echo $num_seguaci["num_seguaci"]; }?></a></td>
                 </tr>
             </tbody>
         </table>

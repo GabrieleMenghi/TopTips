@@ -12,7 +12,6 @@ foreach ($templateParams["idutente"] as $ricercato){
     $templateParams["profilo"] = $dbh->getProfileByUserId($ricercato["idutente"]);
     $templateParams["post"] = $dbh->getPostByUserId($ricercato["idutente"]);
 }
-
 $templateParams["titolo"] = "TopTips - Profilo di ".$username_cercato;
 $templateParams["nome"] = "template/segui-profilo.php";
 

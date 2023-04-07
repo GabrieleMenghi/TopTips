@@ -6,7 +6,7 @@ if(isset($_POST["submit"])){
 }
 
 if(isUserLoggedIn()){
-    $templateParams["titolo"] = "TopTips - Profilo admin";
+    $templateParams["titolo"] = "TopTips - Profilo personale";
     if(isset($_GET["page"])){
         header("location: " . $_GET["page"]);
     } else {
@@ -19,7 +19,7 @@ if(isUserLoggedIn()){
         $templateParams["formmsg"] = $_GET["formmsg"];
     }
 }
-else{
+else {
     $templateParams["titolo"] = "TopTips - Login";
     $templateParams["nome"] = "template/login-form.php";
     $_SESSION["isUserLoggedIn"] = false;

@@ -30,9 +30,9 @@ if(isset($_GET["confirm-account-deletion"])){
     </p>
     
     <?php if(isset($_GET["delete-account"])): ?>
-        <p class="confirm-deletion">
+        <p>
             Sei sicuro di voler eliminare il tuo account?
-            <a class="confirm-deletion" href="?confirm-account-deletion">Elimina account</a>
+            <a href="?confirm-account-deletion">Elimina account</a>
         </p>
     <?php else: ?>
         <a href="?delete-account">Elimina account</a>

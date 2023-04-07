@@ -7,8 +7,11 @@ if(!isUserLoggedIn()){
 
 $templateParams["titolo"] = "TopTips - Utenti seguaci";
 if(isset($_GET["utente"])) {
+    // Lista seguaci dell'utente cercato
     $templateParams["seguaci"] = $dbh->getListOfSeguaciById($_GET["utente"]);
-} else {
+}
+else {
+    // Lista dei propri seguaci
     $templateParams["seguaci"] = $dbh->getListOfSeguaciById($_SESSION["idutente"]);  
 }
 

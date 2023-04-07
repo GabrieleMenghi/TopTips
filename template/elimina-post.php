@@ -12,6 +12,6 @@
                 </a>
             </li>
         </ul>
-        <input type="hidden" name="idpost" value="<?php echo $templateParams["parameter"]; ?>" />
+        <input type="hidden" name="idpost" value="<?php echo $templateParams["numeroIdPost"]; ?>" />
     </form>
 </div>
