@@ -1,10 +1,10 @@
 # TopTips
 ### Introduzione
 
-> TopTips è un applicazione web accessibile e responsive che si pone come tema la condivisione di esperienze e consigli tramite foto e immagini.
+> TopTips è un'applicazione web accessibile e responsive che si pone come tema la condivisione di esperienze e consigli tramite foto e immagini.
 
 Alcune delle tematiche di condivisione che possiamo citare come esempio sono la moda, il cibo, lo stile di vita, le passioni, gli interessi, i viaggi o comunque qualsiasi altro argomento che l’utente desidera che gli altri utenti commentino e consiglino.
-Quindi, in sintesi, TopTips mira all’interazione tra gli utenti attraverso la condivisione di foto e la richiesta di consigli, con l’obbiettivo di creare una comunità in cui gli utenti si aiutano a vicenda e condividono le proprie esperienze e opinioni.
+Quindi, in sintesi, TopTips mira all’interazione tra gli utenti attraverso la condivisione di foto e la richiesta di consigli, con l’obiettivo di creare una comunità in cui gli utenti si aiutano a vicenda e condividono le proprie esperienze e opinioni.
 Ovviamente, a precise richieste su un argomento, corrisponderà una precisa risposta da un utente che verrà salvata e memorizzata.
 Il profilo dell’utente diviene così un “salva-consigli” personale, i quali possono sempre essere consultati in qualsiasi momento.
 
